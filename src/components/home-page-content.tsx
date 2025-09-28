@@ -110,7 +110,7 @@ export function HomePageContent() {
                     data-ai-hint={profileBanner.imageHint}
                   />
                 )}
-                <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5">
+                <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5 rounded-b-2xl">
                   <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                     <h1 className="flex items-center text-3xl font-bold">
                       Mel Maia
