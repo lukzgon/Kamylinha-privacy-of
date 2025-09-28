@@ -113,7 +113,7 @@ export function HomePageContent() {
                 <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5">
                   <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                     <h1 className="flex items-center text-3xl font-bold">
-                      Mel Maia
+                      Kamylinha Santos
                     </h1>
                     <div className="mt-2 flex gap-5">
                       <span className="flex items-center gap-1.5 text-base font-medium">
@@ -147,9 +147,9 @@ export function HomePageContent() {
             <div className="p-6 pt-4">
               <div className="mb-5">
                 <h2 className="text-xl font-bold text-foreground">
-                  melissamelmaia
+                  euukamylinhasantos
                 </h2>
-                <p className="text-base text-muted-foreground">@melmaia</p>
+                <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
               </div>
               <div className="text-base/relaxed font-normal text-card-foreground">
                 <p>
