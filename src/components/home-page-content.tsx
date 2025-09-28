@@ -63,11 +63,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const handleLikeClick = () => {
     setIsLiked(prevIsLiked => {
       const newIsLiked = !prevIsLiked;
-      if (newIsLiked) {
-        setLikeCount(prevCount => prevCount + 1);
-      } else {
-        setLikeCount(prevCount => prevCount - 1);
-      }
+      setLikeCount(prevCount => (newIsLiked ? prevCount + 1 : prevCount - 1));
       return newIsLiked;
     });
   };
@@ -80,6 +76,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               <strong>melissamailmaia</strong>
               <span>@melmaia</span>
           </div>
+          <MoreHorizontal className="h-5 w-5 text-gray-500" />
         </div>
       <div className="feed-item-media">
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
@@ -141,6 +138,23 @@ function MediaGridItem({ seed, type }: { seed: number; type: 'photo' | 'video' }
   );
 }
 
+function MediaGrid() {
+  const mediaItems = [
+    { seed: 0xccc, type: 'photo' },
+    { seed: 0xbbb, type: 'video' },
+    { seed: 0xc9c9c9, type: 'photo' },
+  ];
+
+  return (
+    <div className="media-grid">
+      {mediaItems.map((item, index) => (
+        <MediaGridItem key={index} seed={item.seed} type={item.type} />
+      ))}
+    </div>
+  );
+}
+
+
 export function HomePageContent() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   
@@ -158,12 +172,6 @@ export function HomePageContent() {
     { id: 'popup-trigger-card', seed: 0xe8e8e8, likes: 432, comments: 199 },
   ];
   
-  const mediaItems = [
-    { seed: 0xccc, type: 'photo' },
-    { seed: 0xbbb, type: 'video' },
-    { seed: 0xc9c9c9, type: 'photo' },
-  ];
-
 
   return (
     <>
@@ -235,24 +243,29 @@ export function HomePageContent() {
             </div>
           </div>
 
-          <div className="feed-section">
-              <div className="feed-tabs justify-center">
-                <button className="tab-link active">93 postagens</button>
-                <button className="tab-link">412 mídias</button>
+          <Tabs defaultValue="posts" className="feed-section">
+            <TabsList className="feed-tabs justify-center">
+              <TabsTrigger value="posts" className="tab-link">93 postagens</TabsTrigger>
+              <TabsTrigger value="media" className="tab-link">412 mídias</TabsTrigger>
+            </TabsList>
+            <TabsContent value="posts" className="feed-content active">
+              <div className="posts-grid">
+                {feedPosts.map((post, index) => (
+                  <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
+                ))}
               </div>
-              <div className="feed-content active">
-                <div className="posts-grid">
-                  {feedPosts.map((post, index) => (
-                    <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
-                  ))}
-                </div>
-              </div>
-          </div>
+            </TabsContent>
+            <TabsContent value="media" className="feed-content">
+              <MediaGrid />
+            </TabsContent>
+          </Tabs>
         </main>
       </div>
       <ScrollPopup />
     </>
   );
 }
+
+    
 
     

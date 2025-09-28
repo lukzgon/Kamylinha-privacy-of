@@ -146,9 +146,10 @@ body {
 .feed-tabs { display:flex; border-bottom:1px solid #e6ecf0; }
 .tab-link { background:0 0; border:none; padding:15px 20px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#5b7083; cursor:pointer; border-bottom:3px solid transparent; transition:all .2s ease; }
 .tab-link:hover { background-color:#f7f9fa; }
-.tab-link.active { color:hsl(var(--primary)); border-bottom-color:hsl(var(--primary)); }
+.tab-link[data-state=active] { color:hsl(var(--primary)); border-bottom-color:hsl(var(--primary)); }
 .feed-content { display:none; }
 .feed-content.active { display:block; padding-top:20px; }
+.feed-content[data-state=active] { display:block; }
 .posts-grid { display:grid; grid-template-columns:1fr; gap:20px; }
 .media-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .feed-item { background-color:#ffffff; border:1px solid #e6ecf0; border-radius:12px; overflow:hidden; }
@@ -214,7 +215,7 @@ body {
 .like-btn.active { color: #F44336; }
 .like-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
 
-.bookmark-btn.active { background-color: hsl(var(--primary)); color: #ffffff; }
+.bookmark-btn.active { background-color: #ffffff; color: hsl(var(--primary)); }
 .bookmark-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
     
 /* --- ESTILOS DO POP-UP DE FIM DE PÁGINA --- */
@@ -247,6 +248,8 @@ body {
 
     
 
+
+    
 
     
 
