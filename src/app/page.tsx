@@ -123,7 +123,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
+            
             {profileAvatar && (
               <div className="absolute -bottom-[65px] left-[25px] z-10">
                 <Image
