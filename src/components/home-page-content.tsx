@@ -81,9 +81,6 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           <p className="text-sm font-bold">Kamylinha Santos</p>
           <p className="text-xs text-muted-foreground">@euukamylinhasantos</p>
         </div>
-        <Button variant="ghost" size="icon" className="h-8 w-8">
-          <MoreHorizontal className="h-5 w-5" />
-        </Button>
       </div>
       <div className="relative aspect-[4/5] bg-gray-200">
         <Image
@@ -92,7 +89,7 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white backdrop-blur-sm">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white backdrop-blur-sm">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/30">
             <Lock className="h-8 w-8" />
           </div>
@@ -329,7 +326,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
-
-    
