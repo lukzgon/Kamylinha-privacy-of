@@ -67,6 +67,10 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
       return newIsLiked;
     });
   };
+  
+  const handleBookmarkClick = () => {
+    setIsBookmarked(prevIsBookmarked => !prevIsBookmarked);
+  };
 
   return (
     <div id={id} className="feed-item">
@@ -100,6 +104,14 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
                 </button>
                 <span className="like-count">{likeCount}</span>
               </div>
+              <button className="action-btn comment-btn">
+                <MessageSquare className="material-symbols-outlined" />
+              </button>
+          </div>
+          <div className="actions-right">
+              <button className={cn("action-btn bookmark-btn", { active: isBookmarked })} onClick={handleBookmarkClick}>
+                <Bookmark className="material-symbols-outlined" />
+              </button>
           </div>
       </div>
     </div>
