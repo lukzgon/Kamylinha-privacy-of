@@ -41,7 +41,7 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   );
 }
 
-function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; seed: number; likes: number; comments: number; onMediaClick: () => void; }) {
+function FeedPost({ id, src, likes, comments, onMediaClick }: { id?: string; src: string; likes: number; comments: number; onMediaClick: () => void; }) {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
 
@@ -72,7 +72,7 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
           <span className="material-symbols-outlined">more_horiz</span>
         </div>
       <div className="feed-item-media" onClick={onMediaClick}>
-          <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
+          <Image src={src} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
                 <span className="material-symbols-outlined">lock</span>
@@ -151,14 +151,14 @@ export function HomePageContent() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { id: undefined, seed: 0xccc, likes: 248, comments: 126 },
-    { id: undefined, seed: 0xbbb, likes: 549, comments: 362 },
-    { id: undefined, seed: 0xd1d1d1, likes: 312, comments: 98 },
-    { id: undefined, seed: 0xc9c9c9, likes: 488, comments: 210 },
-    { id: undefined, seed: 0xdddddd, likes: 620, comments: 340 },
-    { id: undefined, seed: 0xe0e0e0, likes: 199, comments: 85 },
-    { id: 'popup-reset-card', seed: 0xd8d8d8, likes: 715, comments: 450 },
-    { id: 'popup-trigger-card', seed: 0xe8e8e8, likes: 432, comments: 199 },
+    { id: undefined, src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 248, comments: 126 },
+    { id: undefined, src: 'https://via.placeholder.com/400x500/bbb/fff', likes: 549, comments: 362 },
+    { id: undefined, src: 'https://via.placeholder.com/400x500/d1d1d1/fff', likes: 312, comments: 98 },
+    { id: undefined, src: 'https://via.placeholder.com/400x500/c9c9c9/fff', likes: 488, comments: 210 },
+    { id: undefined, src: 'https://via.placeholder.com/400x500/dddddd/fff', likes: 620, comments: 340 },
+    { id: undefined, src: 'https://via.placeholder.com/400x500/e0e0e0/fff', likes: 199, comments: 85 },
+    { id: 'popup-reset-card', src: 'https://via.placeholder.com/400x500/d8d8d8/fff', likes: 715, comments: 450 },
+    { id: 'popup-trigger-card', src: 'https://via.placeholder.com/400x500/e8e8e8/fff', likes: 432, comments: 199 },
   ];
   
   const handleMediaClick = () => {
@@ -252,7 +252,7 @@ export function HomePageContent() {
           <TabsContent value="posts" className="feed-content active">
             <div className="posts-grid">
               {feedPosts.map((post, index) => (
-                <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
+                <FeedPost key={index} id={post.id} src={post.src} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
               ))}
             </div>
           </TabsContent>
@@ -266,3 +266,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
