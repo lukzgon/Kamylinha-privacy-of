@@ -3,7 +3,6 @@
 
 import Image from 'next/image';
 import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon, MoreHorizontal, User, Tag, Image as ImageIcon, Film } from 'lucide-react';
-import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -12,16 +11,6 @@ import { useState } from 'react';
 import { ScrollPopup } from './scroll-popup';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ScrollToTopButton } from './scroll-to-top-button';
-
-const fontPlayfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-headline',
-});
-
-const fontInter = Inter({
-  subsets: ['latin'],
-  variable: '--font-body',
-});
 
 type PlanProps = {
   duration: string;
@@ -60,12 +49,12 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
   const [likeCount, setLikeCount] = useState(likes);
 
   const handleLikeClick = () => {
+    setIsLiked(prev => !prev);
     if (isLiked) {
       setLikeCount(prev => prev - 1);
     } else {
       setLikeCount(prev => prev + 1);
     }
-    setIsLiked(prev => !prev);
   };
   
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -187,10 +176,10 @@ export function HomePageContent() {
 
   return (
     <>
-      <div className={cn("flex min-h-screen flex-col items-center bg-background font-body", fontInter.variable, fontPlayfair.variable)}>
+      <div className={cn("flex min-h-screen flex-col items-center bg-background font-body")}>
         <header className="page-header">
           <Image
-            src="https://i.imgur.com/gY9k2Yy.png"
+            src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
             width={125}
             height={24}
@@ -278,5 +267,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    

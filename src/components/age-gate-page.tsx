@@ -28,7 +28,7 @@ export function AgeGate() {
   return (
     <div className="age-gate-body">
       <div className="age-gate-content">
-          <Image src="https://i.imgur.com/gY9k2Yy.png" alt="Logo Privacy" width={200} height={48} className="popup-logo mx-auto" />
+          <Image src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png" alt="Logo Privacy" width={200} height={48} className="popup-logo mx-auto" />
           <p>Este site é uma comunidade adulta que contém material sexualmente explícito.</p>
           <p>Você deve ter 18 anos ou mais para entrar.</p>
           <Button className="age-gate-button" onClick={handleEnter}>Tenho 18 anos ou mais - Entrar</Button>
