@@ -1,39 +1,17 @@
+
+'use client';
+
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 import { Heart, Library, Video } from 'lucide-react';
 
-const Plan = ({
-  popular,
-  period,
-  price,
-}: {
-  popular?: boolean;
-  period: string;
-  price: string;
-}) => (
-  <a
-    href="#"
-    className={cn(
-      'group block no-underline rounded-xl border-2 p-5 font-bold transition-all duration-300',
-      'flex items-center justify-between',
-      {
-        'border-primary bg-primary text-primary-foreground shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:translate-y-[-3px] hover:bg-primary/90 hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)]':
-          popular,
-        'border-primary bg-white text-primary shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:translate-y-[-2px] hover:bg-primary hover:text-primary-foreground hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)]':
-          !popular,
-      }
-    )}
-  >
-    <span className="text-base">{period}</span>
-    <span className="text-base">{price}</span>
-  </a>
-);
-
 export default function Home() {
-  const profileBanner = PlaceHolderImages.find((p) => p.id === 'profile-banner');
-  const profileAvatar = PlaceHolderImages.find((p) => p.id === 'profile-avatar');
+  const profileBanner = PlaceHolderImages.find(
+    (p) => p.id === 'profile-banner'
+  );
+  const profileAvatar = PlaceHolderImages.find(
+    (p) => p.id === 'profile-avatar'
+  );
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-background">
@@ -121,21 +99,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <Card className="mt-4 shadow-lg">
-          <CardContent className="space-y-2.5 p-6">
-            <h3 className="text-xl font-bold">Assinaturas</h3>
-
-            <Plan popular period="7 Dias" price="R$ 9,90" />
-
-            <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
-              Promoções
-            </h4>
-
-            <Plan period="1 Mês" price="R$ 19,90" />
-            <Plan period="3 Meses" price="R$ 29,90" />
-          </CardContent>
-        </Card>
       </main>
     </div>
   );
