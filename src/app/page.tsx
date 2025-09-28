@@ -65,9 +65,9 @@ export default function Home() {
         />
       </header>
 
-      <main className="w-full max-w-[680px] p-4 md:p-5">
+      <main className="w-full max-w-[850px] p-4 md:p-5">
         <div className="relative mb-20">
-          <div className="relative h-[280px] w-full overflow-hidden rounded-2xl shadow-lg">
+          <div className="relative h-[220px] w-full overflow-hidden rounded-2xl shadow-lg">
             {profileBanner && (
               <Image
                 src={profileBanner.imageUrl}
@@ -77,13 +77,13 @@ export default function Home() {
                 data-ai-hint={profileBanner.imageHint}
               />
             )}
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent">
-              <div className="p-5 text-white">
+            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 from-0% to-transparent to-60%">
+              <div className="flex w-full items-center justify-between p-5 text-white">
                 <h1 className="flex items-center text-3xl font-bold [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                   Mel Maia
                 </h1>
-                <div className="mt-2 flex gap-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  <span className="flex items-center gap-1.5 text-base font-medium">
+                <div className="flex gap-5">
+                  <span className="flex items-center gap-1.5 rounded-lg bg-black/20 px-2.5 py-1 text-base font-medium">
                     <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span> 229k
                   </span>
                 </div>
@@ -92,13 +92,13 @@ export default function Home() {
           </div>
 
           {profileAvatar && (
-            <div className="absolute -bottom-16 left-5">
+            <div className="absolute -bottom-[65px] left-[25px]">
               <Image
                 src={profileAvatar.imageUrl}
                 alt={profileAvatar.description}
-                width={140}
-                height={140}
-                className="h-[140px] w-[140px] rounded-full border-[5px] border-background object-cover shadow-lg"
+                width={150}
+                height={150}
+                className="h-[150px] w-[150px] rounded-full border-[6px] border-background object-cover shadow-lg"
                 data-ai-hint={profileAvatar.imageHint}
               />
             </div>
