@@ -90,8 +90,10 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           className="object-cover"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white backdrop-blur-sm">
-          <Lock className="h-12 w-12" />
-          <div className="mt-4 flex items-center gap-4">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/30">
+            <Lock className="h-8 w-8" />
+          </div>
+          <div className="mt-4 flex items-center gap-4 rounded-full bg-black/40 px-4 py-2 text-sm">
             <div className="flex items-center gap-1.5">
               <Heart className="h-5 w-5" />
               <span>{likes}</span>
