@@ -6,21 +6,34 @@ import Image from 'next/image';
 
 export function ScrollPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasAppeared, setHasAppeared] = useState(false);
 
   const checkScrollPosition = useCallback(() => {
-    if (hasAppeared) return;
-
+    // Usando o método mais confiável para altura total da página
+    const pageHeight = document.documentElement.scrollHeight;
     const scrollPosition = window.innerHeight + window.scrollY;
-    const pageHeight = document.body.offsetHeight;
+    const isPopupCurrentlyVisible = document.getElementById('scroll-popup')?.classList.contains('visible');
 
-    if (scrollPosition >= pageHeight - 100) {
-      setIsVisible(true);
-      setHasAppeared(true);
+    console.log(`Verificando rolagem: Posição=${Math.round(scrollPosition)}, Altura Total=${pageHeight}, Pop-up Visível=${isVisible}`);
+    
+    // Gatilho quando o usuário estiver a 150 pixels do final
+    if (scrollPosition >= pageHeight - 150 && !isPopupCurrentlyVisible) {
+        console.log('%cATIVANDO O GATILHO! Mostrando pop-up.', 'color: green; font-weight: bold;');
+        setIsVisible(true);
     }
-  }, [hasAppeared]);
+  }, [isVisible]);
 
   useEffect(() => {
+    console.log('--- SCRIPT DE DIAGNÓSTICO DO POP-UP INICIADO ---');
+    const scrollPopupEl = document.getElementById('scroll-popup');
+    const closePopupBtnEl = document.querySelector('.close-popup-btn');
+    const popupActionBtnEl = document.querySelector('.popup-action-btn');
+
+    if (scrollPopupEl && closePopupBtnEl && popupActionBtnEl) {
+        console.log('Elementos do Pop-up encontrados com sucesso.');
+    } else {
+        console.error('ERRO: Um ou mais elementos do pop-up não foram encontrados. Verifique os IDs e classes no HTML.');
+    }
+
     window.addEventListener('scroll', checkScrollPosition);
     return () => {
       window.removeEventListener('scroll', checkScrollPosition);
@@ -28,12 +41,9 @@ export function ScrollPopup() {
   }, [checkScrollPosition]);
 
   const hidePopup = () => {
+    console.log('%cFECHANDO O POP-UP! O gatilho agora pode ser ativado novamente.', 'color: red; font-weight: bold;');
     setIsVisible(false);
   };
-
-  if (!isVisible) {
-    return null;
-  }
 
   return (
     <div id="scroll-popup" className={`scroll-popup ${isVisible ? 'visible' : ''}`}>
