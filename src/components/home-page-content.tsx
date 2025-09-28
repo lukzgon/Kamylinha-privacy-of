@@ -223,7 +223,7 @@ export function HomePageContent() {
           </div>
 
           <div className="feed-section">
-              <div className="feed-tabs">
+              <div className="feed-tabs justify-center">
                 <button className="tab-link active">93 postagens</button>
                 <button className="tab-link">412 mídias</button>
               </div>
@@ -241,3 +241,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
