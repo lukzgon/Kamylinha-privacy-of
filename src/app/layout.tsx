@@ -1,11 +1,24 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import { Playfair_Display, PT_Sans } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: "Mel's Temptations",
   description: 'Sua dose diária de tentação.',
 };
+
+const fontHeadline = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-headline',
+});
+
+const fontBody = PT_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  weight: ['400', '700'],
+});
 
 export default function RootLayout({
   children,
@@ -14,16 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-      </head>
-      <body className="antialiased">
+      <body
+        className={cn(
+          'antialiased',
+          fontHeadline.variable,
+          fontBody.variable
+        )}
+      >
         {children}
         <Toaster />
       </body>
