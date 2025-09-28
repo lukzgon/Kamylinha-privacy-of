@@ -18,15 +18,15 @@ type PlanProps = {
 
 function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   const popularStyles = isPopular
-    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:bg-accent hover:border-accent hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)] hover:-translate-y-[3px]'
-    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:bg-[#FFF8F2] hover:border-accent hover:text-primary hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)] hover:-translate-y-0.5';
+    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(217,87,139,0.35)] hover:bg-accent hover:border-accent hover:shadow-[0_8px_20px_rgba(217,87,139,0.5)] hover:-translate-y-[3px]'
+    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(217,87,139,0.2)] hover:bg-[#FDF5F8] hover:border-accent hover:text-primary hover:shadow-[0_6px_15px_rgba(217,87,139,0.3)] hover:-translate-y-0.5';
 
   return (
     <a
       href="#"
-      className={`flex items-center justify-between rounded-xl border-2 p-4 font-bold transition-all duration-200 ease-in-out active:scale-[0.98] active:shadow-[0_2px_5px_rgba(255,106,0,0.3)] ${popularStyles}`}
+      className={`flex items-center justify-between rounded-xl border-2 p-4 font-bold transition-all duration-200 ease-in-out active:scale-[0.98] active:shadow-[0_2px_5px_rgba(217,87,139,0.3)] ${popularStyles}`}
     >
-      <div className="flex items-center gap-2.5 text-base">
+      <div className="flex items-center gap-2.5 text-base font-medium">
         <span>{duration}</span>
         {tag && (
           <span
@@ -38,7 +38,7 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
           </span>
         )}
       </div>
-      <div className="text-base">{price}</div>
+      <div className="text-base font-bold">{price}</div>
     </a>
   );
 }
@@ -99,7 +99,7 @@ export default function Home() {
               )}
               <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5">
                 <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  <h1 className="flex items-center text-3xl font-bold">
+                  <h1 className="flex items-center text-3xl">
                     Mel Maia
                   </h1>
                   <div className="mt-2 flex gap-5">
@@ -132,13 +132,13 @@ export default function Home() {
           )}
 
           <div className="p-6 pt-20">
-            <div>
+            <div className="pl-[185px] mt-[-60px] mb-5">
               <h2 className="text-xl font-bold text-foreground">
                 melissamelmaia
               </h2>
               <p className="text-base text-muted-foreground">@melmaia</p>
             </div>
-            <div className="mt-4 text-base/relaxed text-card-foreground">
+            <div className="text-base/relaxed font-normal text-card-foreground">
               <p>
                 Meu amor... não adianta resistir, eu sei que você quer... e eu
                 tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem

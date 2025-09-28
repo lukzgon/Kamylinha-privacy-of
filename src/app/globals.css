@@ -11,19 +11,19 @@
     --card-foreground: 215 14% 16%;
     --popover: 0 0% 100%;
     --popover-foreground: 215 14% 16%;
-    --primary: 25 100% 50%; /* #FF6A00 - Orange */
+    --primary: 343 71% 58%; /* #D9578B - Pink/Magenta */
     --primary-foreground: 0 0% 100%;
     --secondary: 336 50% 97%;
     --secondary-foreground: 335 15% 23%;
     --muted: 210 20% 98%;
     --muted-foreground: 214 20% 46%;
-    --accent: 28 100% 45%; /* #E67E00 - Darker Orange for hover */
+    --accent: 344 65% 55%; /* #C24A7A - Darker Pink/Magenta for hover */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 25 100% 50%;
+    --ring: 343 71% 58%;
     --radius: 0.75rem;
   }
 }
@@ -36,6 +36,6 @@
     @apply bg-background text-foreground font-body;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
+    @apply font-headline font-bold;
   }
 }
