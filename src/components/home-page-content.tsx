@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -61,11 +60,12 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    setIsLiked(prevIsLiked => {
-      const newIsLiked = !prevIsLiked;
-      setLikeCount(prevCount => (newIsLiked ? prevCount + 1 : prevCount - 1));
-      return newIsLiked;
-    });
+    if (isLiked) {
+      setLikeCount(likeCount - 1);
+    } else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsLiked(!isLiked);
   };
   
   const handleBookmarkClick = () => {
@@ -269,5 +269,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
