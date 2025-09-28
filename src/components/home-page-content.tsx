@@ -205,8 +205,11 @@ export function HomePageContent() {
                       <h2>Kamylinha Santos</h2>
                       <p>@euukamylinhasantos</p>                  </div>
                   <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
-                       <p className="description-text">
-                          Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
+                       <p className="description-text whitespace-pre-wrap">
+                          Oi meu bem! Sou a Kamylinha 💋
+A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
+Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
+Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
                       </p>
                       <button className="read-more-btn" onClick={toggleDescription}>
                         {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
@@ -268,6 +271,8 @@ export function HomePageContent() {
     
 
 
+
+    
 
     
 
