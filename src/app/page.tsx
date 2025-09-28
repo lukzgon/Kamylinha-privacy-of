@@ -85,8 +85,8 @@ export default function Home() {
       </header>
 
       <main className="w-full max-w-[850px] p-4 md:p-5">
-        <div className="relative mb-24">
-          <div className="overflow-hidden rounded-2xl bg-card shadow-lg">
+        <div className="relative mb-8 rounded-2xl bg-card shadow-lg">
+          <div className="overflow-hidden rounded-t-2xl">
             <div className="relative h-[220px] w-full">
               {profileBanner && (
                 <Image
@@ -101,13 +101,6 @@ export default function Home() {
                 <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                   <h1 className="flex items-center text-3xl font-bold">
                     Mel Maia
-                    <Image
-                      src="https://i.imgur.com/vH4vK4r.png"
-                      alt="lips"
-                      width={24}
-                      height={24}
-                      className="ml-2.5 h-6 w-auto"
-                    />
                   </h1>
                   <div className="mt-2 flex gap-5">
                     <span className="flex items-center gap-1.5 text-base font-medium">
@@ -123,30 +116,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            <div className="p-6 pt-20">
-              <div>
-                <h2 className="text-xl font-bold text-foreground">
-                  melissamelmaia
-                </h2>
-                <p className="text-base text-muted-foreground">@melmaia</p>
-              </div>
-              <div className="mt-4 text-base/relaxed text-card-foreground">
-                <p>
-                  Meu amor... não adianta resistir, eu sei que você quer... e eu
-                  tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem
-                  dói... você vai ter acesso total ao meu lado mais safado e
-                  proibido. São mais de 800 fotos e vídeos, me mostrando como você
-                  nunca viu... peladinha, provocando, brincando... me tocando...
-                  só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só
-                  meu, tem com as minhas amigas, tem eu fazendo o que você sempre
-                  sonhou...
-                </p>
-              </div>
-            </div>
           </div>
+
           {profileAvatar && (
-            <div className="absolute -bottom-[70px] left-[25px] z-10">
+            <div className="absolute top-[145px] left-[25px] z-10">
               <Image
                 src={profileAvatar.imageUrl}
                 alt={profileAvatar.description}
@@ -157,6 +130,27 @@ export default function Home() {
               />
             </div>
           )}
+
+          <div className="p-6 pt-20">
+            <div>
+              <h2 className="text-xl font-bold text-foreground">
+                melissamelmaia
+              </h2>
+              <p className="text-base text-muted-foreground">@melmaia</p>
+            </div>
+            <div className="mt-4 text-base/relaxed text-card-foreground">
+              <p>
+                Meu amor... não adianta resistir, eu sei que você quer... e eu
+                tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem
+                dói... você vai ter acesso total ao meu lado mais safado e
+                proibido. São mais de 800 fotos e vídeos, me mostrando como você
+                nunca viu... peladinha, provocando, brincando... me tocando...
+                só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só
+                meu, tem com as minhas amigas, tem eu fazendo o que você sempre
+                sonhou...
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="rounded-2xl bg-card p-6 shadow-lg">
