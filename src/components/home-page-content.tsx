@@ -175,7 +175,6 @@ export function HomePageContent() {
 
   return (
     <>
-      <main className="content">
         <header className="page-header">
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
@@ -185,6 +184,7 @@ export function HomePageContent() {
             className="logo"
           />
         </header>
+      <main className="content">
           <div className="profile-card">
               <div className="banner">
                   <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
@@ -229,7 +229,7 @@ export function HomePageContent() {
             </h4>
              <Plan
               duration="1 Mês"
-              price="R.5"
+              price="R$ 15,90"
               tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
             />
             <Plan
