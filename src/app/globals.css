@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
   }
   :root {
-    --background: 24 60% 96%;
+    --background: 33 20% 96%;
     --foreground: 20 10% 15%;
     --card: 0 0% 100%;
     --card-foreground: 20 10% 15%;
@@ -22,7 +22,7 @@
     --secondary-foreground: 20 10% 15%;
     --muted: 20 20% 95%;
     --muted-foreground: 20 8% 44%;
-    --accent: 25 90% 45%;
+    --accent: 30 100% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -44,7 +44,7 @@
     --secondary-foreground: 20 50% 98%;
     --muted: 20 10% 25%;
     --muted-foreground: 20 8% 64%;
-    --accent: 25 90% 45%;
+    --accent: 30 100% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -84,7 +84,7 @@
 .age-gate-content p { font-size: 1.2rem; color: #333; line-height: 1.6; margin: 0 0 20px 0; }
 .age-gate-button { 
   display: inline-block; 
-  background-color: #A23B72; 
+  background-color: hsl(var(--primary)); 
   color: #ffffff; 
   border: none; 
   border-radius: 10px; 
@@ -100,7 +100,7 @@
   max-width: 400px; 
   box-sizing: border-box; 
 }
-.age-gate-button:hover { background-color: #D14D72; }
+.age-gate-button:hover { background-color: hsl(var(--accent)); }
 
 /* --- ESTILOS DA PÁGINA PRINCIPAL --- */
 .page-header { background-color:#fff; width:100%; padding:10px 0; display:flex; justify-content:center; align-items:center; border-bottom:1px solid #e6ecf0; }
@@ -127,7 +127,7 @@
 .description-text { font-size:16px; line-height:1.6; color:#333; transition:max-height .5s ease-in-out; }
 .description-text.collapsed { max-height:105px; overflow:hidden; }
 .description-text.collapsed::after { content:''; position:absolute; bottom:0; left:0; right:0; height:50px; background:linear-gradient(to bottom,transparent,#fff); pointer-events:none; }
-.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#A23B72; cursor:pointer; }
+.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:hsl(var(--primary)); cursor:pointer; }
 
 .info-card h3 { font-family: 'Playfair Display', serif; font-size:20px; font-weight:700; margin:0 0 15px 0; }
 .promotions-title { font-size:14px; color:#5b7083; margin:25px 0 10px 0; text-transform:uppercase; font-weight:700; }
@@ -231,7 +231,7 @@
   margin-bottom: 25px;
 }
 #age-gate-button {
-  background-color: #A23B72;
+  background-color: hsl(var(--primary));
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -301,7 +301,7 @@
 
 .popup-action-btn {
     display: inline-block;
-    background-color: #A23B72;
+    background-color: hsl(var(--primary));
     color: #fff;
     padding: 12px 30px;
     border-radius: 8px;
@@ -312,7 +312,7 @@
 }
 
 .popup-action-btn:hover {
-    background-color: #D14D72;
+    background-color: hsl(var(--accent));
 }
 
 
@@ -321,7 +321,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #A23B72;
+    background-color: hsl(var(--primary));
     color: white;
     width: 50px;
     height: 50px;
@@ -344,7 +344,7 @@
 }
 
 .scroll-to-top-btn:hover {
-    background-color: #D14D72;
+    background-color: hsl(var(--accent));
 }
 
 .scroll-to-top-btn .material-symbols-outlined {
@@ -354,6 +354,8 @@
 
 
     
+    
+
     
 
     
