@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon, MoreHorizontal } from 'lucide-react';
+import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon, MoreHorizontal, User, Tag, Image as ImageIcon, Film } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -62,15 +62,15 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   return (
     <div id={id} className="feed-item">
       <div className="feed-item-header">
-          {avatarImage && <Image src={avatarImage.imageUrl} alt="Avatar" width={40} height={40} className="header-avatar" />}
+          <Image src="https://via.placeholder.com/40" alt="Avatar" width={40} height={40} className="header-avatar" />
           <div className="header-names">
-              <strong>melissamailmaia</strong>
-              <span>@melmaia</span>
+              <strong>euukamylinhasantos</strong>
+              <span>@euukamylinhasantos</span>
           </div>
           <MoreHorizontal className="h-5 w-5 text-gray-500" />
       </div>
       <div className="feed-item-media">
-          <Image src={`https://picsum.photos/seed/${seed}/400/500`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
+          <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
                 <Lock className="h-8 w-8" />
@@ -106,7 +106,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
 
 
 function MediaGridItem({ seed, type }: { seed: number; type: 'photo' | 'video' }) {
-    const imageUrl = `https://picsum.photos/seed/${seed}/300/300`;
+    const imageUrl = `https://via.placeholder.com/300x300/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`;
   return (
     <div className="media-item">
       <Image
@@ -135,17 +135,20 @@ export function HomePageContent() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { id: 'popup-reset-card', seed: 9, likes: 715, comments: 450 },
-    { id: 'popup-trigger-card', seed: 10, likes: 432, comments: 199 },
+    { id: undefined, seed: 0xccc, likes: 248, comments: 126 },
+    { id: undefined, seed: 0xbbb, likes: 549, comments: 362 },
+    { id: undefined, seed: 0xd1d1d1, likes: 312, comments: 98 },
+    { id: undefined, seed: 0xc9c9c9, likes: 488, comments: 210 },
+    { id: undefined, seed: 0xdddddd, likes: 620, comments: 340 },
+    { id: undefined, seed: 0xe0e0e0, likes: 199, comments: 85 },
+    { id: 'popup-reset-card', seed: 0xd8d8d8, likes: 715, comments: 450 },
+    { id: 'popup-trigger-card', seed: 0xe8e8e8, likes: 432, comments: 199 },
   ];
   
   const mediaItems = [
-    { seed: 10, type: 'photo' },
-    { seed: 11, type: 'video' },
-    { seed: 12, type: 'photo' },
-    { seed: 13, type: 'photo' },
-    { seed: 14, type: 'photo' },
-    { seed: 15, type: 'video' },
+    { seed: 0xccc, type: 'photo' },
+    { seed: 0xbbb, type: 'video' },
+    { seed: 0xc9c9c9, type: 'photo' },
   ];
 
 
@@ -165,23 +168,23 @@ export function HomePageContent() {
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
-                    {bannerImage && <Image src={bannerImage.imageUrl} alt={bannerImage.description} width={850} height={220} className="banner-image" data-ai-hint={bannerImage.imageHint} />}
+                    <Image src="https://via.placeholder.com/850x220/333/fff" alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint="woman beach" />
                     <div className="banner-overlay">
                         <div className="banner-text">
                             <h1>Kamylinha Santos</h1>
                             <div className="stats">
-                                <span className="stat-item"><Camera className="h-5 w-5 mr-1.5"/> 401</span>
-                                <span className="stat-item"><VideoIcon className="h-5 w-5 mr-1.5"/> 438</span>
+                                <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
+                                <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
                                 <span className="stat-item"><Heart className="h-5 w-5 mr-1.5"/> 229k</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                {avatarImage && <Image src={avatarImage.imageUrl} alt={avatarImage.description} width={150} height={150} className="avatar" data-ai-hint={avatarImage.imageHint} />}
+                <Image src="https://via.placeholder.com/150" alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint="woman portrait" />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>melissamailmaia</h2>
-                        <p>@melmaia</p>
+                        <h2>euukamylinhasantos</h2>
+                        <p>@euukamylinhasantos</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -227,15 +230,15 @@ export function HomePageContent() {
               </TabsList>
               <TabsContent value="posts" className="feed-content active">
                 <div className="posts-grid">
-                  {feedPosts.map((post) => (
-                    <FeedPost key={post.seed} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
+                  {feedPosts.map((post, index) => (
+                    <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
                   ))}
                 </div>
               </TabsContent>
               <TabsContent value="media" className="feed-content">
                 <div className="media-grid mt-4">
-                  {mediaItems.map((item) => (
-                    <MediaGridItem key={item.seed} seed={item.seed} type={item.type as 'photo' | 'video'} />
+                  {mediaItems.map((item, index) => (
+                    <MediaGridItem key={index} seed={item.seed} type={item.type as 'photo' | 'video'} />
                   ))}
                 </div>
               </TabsContent>
@@ -247,3 +250,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
