@@ -10,25 +10,25 @@
     scroll-behavior: smooth;
   }
   :root {
-    --background: 336 44% 96%; /* #F9E7EF */
-    --foreground: 341 5% 25%; /* #423c3e */
+    --background: 24 60% 96%; /* Light Orange/Peach */
+    --foreground: 24 5% 25%;
     --card: 0 0% 100%;
-    --card-foreground: 210 9% 10%;
+    --card-foreground: 24 9% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 9% 10%;
-    --primary: 341 60% 56%; /* #D14D72 */
+    --popover-foreground: 24 9% 10%;
+    --primary: 24 100% 50%; /* Orange */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 16% 93%;
-    --secondary-foreground: 210 9% 10%;
-    --muted: 210 16% 93%;
-    --muted-foreground: 215 14% 34%;
-    --accent: 326 50% 43%; /* #A23B72 */
+    --secondary: 24 16% 93%;
+    --secondary-foreground: 24 9% 10%;
+    --muted: 24 16% 93%;
+    --muted-foreground: 25 14% 34%;
+    --accent: 24 95% 45%; /* Darker Orange */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 216 11% 89%; /* #e0e6ec */
-    --input: 216 11% 89%;
-    --ring: 341 60% 56%;
+    --border: 24 11% 89%;
+    --input: 24 11% 89%;
+    --ring: 24 100% 50%;
     --radius: 1rem; /* 16px */
   }
 }
@@ -75,8 +75,8 @@
 
 .age-gate-button {
     display: inline-block;
-    background-color: #E5B390;
-    color: #ffffff;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border: none;
     border-radius: 10px;
     padding: 15px 30px;
@@ -93,7 +93,7 @@
 }
 
 .age-gate-button:hover {
-    background-color: #D9A380;
+    background-color: hsl(var(--primary) / 0.9);
 }
 
 
