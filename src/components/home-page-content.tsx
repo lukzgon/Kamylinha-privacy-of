@@ -156,7 +156,7 @@ export function HomePageContent() {
     { id: undefined, src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
     { id: undefined, src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 3275, comments: 99 },
-    { id: 'popup-trigger-card', src: 'https://picsum.photos/seed/105/600/750', likes: 4850, comments: 110 },
+    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/Y2fCbSYZ/photo-2025-08-28-15-09-54.jpg', likes: 4850, comments: 110 },
   ];
   
   const handleMediaClick = () => {
@@ -269,8 +269,6 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     
 
     
-
-
 
     
 
