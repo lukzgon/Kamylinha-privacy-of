@@ -108,15 +108,17 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-start gap-2 p-3">
-        <Button variant="ghost" size="icon" onClick={() => setIsLiked(!isLiked)}>
-          <Heart className={cn("h-6 w-6", isLiked && "fill-current text-primary")} />
-        </Button>
-        <Button variant="ghost" size="icon">
-          <MessageSquare className="h-6 w-6" />
-        </Button>
-        <Button variant="ghost" size="icon" className="ml-auto" onClick={() => setIsBookmarked(!isBookmarked)}>
-          <Bookmark className={cn("h-6 w-6", isBookmarked && "fill-current")} />
+      <div className="flex items-center justify-between p-1.5">
+        <div className="flex items-center">
+          <Button variant="ghost" size="icon" onClick={() => setIsLiked(!isLiked)}>
+            <Heart className={cn("h-6 w-6", isLiked && "fill-current text-red-500")} />
+          </Button>
+          <Button variant="ghost" size="icon">
+            <MessageSquare className="h-6 w-6" />
+          </Button>
+        </div>
+        <Button variant="ghost" size="icon" onClick={() => setIsBookmarked(!isBookmarked)}>
+          <Bookmark className={cn("h-6 w-6", isBookmarked && "fill-current text-primary")} />
         </Button>
       </div>
     </Card>
@@ -325,5 +327,7 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
