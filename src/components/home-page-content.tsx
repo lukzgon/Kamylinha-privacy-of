@@ -61,14 +61,14 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
 
   return (
     <div id={id} className="feed-item">
-      <div className="feed-item-header">
+        <div className="feed-item-header">
           <Image src="https://via.placeholder.com/40" alt="Avatar" width={40} height={40} className="header-avatar" />
           <div className="header-names">
-              <strong>euukamylinhasantos</strong>
-              <span>@euukamylinhasantos</span>
+              <strong>melissamailmaia</strong>
+              <span>@melmaia</span>
           </div>
-          <MoreHorizontal className="h-5 w-5 text-gray-500" />
-      </div>
+          <button className="action-btn"><MoreHorizontal className="h-5 w-5 text-gray-500" /></button>
+        </div>
       <div className="feed-item-media">
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
           <div className="locked-overlay">
@@ -168,7 +168,7 @@ export function HomePageContent() {
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
-                    <Image src="https://via.placeholder.com/850x220/333/fff" alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint="woman beach" />
+                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
                             <h1>Kamylinha Santos</h1>
@@ -180,7 +180,7 @@ export function HomePageContent() {
                         </div>
                     </div>
                 </div>
-                <Image src="https://via.placeholder.com/150" alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint="woman portrait" />
+                <Image src={avatarImage?.imageUrl || "https://via.placeholder.com/150"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
                         <h2>euukamylinhasantos</h2>
@@ -223,26 +223,17 @@ export function HomePageContent() {
           </div>
 
           <div className="feed-section">
-            <Tabs defaultValue="posts" className="w-full">
-              <TabsList className="feed-tabs">
-                <TabsTrigger value="posts" className="tab-link">93 postagens</TabsTrigger>
-                <TabsTrigger value="media" className="tab-link">412 mídias</TabsTrigger>
-              </TabsList>
-              <TabsContent value="posts" className="feed-content active">
+              <div className="feed-tabs">
+                <button className="tab-link active">93 postagens</button>
+                <button className="tab-link">412 mídias</button>
+              </div>
+              <div className="feed-content active">
                 <div className="posts-grid">
                   {feedPosts.map((post, index) => (
                     <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
                   ))}
                 </div>
-              </TabsContent>
-              <TabsContent value="media" className="feed-content">
-                <div className="media-grid mt-4">
-                  {mediaItems.map((item, index) => (
-                    <MediaGridItem key={index} seed={item.seed} type={item.type as 'photo' | 'video'} />
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
+              </div>
           </div>
         </main>
       </div>
@@ -250,5 +241,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
