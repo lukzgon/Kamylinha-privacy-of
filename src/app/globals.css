@@ -5,25 +5,25 @@
 
 @layer base {
   :root {
-    --background: 336 60% 96%; /* #f9e7ef - Very light pink */
+    --background: 20 50% 96%; /* #fdeee5 - Very light orange */
     --foreground: 215 14% 16%;
     --card: 0 0% 100%;
     --card-foreground: 215 14% 16%;
     --popover: 0 0% 100%;
     --popover-foreground: 215 14% 16%;
-    --primary: 343 71% 58%; /* #D9578B - Pink/Magenta */
+    --primary: 25 100% 50%; /* #FF6A00 - Orange */
     --primary-foreground: 0 0% 100%;
-    --secondary: 336 50% 97%;
-    --secondary-foreground: 335 15% 23%;
+    --secondary: 20 50% 97%;
+    --secondary-foreground: 25 15% 23%;
     --muted: 210 20% 98%;
     --muted-foreground: 214 20% 46%;
-    --accent: 344 65% 55%; /* #C24A7A - Darker Pink/Magenta for hover */
+    --accent: 28 80% 50%; /* #E67E00 - Darker Orange for hover */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 343 71% 58%;
+    --ring: 25 100% 50%;
     --radius: 0.75rem;
   }
 }
