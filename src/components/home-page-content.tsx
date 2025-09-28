@@ -182,7 +182,7 @@ export function HomePageContent() {
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
             width={150}
-            height={29}
+            height={35}
             className="logo"
           />
         </header>
