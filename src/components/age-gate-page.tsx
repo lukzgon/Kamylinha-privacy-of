@@ -35,7 +35,7 @@ export function AgeGate() {
         </div>
       </div>
 
-      <div id="main-content" className={cn('main-content', isVerified && 'visible')}>
+      <div id="main-content" className={cn('main-content', isVerified && 'opacity-100 visible')}>
         <HomePageContent />
       </div>
     </>
