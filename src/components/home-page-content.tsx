@@ -243,7 +243,7 @@ export function HomePageContent() {
         <Tabs defaultValue="posts" className="feed-section">
           <TabsList className="feed-tabs">
             <TabsTrigger value="posts" className="tab-link active">67 postagens</TabsTrigger>
-            <TabsTrigger value="media" className="tab-link" disabled>412 mídias</TabsTrigger>
+            <TabsTrigger value="media" className="tab-link" disabled>149 mídias</TabsTrigger>
           </TabsList>
           <TabsContent value="posts" className="feed-content active">
             <div className="posts-grid">
@@ -268,5 +268,7 @@ export function HomePageContent() {
     
 
 
+
+    
 
     
