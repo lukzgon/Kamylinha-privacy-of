@@ -90,8 +90,8 @@ export default function Home() {
         <Image
           src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
           alt="Logo Privacy"
-          width={154}
-          height={38}
+          width={123}
+          height={30}
           className="h-auto w-auto"
         />
       </header>
