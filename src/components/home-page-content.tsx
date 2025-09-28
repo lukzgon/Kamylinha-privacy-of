@@ -152,11 +152,11 @@ export function HomePageContent() {
 
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 248, comments: 126 },
-    { id: 'popup-trigger-card', src: 'https://picsum.photos/seed/101/600/750', likes: 312, comments: 88 },
+    { id: undefined, src: 'https://picsum.photos/seed/101/600/750', likes: 312, comments: 88 },
     { id: undefined, src: 'https://picsum.photos/seed/102/600/750', likes: 189, comments: 45 },
     { id: undefined, src: 'https://picsum.photos/seed/103/600/750', likes: 402, comments: 150 },
     { id: undefined, src: 'https://picsum.photos/seed/104/600/750', likes: 275, comments: 99 },
-    { id: undefined, src: 'https://picsum.photos/seed/105/600/750', likes: 350, comments: 110 },
+    { id: 'popup-trigger-card', src: 'https://picsum.photos/seed/105/600/750', likes: 350, comments: 110 },
   ];
   
   const handleMediaClick = () => {
@@ -269,6 +269,8 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     
 
 
+
+    
 
     
 
