@@ -152,10 +152,6 @@ export function HomePageContent() {
 
   const feedPosts = [
     { id: undefined, src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 248, comments: 126 },
-    { id: undefined, src: 'https://via.placeholder.com/400x500/bbb/fff', likes: 549, comments: 362 },
-    { id: undefined, src: 'https://via.placeholder.com/400x500/d1d1d1/fff', likes: 312, comments: 98 },
-    { id: undefined, src: 'https://via.placeholder.com/400x500/c9c9c9/fff', likes: 488, comments: 210 },
-    { id: 'popup-trigger-card', src: 'https://via.placeholder.com/400x500/dddddd/fff', likes: 620, comments: 340 },
   ];
   
   const handleMediaClick = () => {
@@ -268,6 +264,8 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     
 
 
+
+    
 
     
 
