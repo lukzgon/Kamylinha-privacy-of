@@ -16,15 +16,18 @@ const Plan = ({
   <a
     href="#"
     className={cn(
-      'group block no-underline rounded-lg border border-border p-4 transition-colors hover:bg-secondary',
+      'group block no-underline rounded-xl border-2 p-5 font-bold transition-all',
       'flex items-center justify-between',
       {
-        'bg-primary text-primary-foreground hover:bg-primary/90': popular,
+        'border-primary bg-primary text-primary-foreground hover:border-primary/90 hover:bg-primary/90':
+          popular,
+        'border-primary bg-white text-primary hover:bg-primary hover:text-primary-foreground':
+          !popular,
       }
     )}
   >
-    <strong className="font-bold">{period}</strong>
-    <strong className="text-lg font-bold">{price}</strong>
+    <span className="text-base">{period}</span>
+    <span className="text-base">{price}</span>
   </a>
 );
 
@@ -61,7 +64,13 @@ export default function Home() {
                 <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                   <h1 className="flex items-center text-3xl font-bold">
                     Mel Maia
-                    <Image src="https://i.imgur.com/vH4vK4r.png" alt="lips" width={24} height={24} className="ml-2.5 h-6 w-auto" />
+                    <Image
+                      src="https://i.imgur.com/vH4vK4r.png"
+                      alt="lips"
+                      width={24}
+                      height={24}
+                      className="ml-2.5 h-6 w-auto"
+                    />
                   </h1>
                   <div className="mt-2 flex gap-5">
                     <span className="flex items-center gap-1.5 text-base font-medium">
@@ -93,12 +102,21 @@ export default function Home() {
           </div>
           <div className="p-6 pt-[95px]">
             <div>
-              <h2 className="text-xl font-bold text-foreground">melissamelmaia</h2>
+              <h2 className="text-xl font-bold text-foreground">
+                melissamelmaia
+              </h2>
               <p className="text-base text-muted-foreground">@melmaia</p>
             </div>
             <div className="mt-4 text-base/relaxed text-card-foreground">
               <p>
-                Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou...
+                Meu amor... não adianta resistir, eu sei que você quer... e eu
+                tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem
+                dói... você vai ter acesso total ao meu lado mais safado e
+                proibido. São mais de 800 fotos e vídeos, me mostrando como você
+                nunca viu... peladinha, provocando, brincando... me tocando...
+                só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só
+                meu, tem com as minhas amigas, tem eu fazendo o que você sempre
+                sonhou...
               </p>
             </div>
           </div>
