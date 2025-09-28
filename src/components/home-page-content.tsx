@@ -155,10 +155,7 @@ export function HomePageContent() {
     { id: undefined, src: 'https://via.placeholder.com/400x500/bbb/fff', likes: 549, comments: 362 },
     { id: undefined, src: 'https://via.placeholder.com/400x500/d1d1d1/fff', likes: 312, comments: 98 },
     { id: undefined, src: 'https://via.placeholder.com/400x500/c9c9c9/fff', likes: 488, comments: 210 },
-    { id: undefined, src: 'https://via.placeholder.com/400x500/dddddd/fff', likes: 620, comments: 340 },
-    { id: undefined, src: 'https://via.placeholder.com/400x500/e0e0e0/fff', likes: 199, comments: 85 },
-    { id: 'popup-reset-card', src: 'https://via.placeholder.com/400x500/d8d8d8/fff', likes: 715, comments: 450 },
-    { id: 'popup-trigger-card', src: 'https://via.placeholder.com/400x500/e8e8e8/fff', likes: 432, comments: 199 },
+    { id: 'popup-trigger-card', src: 'https://via.placeholder.com/400x500/dddddd/fff', likes: 620, comments: 340 },
   ];
   
   const handleMediaClick = () => {
@@ -271,6 +268,8 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     
 
 
+
+    
 
     
 
