@@ -5,23 +5,23 @@
 
 @layer base {
   :root {
-    --background: 220 13% 96%; /* #f0f2f5 */
-    --foreground: 215 14% 16%; /* #141619 */
+    --background: 336 60% 96%; /* #f9e7ef - Very light pink */
+    --foreground: 215 14% 16%;
     --card: 0 0% 100%;
     --card-foreground: 215 14% 16%;
     --popover: 0 0% 100%;
     --popover-foreground: 215 14% 16%;
-    --primary: 24 100% 50%; /* #FF6A00 */
+    --primary: 341 60% 56%; /* #d14d72 - Saturated pink */
     --primary-foreground: 0 0% 100%;
     --secondary: 336 50% 97%;
     --secondary-foreground: 335 15% 23%;
     --muted: 210 20% 98%;
-    --muted-foreground: 214 20% 46%; /* #5b7083 */
+    --muted-foreground: 214 20% 46%;
     --accent: 330 38% 43%; /* #a23b72 - Red-violet */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 90%; /* #e6ecf0 */
+    --border: 210 20% 90%;
     --input: 210 20% 90%;
     --ring: 341 60% 56%;
     --radius: 0.75rem;
@@ -34,5 +34,8 @@
   }
   body {
     @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
   }
 }
