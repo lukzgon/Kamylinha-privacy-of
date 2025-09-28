@@ -49,12 +49,12 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
   const [likeCount, setLikeCount] = useState(likes);
 
   const handleLikeClick = () => {
-    setIsLiked(prev => !prev);
     if (isLiked) {
       setLikeCount(prev => prev - 1);
     } else {
       setLikeCount(prev => prev + 1);
     }
+    setIsLiked(prev => !prev);
   };
   
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -181,8 +181,8 @@ export function HomePageContent() {
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
-            width={125}
-            height={24}
+            width={150}
+            height={29}
             className="logo"
           />
         </header>
