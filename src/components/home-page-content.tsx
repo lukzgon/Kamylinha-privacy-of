@@ -62,7 +62,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   return (
     <div id={id} className="feed-item">
         <div className="feed-item-header">
-          <Image src="https://via.placeholder.com/40" alt="Avatar" width={40} height={40} className="header-avatar" />
+          <Image src={avatarImage?.imageUrl || "https://via.placeholder.com/40"} alt="Avatar" width={40} height={40} className="header-avatar" />
           <div className="header-names">
               <strong>melissamailmaia</strong>
               <span>@melmaia</span>
@@ -87,9 +87,12 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
       </div>
       <div className="feed-item-actions">
           <div className="actions-left">
-              <button className={cn("action-btn like-btn", { active: isLiked })} onClick={() => setIsLiked(!isLiked)}>
-                  <Heart className="material-symbols-outlined" />
-              </button>
+              <div className="like-wrapper">
+                <button className={cn("action-btn like-btn", { active: isLiked })} onClick={() => setIsLiked(!isLiked)}>
+                    <Heart className="material-symbols-outlined" />
+                </button>
+                <span className="like-count">{isLiked ? likes + 1 : likes}</span>
+              </div>
               <button className="action-btn comment-btn">
                   <MessageSquare className="material-symbols-outlined" />
               </button>
@@ -180,11 +183,11 @@ export function HomePageContent() {
                         </div>
                     </div>
                 </div>
-                <Image src={avatarImage?.imageUrl || "https://via.placeholder.com/150"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
+                <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>euukamylinhasantos</h2>
-                        <p>@euukamylinhasantos</p>
+                        <h2>melissamailmaia</h2>
+                        <p>@melmaia</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -241,5 +244,7 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
