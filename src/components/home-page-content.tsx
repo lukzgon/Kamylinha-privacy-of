@@ -2,7 +2,6 @@
 'use client';
 
 import Image from 'next/image';
-import { Expand, PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState } from 'react';
@@ -261,3 +260,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
