@@ -12,19 +12,19 @@
     --card-foreground: 20 14% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14% 4%;
-    --primary: 343 78% 54%; /* Saturated pink */
+    --primary: 25 95% 53%; /* Orange */
     --primary-foreground: 0 0% 100%;
     --secondary: 33 100% 98%;
     --secondary-foreground: 20 14% 4%;
     --muted: 60 5% 96%;
     --muted-foreground: 25 5% 45%;
-    --accent: 326 49% 43%; /* Red-violet */
+    --accent: 25 95% 53%; /* Orange */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 336 20% 90%;
     --input: 336 20% 90%;
-    --ring: 343 78% 54%;
+    --ring: 25 95% 53%; /* Orange */
     --radius: 0.75rem;
   }
 }
@@ -70,8 +70,8 @@
 
 .age-gate-button {
     display: inline-block;
-    background-color: #A23B72; /* Red-violet */
-    color: #ffffff;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border: none;
     border-radius: 10px;
     padding: 15px 30px;
@@ -88,7 +88,7 @@
 }
 
 .age-gate-button:hover {
-    background-color: #D14D72; /* Saturated pink */
+    background-color: hsl(var(--primary) / 0.9);
 }
 
 /* --- FEED SECTION --- */
@@ -110,7 +110,7 @@
 
 .tab-link.active {
   color: #111827;
-  border-color: #D14D72;
+  border-color: hsl(var(--primary));
 }
 
 .feed-content {
