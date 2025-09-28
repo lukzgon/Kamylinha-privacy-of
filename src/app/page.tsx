@@ -5,6 +5,44 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Heart, Library, Video } from 'lucide-react';
 
+type PlanProps = {
+  duration: string;
+  price: string;
+  isPopular?: boolean;
+  tag?: {
+    text: string;
+    bgColor: string;
+    textColor: string;
+  };
+};
+
+function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
+  const popularStyles = isPopular
+    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:bg-primary/90 hover:border-primary/90 hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)] hover:-translate-y-0.5'
+    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:bg-primary hover:text-primary-foreground hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)] hover:-translate-y-0.5';
+
+  return (
+    <a
+      href="#"
+      className={`flex items-center justify-between rounded-xl border-2 p-4 font-bold transition-all duration-200 ease-in-out active:scale-[0.98] active:shadow-[0_2px_5px_rgba(255,106,0,0.3)] ${popularStyles}`}
+    >
+      <div className="flex items-center gap-2.5 text-base">
+        <span>{duration}</span>
+        {tag && (
+          <span
+            className={`rounded-full px-2 py-1 text-[10px] font-bold uppercase leading-none tracking-wider ${
+              isPopular ? 'bg-white text-primary' : `${tag.bgColor} ${tag.textColor}`
+            }`}
+          >
+            {tag.text}
+          </span>
+        )}
+      </div>
+      <div className="text-base">{price}</div>
+    </a>
+  );
+}
+
 export default function Home() {
   const profileBanner = PlaceHolderImages.find(
     (p) => p.id === 'profile-banner'
@@ -12,6 +50,27 @@ export default function Home() {
   const profileAvatar = PlaceHolderImages.find(
     (p) => p.id === 'profile-avatar'
   );
+
+  const plans: Omit<PlanProps, 'isPopular'>[] = [
+    {
+      duration: '1 Mês',
+      price: 'R$ 19,90',
+      tag: {
+        text: 'Economia',
+        bgColor: 'bg-[#d4edda]',
+        textColor: 'text-[#155724]',
+      },
+    },
+    {
+      duration: '3 Meses',
+      price: 'R$ 29,90',
+      tag: {
+        text: 'Melhor oferta',
+        bgColor: 'bg-[#d1ecf1]',
+        textColor: 'text-[#0c5460]',
+      },
+    },
+  ];
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-background">
@@ -27,7 +86,7 @@ export default function Home() {
 
       <main className="w-full max-w-[850px] p-4 md:p-5">
         <div className="relative mb-20">
-          <div className="relative overflow-hidden rounded-2xl bg-card shadow-lg">
+          <div className="overflow-hidden rounded-2xl bg-card shadow-lg">
             <div className="relative h-[220px] w-full">
               {profileBanner && (
                 <Image
@@ -78,7 +137,7 @@ export default function Home() {
               </div>
             )}
           </div>
-          <div className="rounded-2xl bg-card p-6 pt-[95px] shadow-lg">
+          <div className="rounded-b-2xl bg-card p-6 pt-[95px] shadow-lg">
             <div>
               <h2 className="text-xl font-bold text-foreground">
                 melissamelmaia
@@ -97,6 +156,29 @@ export default function Home() {
                 sonhou...
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-card p-6 shadow-lg">
+          <h3 className="text-xl font-bold">Assinaturas</h3>
+          <div className="mt-4 flex flex-col gap-3">
+            <Plan
+              duration="7 Dias"
+              price="R$ 9,90"
+              isPopular={true}
+              tag={{ text: 'MAIS POPULAR 🔥', bgColor: '', textColor: '' }}
+            />
+            <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
+              Promoções
+            </h4>
+            {plans.map((plan, index) => (
+              <Plan
+                key={index}
+                duration={plan.duration}
+                price={plan.price}
+                tag={plan.tag}
+              />
+            ))}
           </div>
         </div>
       </main>
