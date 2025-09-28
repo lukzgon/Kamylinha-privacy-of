@@ -72,7 +72,7 @@ function FeedPost({ id, src, likes, comments, onMediaClick }: { id?: string; src
           <span className="material-symbols-outlined">more_horiz</span>
         </div>
       <div className="feed-item-media" onClick={onMediaClick}>
-          <Image src={src} alt="Mídia Bloqueada" width={400} height={500} className="w-full h-auto" data-ai-hint="woman content" />
+          <Image src={src} alt="Mídia Bloqueada" fill style={{ objectFit: 'cover' }} data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
                 <span className="material-symbols-outlined">lock</span>
@@ -199,8 +199,7 @@ export function HomePageContent() {
               <div className="profile-card-body">
                   <div className="username-section">
                       <h2>Kamylinha Santos</h2>
-                      <p>@euukamylinhasantos</p>
-                  </div>
+                      <p>@euukamylinhasantos</p>                  </div>
                   <div className="description-wrapper">
                        <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
                           Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
@@ -233,7 +232,7 @@ export function HomePageContent() {
             </h4>
              <Plan
               duration="1 Mês"
-              price="R$ 19,90"
+              price="R.5"
               tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
             />
             <Plan
@@ -266,7 +265,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
-
-    
