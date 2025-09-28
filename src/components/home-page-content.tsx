@@ -42,12 +42,12 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
     >
       <div className="plan-info">
         <div className='flex flex-row items-center gap-2'>
+        <strong>{duration}</strong>
         {tag && (
             <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
               {tag.text}
             </span>
           )}
-          <strong>{duration}</strong>
         </div>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
@@ -62,11 +62,8 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    setIsLiked(prevIsLiked => {
-      const newIsLiked = !prevIsLiked;
-      setLikeCount(prevLikeCount => newIsLiked ? prevLikeCount + 1 : prevLikeCount - 1);
-      return newIsLiked;
-    });
+    setLikeCount(prevLikeCount => isLiked ? prevLikeCount - 1 : prevLikeCount + 1);
+    setIsLiked(prevIsLiked => !prevIsLiked);
   };
   
   const handleBookmarkClick = () => {
@@ -91,6 +88,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               </div>
               <div className="locked-stats">
                   <Heart className="h-4 w-4" />
+                  <span className="locked-like-count">{likeCount}</span>
                   <MessageSquare className="h-4 w-4" />
                   <span>{comments}</span>
               </div>
@@ -268,5 +266,7 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
