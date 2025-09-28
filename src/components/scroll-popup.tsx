@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 
 export function ScrollPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,12 +37,15 @@ export function ScrollPopup() {
 
   return (
     <div id="scroll-popup" className={`scroll-popup ${isVisible ? 'visible' : ''}`}>
-      <button className="close-popup-btn" onClick={hidePopup}>&times;</button>
-      <div className="popup-box-content">
-        <h2>Gostou do que viu?</h2>
-        <p>Assine agora e desbloqueie todo o conteúdo exclusivo da Kamylinha Santos sem nenhuma censura.</p>
-        <a href="#assinaturas" className="popup-action-btn" onClick={hidePopup}>Desbloquear Conteúdo Completo</a>
-      </div>
+        <div className="scroll-popup-box">
+            <button className="close-popup-btn" onClick={hidePopup}>&times;</button>
+            <div className="popup-box-content">
+                <Image src="https://i.imgur.com/gY9k2Yy.png" alt="Logo Privacy" width={150} height={30} className="mx-auto mb-4" />
+                <h2>A melhor parte começa agora...</h2>
+                <p>Você chegou até aqui, meu bem. Para ver o conteúdo que eu não ouso postar em nenhum outro lugar, assine e libere tudo. Sem censura. 😉</p>
+                <a href="#assinaturas" className="popup-action-btn" onClick={hidePopup}>Desbloquear Tudo 😈</a>
+            </div>
+        </div>
     </div>
   );
 }

@@ -75,7 +75,7 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           />
         )}
         <div className="flex-1">
-          <p className="text-sm font-bold">euukamylinhasantos</p>
+          <p className="text-sm font-bold">Kamylinha Santos</p>
           <p className="text-xs text-muted-foreground">@euukamylinhasantos</p>
         </div>
         <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -197,7 +197,7 @@ export function HomePageContent() {
       <div className={cn("flex min-h-screen flex-col items-center bg-background font-body", fontInter.variable, fontPlayfair.variable)}>
         <header className="flex w-full items-center justify-center border-b border-border bg-card py-2.5">
           <Image
-            src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
+            src="https://i.imgur.com/gY9k2Yy.png"
             alt="Logo Privacy"
             width={125}
             height={24}

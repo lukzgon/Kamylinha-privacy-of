@@ -208,23 +208,41 @@
 /* --- SCROLL POPUP --- */
 .scroll-popup {
     position: fixed;
-    bottom: -100%; /* Começa escondido abaixo da tela */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%;
-    max-width: 600px;
-    background-color: #141619;
-    color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-    padding: 20px;
+    bottom: -100%; 
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
     z-index: 1000;
-    transition: bottom 0.5s ease-in-out;
-    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
 }
 
 .scroll-popup.visible {
-    bottom: 20px; /* Posição final quando visível */
+    bottom: 0;
+    opacity: 1;
+}
+
+.scroll-popup-box {
+    position: relative;
+    width: 95%;
+    max-width: 500px;
+    background-color: #141619;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    padding: 30px;
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+
+.scroll-popup.visible .scroll-popup-box {
+    transform: scale(1);
 }
 
 .close-popup-btn {
@@ -234,27 +252,24 @@
     background: none;
     border: none;
     color: #a0a0a0;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1;
     cursor: pointer;
     padding: 5px;
 }
 
-.popup-box-content {
-    text-align: center;
-}
-
 .popup-box-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 28px;
     margin: 0 0 10px 0;
+    color: #fff;
 }
 
 .popup-box-content p {
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
     color: #e0e0e0;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0;
 }
 
 .popup-action-btn {
@@ -263,9 +278,9 @@
     background-color: #FF6A00;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 16px;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 18px;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
