@@ -40,30 +40,32 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
         isPopular ? 'popular' : ''
       )}
     >
-      <div className="plan-info">
-        <div className='flex flex-row items-center gap-2'>
+      <div className="flex items-center gap-2">
         <strong>{duration}</strong>
         {tag && (
             <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
               {tag.text}
             </span>
           )}
-        </div>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
     </a>
   );
 }
 
-function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; likes: number; comments: number }) {
+function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; seed: number; likes: number; comments: number; onMediaClick: () => void; }) {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    setLikeCount(prevLikeCount => isLiked ? prevLikeCount - 1 : prevLikeCount + 1);
-    setIsLiked(prevIsLiked => !prevIsLiked);
+    if (isLiked) {
+      setLikeCount(prev => prev - 1);
+    } else {
+      setLikeCount(prev => prev + 1);
+    }
+    setIsLiked(prev => !prev);
   };
   
   const handleBookmarkClick = () => {
@@ -80,7 +82,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
           </div>
           <MoreHorizontal className="h-5 w-5 text-gray-500" />
         </div>
-      <div className="feed-item-media">
+      <div className="feed-item-media" onClick={onMediaClick}>
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
@@ -101,14 +103,6 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
                     <Heart className="material-symbols-outlined" />
                 </button>
               </div>
-              <button className="action-btn comment-btn">
-                <MessageSquare className="material-symbols-outlined" />
-              </button>
-          </div>
-          <div className="actions-right">
-              <button className={cn("action-btn bookmark-btn", { active: isBookmarked })} onClick={handleBookmarkClick}>
-                <Bookmark className="material-symbols-outlined" />
-              </button>
           </div>
       </div>
     </div>
@@ -116,10 +110,10 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
 }
 
 
-function MediaGridItem({ seed, type }: { seed: number; type: 'photo' | 'video' }) {
+function MediaGridItem({ seed, type, onMediaClick }: { seed: number; type: 'photo' | 'video'; onMediaClick: () => void; }) {
     const imageUrl = `https://via.placeholder.com/300x300/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`;
   return (
-    <div className="media-item">
+    <div className="media-item" onClick={onMediaClick}>
       <Image
         src={imageUrl}
         alt="Mídia"
@@ -139,7 +133,7 @@ function MediaGridItem({ seed, type }: { seed: number; type: 'photo' | 'video' }
   );
 }
 
-function MediaGrid() {
+function MediaGrid({ onMediaClick }: { onMediaClick: () => void }) {
   const mediaItems = [
     { seed: 0xccc, type: 'photo' },
     { seed: 0xbbb, type: 'video' },
@@ -149,7 +143,7 @@ function MediaGrid() {
   return (
     <div className="media-grid">
       {mediaItems.map((item, index) => (
-        <MediaGridItem key={index} seed={item.seed} type={item.type} />
+        <MediaGridItem key={index} seed={item.seed} type={item.type} onMediaClick={onMediaClick} />
       ))}
     </div>
   );
@@ -158,7 +152,8 @@ function MediaGrid() {
 
 export function HomePageContent() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const bannerImage = PlaceHolderImages.find(img => img.id === 'profile-banner');
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
@@ -173,6 +168,13 @@ export function HomePageContent() {
     { id: 'popup-trigger-card', seed: 0xe8e8e8, likes: 432, comments: 199 },
   ];
   
+  const handleMediaClick = () => {
+    setIsPopupVisible(true);
+  };
+  
+  const handleClosePopup = () => {
+    setIsPopupVisible(false);
+  };
 
   return (
     <>
@@ -252,17 +254,17 @@ export function HomePageContent() {
             <TabsContent value="posts" className="feed-content active">
               <div className="posts-grid">
                 {feedPosts.map((post, index) => (
-                  <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
+                  <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="media" className="feed-content">
-              <MediaGrid />
+              <MediaGrid onMediaClick={handleMediaClick} />
             </TabsContent>
           </Tabs>
         </main>
       </div>
-      <ScrollPopup />
+      <ScrollPopup isVisible={isPopupVisible} onClose={handleClosePopup} onShow={handleMediaClick} />
     </>
   );
 }

@@ -4,10 +4,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-export function ScrollPopup() {
-  const [isVisible, setIsVisible] = useState(false);
+export function ScrollPopup({ isVisible: isVisibleProp, onClose, onShow }: { isVisible: boolean, onClose: () => void, onShow: () => void }) {
+  const [isVisible, setIsVisible] = useState(isVisibleProp);
   const isTriggerArmed = useRef(true);
 
+  useEffect(() => {
+    setIsVisible(isVisibleProp);
+  }, [isVisibleProp]);
+  
   useEffect(() => {
     const triggerCard = document.getElementById('popup-trigger-card');
     const resetCard = document.getElementById('popup-reset-card');
@@ -16,9 +20,9 @@ export function ScrollPopup() {
       return;
     }
 
-    const showPopup = () => {
+    const showPopupOnScroll = () => {
       if (isTriggerArmed.current) {
-        setIsVisible(true);
+        onShow();
         isTriggerArmed.current = false;
       }
     };
@@ -27,7 +31,7 @@ export function ScrollPopup() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            showPopup();
+            showPopupOnScroll();
           }
         });
       },
@@ -52,15 +56,11 @@ export function ScrollPopup() {
       triggerObserver.unobserve(triggerCard);
       resetObserver.unobserve(resetCard);
     };
-  }, []);
-
-  const hidePopup = () => {
-    setIsVisible(false);
-  };
+  }, [onShow]);
 
   const handleActionClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    hidePopup();
+    onClose();
     const targetId = event.currentTarget.getAttribute('href');
     if (targetId) {
       const targetSection = document.querySelector(targetId);
@@ -79,7 +79,7 @@ export function ScrollPopup() {
       className={`scroll-popup-overlay ${isVisible ? 'visible' : ''}`}
     >
       <div className="scroll-popup-box">
-        <button className="close-popup-btn" onClick={hidePopup}>
+        <button className="close-popup-btn" onClick={onClose}>
           &times;
         </button>
         <div className="popup-content-inner">
