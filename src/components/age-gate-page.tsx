@@ -21,18 +21,20 @@ export function AgeGate() {
     setIsVerified(true);
   };
 
-  if (isVerified) {
-    return <HomePageContent />;
-  }
-
   return (
-    <div className="age-gate-body">
-      <div className="age-gate-content">
+    <>
+      <div id="age-gate-page" className="age-gate-page" style={{ display: isVerified ? 'none' : 'flex' }}>
+        <div className="age-gate-content">
           <Image src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png" alt="Logo Privacy" width={250} height={60} className="popup-logo mx-auto" />
           <p>Este site é uma comunidade adulta que contém material sexualmente explícito.</p>
           <p>Você deve ter 18 anos ou mais para entrar.</p>
           <Button className="age-gate-button" onClick={handleEnter}>Tenho 18 anos ou mais - Entrar</Button>
+        </div>
       </div>
-    </div>
+
+      <div id="main-content" className="main-content" style={{ display: isVerified ? 'block' : 'none' }}>
+        <HomePageContent />
+      </div>
+    </>
   );
 }

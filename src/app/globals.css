@@ -77,6 +77,14 @@ body {
 }
 
 /* --- ESTILOS DA PÁGINA DE VERIFICAÇÃO DE IDADE --- */
+.age-gate-page {
+    background-color: #F5F3F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
 .age-gate-body { background-color: #F5F3F2; display: flex; justify-content: center; align-items: center; height: 100vh; }
 .age-gate-content { text-align: center; max-width: 500px; padding: 20px; }
 .popup-logo { max-width: 200px; margin-bottom: 30px; }
@@ -85,6 +93,9 @@ body {
 .age-gate-button:hover { background-color: #D9A380; }
 
 /* --- ESTILOS DA PÁGINA PRINCIPAL --- */
+.main-content {
+  display: block;
+}
 .page-header { background-color:#fff; width:100%; padding:10px 0; display:flex; justify-content:center; align-items:center; border-bottom:1px solid #e6ecf0; }
 .logo { height:25px; }
 .content { width:100%; max-width:850px; padding:20px 15px; box-sizing:border-box; margin: 0 auto; }

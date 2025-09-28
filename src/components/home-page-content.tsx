@@ -176,96 +176,92 @@ export function HomePageContent() {
 
   return (
     <>
-      <div className={cn("flex min-h-screen flex-col items-center bg-background font-body")}>
-        <header className="page-header">
-          <Image
-            src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
-            alt="Logo Privacy"
-            width={150}
-            height={35}
-            className="logo"
-          />
-        </header>
+      <header className="page-header">
+        <Image
+          src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
+          alt="Logo Privacy"
+          width={150}
+          height={35}
+          className="logo"
+        />
+      </header>
 
-        <main className="content">
-            <div className="profile-card">
-                <div className="banner">
-                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
-                    <div className="banner-overlay">
-                        <div className="banner-text">
-                            <h1>Kamylinha Santos</h1>
-                            <div className="stats">
-                                <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
-                                <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
-                                <span className="stat-item"><Heart className="h-5 w-5 mr-1.5"/> 229k</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
-                <div className="profile-card-body">
-                    <div className="username-section">
-                        <h2>Kamylinha Santos</h2>
-                        <p>@euukamylinhasantos</p>
-                    </div>
-                    <div className="description-wrapper">
-                         <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
-                            Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
-                        </p>
-                        <button className="read-more-btn" onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}>
-                            {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
-                        </button>
-                    </div>
-                </div>
-            </div>
-          
-          <div id="assinaturas" className="info-card">
-            <h3>Assinaturas</h3>
-            <div className="mt-4 flex flex-col gap-3">
-              <Plan
-                duration="7 Dias"
-                price="R$ 9,90"
-                isPopular={true}
-                tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
-              />
-              <h4 className="promotions-title">
-                Promoções
-              </h4>
-               <Plan
-                duration="1 Mês"
-                price="R$ 19,90"
-                tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
-              />
-              <Plan
-                duration="3 Meses"
-                price="R$ 29,90"
-                tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
-              />
-            </div>
-          </div>
-
-          <Tabs defaultValue="posts" className="feed-section">
-            <TabsList className="feed-tabs">
-              <TabsTrigger value="posts" className="tab-link active">93 postagens</TabsTrigger>
-              <TabsTrigger value="media" className="tab-link" disabled>412 mídias</TabsTrigger>
-            </TabsList>
-            <TabsContent value="posts" className="feed-content active">
-              <div className="posts-grid">
-                {feedPosts.map((post, index) => (
-                  <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
-                ))}
+      <main className="content">
+          <div className="profile-card">
+              <div className="banner">
+                  <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
+                  <div className="banner-overlay">
+                      <div className="banner-text">
+                          <h1>Kamylinha Santos</h1>
+                          <div className="stats">
+                              <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
+                              <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
+                              <span className="stat-item"><Heart className="h-5 w-5 mr-1.5"/> 229k</span>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </TabsContent>
-            <TabsContent value="media" className="feed-content">
-              <MediaGrid onMediaClick={handleMediaClick} />
-            </TabsContent>
-          </Tabs>
-        </main>
-      </div>
+              <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
+              <div className="profile-card-body">
+                  <div className="username-section">
+                      <h2>Kamylinha Santos</h2>
+                      <p>@euukamylinhasantos</p>
+                  </div>
+                  <div className="description-wrapper">
+                       <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
+                          Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
+                      </p>
+                      <button className="read-more-btn" onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}>
+                          {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+                      </button>
+                  </div>
+              </div>
+          </div>
+        
+        <div id="assinaturas" className="info-card">
+          <h3>Assinaturas</h3>
+          <div className="mt-4 flex flex-col gap-3">
+            <Plan
+              duration="7 Dias"
+              price="R$ 9,90"
+              isPopular={true}
+              tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
+            />
+            <h4 className="promotions-title">
+              Promoções
+            </h4>
+             <Plan
+              duration="1 Mês"
+              price="R$ 19,90"
+              tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
+            />
+            <Plan
+              duration="3 Meses"
+              price="R$ 29,90"
+              tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
+            />
+          </div>
+        </div>
+
+        <Tabs defaultValue="posts" className="feed-section">
+          <TabsList className="feed-tabs">
+            <TabsTrigger value="posts" className="tab-link active">93 postagens</TabsTrigger>
+            <TabsTrigger value="media" className="tab-link" disabled>412 mídias</TabsTrigger>
+          </TabsList>
+          <TabsContent value="posts" className="feed-content active">
+            <div className="posts-grid">
+              {feedPosts.map((post, index) => (
+                <FeedPost key={index} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="media" className="feed-content">
+            <MediaGrid onMediaClick={handleMediaClick} />
+          </TabsContent>
+        </Tabs>
+      </main>
       <ScrollPopup isVisible={isPopupVisible} onClose={handleClosePopup} onShow={handleMediaClick} />
       <ScrollToTopButton />
     </>
   );
 }
-
-    
