@@ -200,8 +200,8 @@ export function HomePageContent() {
                   <div className="username-section">
                       <h2>Kamylinha Santos</h2>
                       <p>@euukamylinhasantos</p>                  </div>
-                  <div className="description-wrapper">
-                       <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
+                  <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
+                       <p className="description-text">
                           Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
                       </p>
                       {!isDescriptionExpanded && (
