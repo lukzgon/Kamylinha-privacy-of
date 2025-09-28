@@ -41,12 +41,14 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
       )}
     >
       <div className="plan-info">
-        <strong>{duration}</strong>
-        {tag && (
-          <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
-            {tag.text}
-          </span>
-        )}
+        <div className='flex flex-col items-start'>
+          <strong>{duration}</strong>
+          {tag && (
+            <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
+              {tag.text}
+            </span>
+          )}
+        </div>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
     </a>
@@ -60,12 +62,8 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    if (isLiked) {
-      setLikeCount(likeCount - 1);
-    } else {
-      setLikeCount(likeCount + 1);
-    }
-    setIsLiked(!isLiked);
+    setLikeCount(prevLikeCount => isLiked ? prevLikeCount - 1 : prevLikeCount + 1);
+    setIsLiked(prevIsLiked => !prevIsLiked);
   };
   
   const handleBookmarkClick = () => {
