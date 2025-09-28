@@ -4,6 +4,18 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Heart, Library, Video } from 'lucide-react';
+import { Playfair_Display, Inter } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const fontPlayfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-headline',
+});
+
+const fontInter = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+});
 
 type PlanProps = {
   duration: string;
@@ -73,10 +85,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-background font-body">
+    <div className={cn("flex min-h-screen flex-col items-center bg-background font-body", fontInter.variable, fontPlayfair.variable)}>
       <header className="flex w-full items-center justify-center border-b border-border bg-card py-2.5">
         <Image
-          src="https://i.imgur.com/gY9k2Yy.png"
+          src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
           alt="Logo Privacy"
           width={100}
           height={25}
