@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -41,13 +42,13 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
         isPopular ? 'popular' : ''
       )}
     >
-      <div className="flex items-center gap-2">
+      <div className="plan-info">
+        <strong>{duration}</strong>
         {tag && (
-            <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
+            <span className={cn('plan-tag', tag.className)}>
               {tag.text}
             </span>
           )}
-        <strong>{duration}</strong>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
     </a>
@@ -104,7 +105,7 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
       <div className="feed-item-actions">
           <div className="actions-left">
               <div className={cn("like-wrapper", { liked: isLiked })}>
-                <button className={cn("action-btn like-btn", { active: isLiked })} onClick={handleLikeClick}>
+                <button className={cn("action-btn like-btn")} onClick={handleLikeClick}>
                     <span className="material-symbols-outlined">favorite</span>
                 </button>
               </div>
@@ -206,7 +207,7 @@ export function HomePageContent() {
                     <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
-                            <h1>Kamylinha Santos</h1>
+                            <h1>Mel Maia</h1>
                             <div className="stats">
                                 <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
                                 <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
@@ -218,8 +219,8 @@ export function HomePageContent() {
                 <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>euukamylinhasantos</h2>
-                        <p>@euukamylinhasantos</p>
+                        <h2>@melmaia</h2>
+                        <p>@melmaia</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -258,8 +259,8 @@ export function HomePageContent() {
           </div>
 
           <Tabs defaultValue="posts" className="feed-section">
-            <TabsList className="feed-tabs justify-center">
-              <TabsTrigger value="posts" className="tab-link">93 postagens</TabsTrigger>
+            <TabsList className="feed-tabs">
+              <TabsTrigger value="posts" className="tab-link active">93 postagens</TabsTrigger>
               <TabsTrigger value="media" className="tab-link" disabled>412 mídias</TabsTrigger>
             </TabsList>
             <TabsContent value="posts" className="feed-content active">
@@ -280,8 +281,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
-
-    
-
