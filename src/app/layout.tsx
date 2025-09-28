@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -9,15 +9,9 @@ export const metadata: Metadata = {
   description: 'Sua dose diária de tentação.',
 };
 
-const fontPlayfair = Playfair_Display({
+const fontNunito = Nunito({
   subsets: ['latin'],
-  weight: '700',
-  variable: '--font-headline',
-});
-
-const fontInter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '600', '700'],
   variable: '--font-body',
 });
 
@@ -34,8 +28,7 @@ export default function RootLayout({
       <body
         className={cn(
           'antialiased',
-          fontPlayfair.variable,
-          fontInter.variable
+          fontNunito.variable
         )}
       >
         {children}

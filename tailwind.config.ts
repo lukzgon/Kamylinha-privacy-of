@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"Inter"', 'sans-serif'],
-        headline: ['"Playfair Display"', 'serif'],
+        body: ['"Nunito"', 'sans-serif'],
+        headline: ['"Nunito"', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -106,5 +106,3 @@ export default {
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-
-    
