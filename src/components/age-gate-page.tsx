@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,6 +8,7 @@ export function AgeGate() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // This check needs to run only on the client.
     const ageGateDismissed = localStorage.getItem('ageGateDismissed');
     if (ageGateDismissed !== 'true') {
       setIsVisible(true);

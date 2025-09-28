@@ -39,3 +39,63 @@
     @apply font-headline;
   }
 }
+
+/* --- ESTILOS DO POP-UP DE VERIFICAÇÃO DE IDADE --- */
+.popup-overlay {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F5F3F2; /* Cor de fundo acinzentada/bege */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que fique por cima de tudo */
+    transition: opacity 0.5s ease;
+}
+
+.popup-content {
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.popup-logo {
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.popup-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+#age-gate-button {
+    background-color: #E5B390; /* Cor pêssego/bege do botão */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+#age-gate-button:hover {
+    background-color: #D9A380; /* Tom um pouco mais escuro */
+}
+
+/* Classe para esconder o pop-up */
+.popup-overlay.hidden {
+    opacity: 0;
+    visibility: hidden; /* Esconde o elemento e o remove da navegação por teclado */
+    pointer-events: none;
+}
