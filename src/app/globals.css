@@ -137,8 +137,6 @@ body {
     border:1px solid #e6ecf0;
     border-radius:12px;
     overflow:hidden;
-    /* MUDANÇA: Aumentando a altura mínima do card do feed */
-    min-height: 450px; /* Você pode ajustar este valor conforme desejar */
 }
 .feed-item-header { display:flex; align-items:center; padding:12px; gap:10px; }
 .header-avatar { width:40px; height:40px; border-radius:50%; }
