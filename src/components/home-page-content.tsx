@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video, MoreHorizontal, Lock, MessageSquare, Bookmark } from 'lucide-react';
+import { Heart, Library, Video, MoreHorizontal, Lock, MessageSquare, Bookmark, PlayCircle, Expand } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -117,6 +117,26 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
   );
 }
 
+function MediaGridItem({ seed, type }: { seed: number; type: 'photo' | 'video' }) {
+  return (
+    <div className="media-item">
+      <Image
+        src={`https://picsum.photos/seed/media${seed}/300/300`}
+        alt="Mídia"
+        fill
+        className="object-cover"
+      />
+      <div className="media-overlay">
+        {type === 'video' ? (
+          <PlayCircle className="h-10 w-10 text-white" />
+        ) : (
+          <Expand className="h-10 w-10 text-white" />
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function HomePageContent() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const profileBanner = PlaceHolderImages.find(
@@ -156,6 +176,18 @@ export function HomePageContent() {
     { seed: 6, likes: 199, comments: 85 },
     { seed: 7, likes: 715, comments: 450 },
     { seed: 8, likes: 432, comments: 199 },
+  ];
+  
+  const mediaItems = [
+    { seed: 1, type: 'photo' },
+    { seed: 2, type: 'video' },
+    { seed: 3, type: 'photo' },
+    { seed: 4, type: 'photo' },
+    { seed: 5, type: 'photo' },
+    { seed: 6, type: 'video' },
+    { seed: 7, type: 'photo' },
+    { seed: 8, type: 'photo' },
+    { seed: 9, type: 'photo' },
   ];
 
 
@@ -222,7 +254,7 @@ export function HomePageContent() {
             <div className="p-6 pt-4">
               <div className="mb-5">
                 <h2 className="text-xl font-bold text-foreground">
-                  euukamylinhasantos
+                  Kamylinha Santos
                 </h2>
                 <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
               </div>
@@ -273,8 +305,10 @@ export function HomePageContent() {
                 </div>
               </TabsContent>
               <TabsContent value="media">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                   <p className="text-center col-span-2 text-muted-foreground">Conteúdo da aba de mídias.</p>
+                <div className="media-grid mt-4">
+                  {mediaItems.map((item) => (
+                    <MediaGridItem key={item.seed} seed={item.seed} type={item.type as 'photo' | 'video'} />
+                  ))}
                 </div>
               </TabsContent>
             </Tabs>
@@ -284,5 +318,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    

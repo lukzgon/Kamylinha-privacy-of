@@ -220,3 +220,33 @@
 .feed-item-actions .material-symbols-outlined:last-child {
   margin-left: auto;
 }
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+}
+
+.media-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.media-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.media-item:hover .media-overlay {
+    opacity: 1;
+}
+
