@@ -208,7 +208,7 @@ export function HomePageContent() {
             <div className="p-6 pt-4">
               <div className="mb-5">
                 <h2 className="text-xl font-bold text-foreground">
-                  Kamylinha Santos
+                  euukamylinhasantos
                 </h2>
                 <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
               </div>
@@ -217,11 +217,7 @@ export function HomePageContent() {
                   Meu amor... não adianta resistir, eu sei que você quer... e eu
                   tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem
                   dói... você vai ter acesso total ao meu lado mais safado e
-                  proibido. São mais de 800 fotos e vídeos, me mostrando como você
-                  nunca viu... peladinha, provocando, brincando... me tocando...
-                  só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só
-                  meu, tem com as minhas amigas, tem eu fazendo o que você sempre
-                  sonhou...
+                  proibido. São mais de 800 fotos
                 </p>
               </div>
             </div>
@@ -273,5 +269,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
