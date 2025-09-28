@@ -16,19 +16,19 @@
     --card-foreground: 340 10% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 340 10% 15%;
-    --primary: 348 83% 61%;
+    --primary: 26 100% 50%;
     --primary-foreground: 0 0% 100%;
     --secondary: 330 10% 95%;
     --secondary-foreground: 340 10% 15%;
     --muted: 330 10% 95%;
     --muted-foreground: 336 8% 44%;
-    --accent: 326 77% 43%;
+    --accent: 26 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 330 10% 90%;
     --input: 330 10% 90%;
-    --ring: 348 83% 61%;
+    --ring: 26 100% 50%;
     --radius: 1rem;
   }
 }
@@ -84,10 +84,10 @@
 
 .action-btn{background:0 0;border:none;padding:0;cursor:pointer;color:#5b7083;transition:color .2s ease}
 .action-btn .material-symbols-outlined{font-size:26px;font-variation-settings:"FILL" 0}
-.action-btn.like-btn.active{color:#ff3c6a}
+.action-btn.like-btn.active{color:hsl(var(--primary));}
 .action-btn.like-btn.active .material-symbols-outlined{font-variation-settings:"FILL" 1}
 .action-btn.bookmark-btn{margin-left:auto}
-.action-btn.bookmark-btn.active{color:#1d9bf0}
+.action-btn.bookmark-btn.active{color:hsl(var(--accent));}
 .action-btn.bookmark-btn.active .material-symbols-outlined{font-variation-settings:"FILL" 1}
 
 .media-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1/1;cursor:pointer}
@@ -99,7 +99,7 @@
 
 .scroll-popup{position:fixed;bottom:-100%;left:0;right:0;top:0;background-color:rgba(0,0,0,.6);z-index:1000;display:flex;justify-content:center;align-items:center;opacity:0;transition:opacity .3s ease-in-out;backdrop-filter:blur(5px)}
 .scroll-popup.visible{bottom:0;opacity:1}
-.scroll-popup-box{position:relative;width:95%;max-width:500px;background-color:#fff;color:#141619;border-radius:16px;box-shadow:0 0 40px rgba(0,0,0,.5);padding:30px;text-align:center;transform:scale(.95);transition:transform .3s ease-in-out}
+.scroll-popup-box{position:relative;width:95%;max-width:500px;background-color:#ffffff;color:#000000;border-radius:16px;box-shadow:0 0 40px rgba(0,0,0,.5);padding:30px;text-align:center;transform:scale(.95);transition:transform .3s ease-in-out}
 .scroll-popup.visible .scroll-popup-box{transform:scale(1)}
 .close-popup-btn{position:absolute;top:10px;right:10px;background:0 0;border:none;color:#a0a0a0;font-size:28px;line-height:1;cursor:pointer;padding:5px}
 .popup-box-content h2{font-family:'Playfair Display',serif;font-size:28px;margin:0 0 10px 0;color:#141619}
