@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon } from 'lucide-react';
+import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon, MoreHorizontal } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -64,9 +64,10 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
       <div className="feed-item-header">
           {avatarImage && <Image src={avatarImage.imageUrl} alt="Avatar" width={40} height={40} className="header-avatar" />}
           <div className="header-names">
-              <strong>euukamylinhasantos</strong>
-              <span>@euukamylinhasantos</span>
+              <strong>melissamailmaia</strong>
+              <span>@melmaia</span>
           </div>
+          <MoreHorizontal className="h-5 w-5 text-gray-500" />
       </div>
       <div className="feed-item-media">
           <Image src={`https://picsum.photos/seed/${seed}/400/500`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
@@ -137,6 +138,11 @@ export function HomePageContent() {
     { seed: 1, likes: 248, comments: 126 },
     { seed: 2, likes: 549, comments: 362 },
     { seed: 3, likes: 312, comments: 98 },
+    { seed: 4, likes: 87, comments: 23 },
+    { seed: 5, likes: 199, comments: 77 },
+    { seed: 6, likes: 450, comments: 200 },
+    { seed: 7, likes: 112, comments: 45 },
+    { seed: 8, likes: 678, comments: 300 },
   ];
   
   const mediaItems = [
@@ -225,7 +231,7 @@ export function HomePageContent() {
                 <TabsTrigger value="posts" className="tab-link">93 postagens</TabsTrigger>
                 <TabsTrigger value="media" className="tab-link">412 mídias</TabsTrigger>
               </TabsList>
-              <TabsContent value="posts" className="feed-content">
+              <TabsContent value="posts" className="feed-content active">
                 <div className="posts-grid">
                   {feedPosts.map((post) => (
                     <FeedPost key={post.seed} seed={post.seed} likes={post.likes} comments={post.comments} />
@@ -247,3 +253,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
