@@ -88,7 +88,7 @@ export function ScrollPopup() {
             alt="Logo Privacy"
             width={120}
             height={25}
-            className="popup-logo"
+            className="popup-logo mx-auto"
           />
           <h2>A melhor parte começa agora...</h2>
           <p>
