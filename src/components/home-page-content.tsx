@@ -108,18 +108,20 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between p-1.5">
-        <div className="flex items-center">
-          <Button variant="ghost" size="icon" onClick={() => setIsLiked(!isLiked)}>
-            <Heart className={cn("h-6 w-6", isLiked && "fill-current text-red-500")} />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <MessageSquare className="h-6 w-6" />
-          </Button>
-        </div>
-        <Button variant="ghost" size="icon" onClick={() => setIsBookmarked(!isBookmarked)}>
-          <Bookmark className={cn("h-6 w-6", isBookmarked && "fill-current text-primary")} />
-        </Button>
+      <div className="feed-item-actions">
+          <div className="actions-left">
+              <button className={cn("action-btn like-btn", isLiked && "active")} onClick={() => setIsLiked(!isLiked)}>
+                  <span className="material-symbols-outlined">favorite</span>
+              </button>
+              <button className="action-btn comment-btn">
+                  <span className="material-symbols-outlined">chat_bubble</span>
+              </button>
+          </div>
+          <div className="actions-right">
+              <button className={cn("action-btn bookmark-btn", isBookmarked && "active")} onClick={() => setIsBookmarked(!isBookmarked)}>
+                  <span className="material-symbols-outlined">bookmark</span>
+              </button>
+          </div>
       </div>
     </Card>
   );

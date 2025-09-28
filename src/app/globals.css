@@ -136,51 +136,6 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
 .locked-stats{background-color:rgba(0,0,0,.4);border-radius:20px;padding:8px 15px;display:flex;align-items:center;gap:15px;font-size:14px;font-weight:500}
 .locked-stats .material-symbols-outlined{font-size:18px;margin-right:5px}
 
-.feed-item-actions {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    gap: 8px;
-}
-.action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5b7083;
-    padding: 12px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-.action-btn .material-symbols-outlined {
-    font-size: 24px;
-    font-variation-settings: 'FILL' 0;
-}
-.action-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-.action-btn:active {
-    transform: scale(0.9);
-}
-.like-btn.active {
-    color: #F44336;
-    background-color: transparent;
-}
-.like-btn.active .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1;
-}
-.bookmark-btn{margin-left:auto}
-.bookmark-btn.active {
-    color: #5b7083;
-    background-color: transparent;
-}
-.bookmark-btn.active .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1;
-}
-
-
 .media-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1/1;cursor:pointer}
 .media-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
 .media-item:hover img{transform:scale(1.05)}
@@ -208,8 +163,13 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
 
 .feed-item-actions {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
+}
+
+.actions-left, .actions-right {
+    display: flex;
     gap: 8px;
 }
 
@@ -218,7 +178,7 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
     border: none;
     cursor: pointer;
     color: #5b7083;
-    padding: 12px;
+    padding: 8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -232,26 +192,21 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
 }
 
 .action-btn:hover {
-    background-color: rgba(255, 106, 0, 0.1);
-    color: #FF6A00;
+    background-color: #f0f2f5;
 }
 
 .action-btn:active {
     transform: scale(0.9);
 }
 
-.like-btn.active {
-    color: #F44336;
-    background-color: transparent;
-}
-
 .like-btn.active .material-symbols-outlined {
+    color: #FF6A00;
     font-variation-settings: 'FILL' 1;
 }
 
 .bookmark-btn.active {
-    color: #FF6A00;
-    background-color: transparent;
+    background-color: #FF6A00;
+    color: #ffffff;
 }
 
 .bookmark-btn.active .material-symbols-outlined {
