@@ -169,6 +169,10 @@ export function HomePageContent() {
     setIsPopupVisible(false);
   };
 
+  const toggleDescription = () => {
+    setIsDescriptionExpanded(prevState => !prevState);
+  };
+
   return (
     <>
       <main className="content">
@@ -204,17 +208,10 @@ export function HomePageContent() {
                        <p className="description-text">
                           Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat...
                       </p>
-                      {!isDescriptionExpanded && (
-                        <button className="read-more-btn" onClick={() => setIsDescriptionExpanded(true)}>
-                            Ler mais
-                        </button>
-                      )}
+                      <button className="read-more-btn" onClick={toggleDescription}>
+                        {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+                      </button>
                   </div>
-                  {isDescriptionExpanded && (
-                    <button className="read-more-btn" onClick={() => setIsDescriptionExpanded(false)}>
-                        Ler menos
-                    </button>
-                  )}
               </div>
           </div>
         
@@ -265,3 +262,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    

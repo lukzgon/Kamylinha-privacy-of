@@ -1,3 +1,4 @@
+
 /* MUDANÇA: Importando a fonte Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
@@ -325,3 +326,5 @@ body {
 .scroll-to-top-btn:hover {
     background-color: #e67e00;
 }
+
+    
