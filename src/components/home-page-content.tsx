@@ -17,12 +17,13 @@ type PlanProps = {
     text: string;
     className: string;
   };
+  href?: string;
 };
 
-function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
+function Plan({ duration, price, isPopular = false, tag, href = '#' }: PlanProps) {
   return (
     <a
-      href="#"
+      href={href}
       className={cn(
         'plan-button',
         isPopular ? 'popular' : ''
@@ -224,6 +225,7 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
               price="R$ 9,90"
               isPopular={true}
               tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
+              href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
             />
             <h4 className="promotions-title">
               Promoções
@@ -294,3 +296,4 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
 
 
     
+
