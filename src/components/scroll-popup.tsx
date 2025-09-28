@@ -6,19 +6,18 @@ import Image from 'next/image';
 
 export function ScrollPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [popupHasAppeared, setPopupHasAppeared] = useState(false);
 
   const checkScrollPosition = useCallback(() => {
-    if (popupHasAppeared) return;
-
+    // This logic is based on the user's provided script.
     const scrollPosition = window.innerHeight + window.scrollY;
-    const pageHeight = document.documentElement.scrollHeight;
-    
-    if (scrollPosition >= pageHeight - 100) {
+    // Using document.body.offsetHeight as per the script's intention.
+    const pageHeight = document.body.offsetHeight;
+    const isPopupVisible = document.getElementById('scroll-popup')?.classList.contains('visible');
+
+    if (scrollPosition >= pageHeight - 100 && !isPopupVisible) {
         setIsVisible(true);
-        setPopupHasAppeared(true);
     }
-  }, [popupHasAppeared]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollPosition);
@@ -32,11 +31,15 @@ export function ScrollPopup() {
   };
 
   const handleActionClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    // 1. Prevent the default link behavior
     event.preventDefault();
+    // 2. Close the popup
     hidePopup();
+    // 3. Get the target from the link
     const targetId = event.currentTarget.getAttribute('href');
     if (targetId) {
         const targetSection = document.querySelector(targetId);
+        // 4. If the section exists, scroll smoothly to it
         if (targetSection) {
             targetSection.scrollIntoView({
                 behavior: 'smooth',
@@ -60,5 +63,3 @@ export function ScrollPopup() {
     </div>
   );
 }
-
-    
