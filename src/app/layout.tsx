@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Nunito } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: 'Sua dose diária de tentação.',
 };
 
-const fontNunito = Nunito({
+const fontInter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400', '500', '700'],
   variable: '--font-body',
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={cn(
           'antialiased',
-          fontNunito.variable
+          fontInter.variable
         )}
       >
         {children}

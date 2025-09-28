@@ -2,11 +2,9 @@
 'use client';
 
 import Image from 'next/image';
-import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon, MoreHorizontal, User, Tag, Image as ImageIcon, Film } from 'lucide-react';
+import { Expand, PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card } from '@/components/ui/card';
 import { useState } from 'react';
 import { ScrollPopup } from './scroll-popup';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -72,29 +70,27 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
               <strong>euukamylinhasantos</strong>
               <span>@euukamylinhasantos</span>
           </div>
-          <MoreHorizontal className="h-5 w-5 text-gray-500" />
+          <span className="material-symbols-outlined">more_horiz</span>
         </div>
       <div className="feed-item-media" onClick={onMediaClick}>
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
-                <Lock className="h-8 w-8" />
+                <span className="material-symbols-outlined">lock</span>
               </div>
               <div className="locked-stats">
-                  <Heart className="h-4 w-4" />
+                  <span className="material-symbols-outlined">favorite</span>
                   <span className="locked-like-count">{likeCount}</span>
-                  <MessageSquare className="h-4 w-4" />
+                  <span className="material-symbols-outlined">chat_bubble</span>
                   <span>{comments}</span>
               </div>
           </div>
       </div>
       <div className="feed-item-actions">
           <div className="actions-left">
-              <div className={cn("like-wrapper", { liked: isLiked })}>
-                <button className={cn("action-btn like-btn")} onClick={handleLikeClick}>
-                    <span className="material-symbols-outlined">favorite</span>
-                </button>
-              </div>
+              <button className={cn("action-btn like-btn", { active: isLiked })} onClick={handleLikeClick}>
+                  <span className="material-symbols-outlined">favorite</span>
+              </button>
               <button className="action-btn comment-btn"><span className="material-symbols-outlined">chat_bubble</span></button>
           </div>
           <div className="actions-right">
@@ -122,9 +118,9 @@ function MediaGridItem({ seed, type, onMediaClick }: { seed: number; type: 'phot
       />
       <div className="media-overlay">
         {type === 'video' ? (
-          <PlayCircle className="h-12 w-12 text-white" />
+          <span className="material-symbols-outlined">play_circle</span>
         ) : (
-          <Expand className="h-12 w-12 text-white" />
+          <span className="material-symbols-outlined">expand_content</span>
         )}
       </div>
     </div>
@@ -194,9 +190,9 @@ export function HomePageContent() {
                       <div className="banner-text">
                           <h1>Kamylinha Santos</h1>
                           <div className="stats">
-                              <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
-                              <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
-                              <span className="stat-item"><Heart className="h-5 w-5 mr-1.5"/> 229k</span>
+                              <span className="stat-item"><span className="material-symbols-outlined">image</span> 401</span>
+                              <span className="stat-item"><span className="material-symbols-outlined">movie</span> 438</span>
+                              <span className="stat-item"><span className="material-symbols-outlined">favorite</span> 229k</span>
                           </div>
                       </div>
                   </div>
