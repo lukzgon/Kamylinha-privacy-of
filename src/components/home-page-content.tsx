@@ -110,7 +110,7 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
       </div>
       <div className="flex items-center justify-start gap-2 p-3">
         <Button variant="ghost" size="icon" onClick={() => setIsLiked(!isLiked)}>
-          <Heart className={cn("h-6 w-6", isLiked && "fill-current text-red-500")} />
+          <Heart className={cn("h-6 w-6", isLiked && "fill-current text-primary")} />
         </Button>
         <Button variant="ghost" size="icon">
           <MessageSquare className="h-6 w-6" />
