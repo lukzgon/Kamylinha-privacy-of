@@ -69,8 +69,8 @@ export function HomePageContent() {
       price: 'R$ 19,90',
       tag: {
         text: 'Economia',
-        bgColor: 'bg-[#d4edda]',
-        textColor: 'text-[#155724]',
+        bgColor: 'bg-orange-500',
+        textColor: 'text-white',
       },
     },
     {
