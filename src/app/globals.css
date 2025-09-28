@@ -10,25 +10,25 @@
     scroll-behavior: smooth;
   }
   :root {
-    --background: 220 13% 96%; /* #f0f2f5 */
-    --foreground: 210 9% 10%; /* #141619 */
+    --background: 336 44% 96%; /* #F9E7EF */
+    --foreground: 341 5% 25%; /* #423c3e */
     --card: 0 0% 100%;
     --card-foreground: 210 9% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 210 9% 10%;
-    --primary: 25 100% 50%; /* #ff8000 - adjusted from #ff6a00 */
+    --primary: 341 60% 56%; /* #D14D72 */
     --primary-foreground: 0 0% 100%;
     --secondary: 210 16% 93%;
     --secondary-foreground: 210 9% 10%;
     --muted: 210 16% 93%;
     --muted-foreground: 215 14% 34%;
-    --accent: 25 100% 50%;
+    --accent: 326 50% 43%; /* #A23B72 */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 216 11% 89%; /* #e0e6ec */
     --input: 216 11% 89%;
-    --ring: 25 100% 50%;
+    --ring: 341 60% 56%;
     --radius: 1rem; /* 16px */
   }
 }
@@ -125,8 +125,8 @@
 }
 
 .tab-link.active {
-    color: #FF6A00;
-    border-bottom-color: #FF6A00;
+    color: hsl(var(--primary));
+    border-bottom-color: hsl(var(--primary));
 }
 
 .feed-content {
@@ -231,8 +231,8 @@
     position: relative;
     width: 95%;
     max-width: 500px;
-    background-color: #141619;
-    color: #fff;
+    background-color: #ffffff;
+    color: #141619;
     border-radius: 16px;
     box-shadow: 0 0 40px rgba(0,0,0,0.5);
     padding: 30px;
@@ -262,21 +262,21 @@
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     margin: 0 0 10px 0;
-    color: #fff;
+    color: #141619;
 }
 
 .popup-box-content p {
     font-size: 16px;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: #444;
     margin: 0 0 25px 0;
 }
 
 .popup-action-btn {
     display: block;
     width: 100%;
-    background-color: #FF6A00;
-    color: #fff;
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
     border: none;
     border-radius: 10px;
     padding: 16px;
@@ -289,7 +289,7 @@
 }
 
 .popup-action-btn:hover {
-    background-color: #e65c00;
+    background-color: hsl(var(--accent) / 0.9);
 }
 
 
