@@ -12,19 +12,19 @@
     --card-foreground: 20 14% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14% 4%;
-    --primary: 24 94% 52%;
+    --primary: 343 78% 54%; /* Saturated pink */
     --primary-foreground: 0 0% 100%;
-    --secondary: 340 40% 97%;
-    --secondary-foreground: 336 44% 23%;
+    --secondary: 33 100% 98%;
+    --secondary-foreground: 20 14% 4%;
     --muted: 60 5% 96%;
     --muted-foreground: 25 5% 45%;
-    --accent: 325 79% 52%;
+    --accent: 326 49% 43%; /* Red-violet */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 336 20% 90%;
     --input: 336 20% 90%;
-    --ring: 24 94% 52%;
+    --ring: 343 78% 54%;
     --radius: 0.75rem;
   }
 }
@@ -46,24 +46,19 @@
   }
 }
 
-/* --- ESTILOS DA PÁGINA DE VERIFICAÇÃO DE IDADE --- */
+/* --- AGE GATE STYLES --- */
 .age-gate-body {
-    background-color: #F5F3F2; /* Cor de fundo da página de verificação */
+    background-color: #F9E7EF; /* Very light pink */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa a altura inteira da tela */
+    height: 100vh;
 }
 
 .age-gate-content {
     text-align: center;
     max-width: 500px;
     padding: 20px;
-}
-
-.popup-logo {
-    max-width: 200px;
-    margin-bottom: 30px;
 }
 
 .age-gate-content p {
@@ -75,12 +70,12 @@
 
 .age-gate-button {
     display: inline-block;
-    background-color: #E5B390;
+    background-color: #A23B72; /* Red-violet */
     color: #ffffff;
     border: none;
     border-radius: 10px;
     padding: 15px 30px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -93,5 +88,135 @@
 }
 
 .age-gate-button:hover {
-    background-color: #D9A380;
+    background-color: #D14D72; /* Saturated pink */
+}
+
+/* --- FEED SECTION --- */
+
+.feed-tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.tab-link {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab-link.active {
+  color: #111827;
+  border-color: #D14D72;
+}
+
+.feed-content {
+  display: none;
+}
+
+.feed-content.active {
+  display: block;
+}
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.feed-item {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background: white;
+}
+
+.feed-item-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 0.75rem;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.header-names {
+  flex-grow: 1;
+}
+
+.header-names strong {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.header-names span {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #6b7280;
+}
+
+.feed-item-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+}
+
+.media-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.locked-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
+.locked-icon {
+  margin-bottom: 1rem;
+}
+
+.locked-icon .material-symbols-outlined {
+  font-size: 3rem;
+}
+
+.locked-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.locked-stats .material-symbols-outlined {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+.feed-item-actions {
+  display: flex;
+  padding: 0.75rem;
+  gap: 0.5rem;
+}
+
+.feed-item-actions .material-symbols-outlined {
+  cursor: pointer;
+}
+
+.feed-item-actions .material-symbols-outlined:last-child {
+  margin-left: auto;
 }
