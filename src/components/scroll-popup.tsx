@@ -6,20 +6,18 @@ import Image from 'next/image';
 
 export function ScrollPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [popupHasAppeared, setPopupHasAppeared] = useState(false);
 
   const checkScrollPosition = useCallback(() => {
-    if (popupHasAppeared) return;
-
-    const pageHeight = document.documentElement.scrollHeight;
+    // This logic is now based on your provided script
     const scrollPosition = window.innerHeight + window.scrollY;
+    const pageHeight = document.documentElement.scrollHeight;
+    const isPopupVisible = document.getElementById('scroll-popup')?.classList.contains('visible');
     
-    // Gatilho quando o usuário estiver a 100 pixels do final
-    if (scrollPosition >= pageHeight - 100) {
+    // Trigger when the user is 100 pixels from the bottom and the popup isn't already visible
+    if (scrollPosition >= pageHeight - 100 && !isPopupVisible) {
         setIsVisible(true);
-        setPopupHasAppeared(true);
     }
-  }, [popupHasAppeared]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollPosition);
