@@ -42,12 +42,12 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
     >
       <div className="plan-info">
         <div className='flex flex-row items-center gap-2'>
+          <strong>{duration}</strong>
           {tag && (
             <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
               {tag.text}
             </span>
           )}
-          <strong>{duration}</strong>
         </div>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
@@ -62,11 +62,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    if (isLiked) {
-      setLikeCount(prev => prev - 1);
-    } else {
-      setLikeCount(prev => prev + 1);
-    }
+    setLikeCount(prev => isLiked ? prev - 1 : prev + 1);
     setIsLiked(prev => !prev);
   };
   
