@@ -171,17 +171,16 @@ export function HomePageContent() {
 
   return (
     <>
-      <header className="page-header">
-        <Image
-          src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
-          alt="Logo Privacy"
-          width={150}
-          height={35}
-          className="logo"
-        />
-      </header>
-
       <main className="content">
+        <header className="page-header">
+          <Image
+            src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
+            alt="Logo Privacy"
+            width={150}
+            height={35}
+            className="logo"
+          />
+        </header>
           <div className="profile-card">
               <div className="banner">
                   <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
