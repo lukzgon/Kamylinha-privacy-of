@@ -16,12 +16,12 @@ const Plan = ({
   <a
     href="#"
     className={cn(
-      'group block no-underline rounded-xl border-2 p-5 font-bold transition-all',
+      'group block no-underline rounded-xl border-2 p-5 font-bold transition-all duration-300',
       'flex items-center justify-between',
       {
-        'border-primary bg-primary text-primary-foreground hover:border-primary/90 hover:bg-primary/90':
+        'border-primary bg-primary text-primary-foreground shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:translate-y-[-3px] hover:bg-primary/90 hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)]':
           popular,
-        'border-primary bg-white text-primary hover:bg-primary hover:text-primary-foreground':
+        'border-primary bg-white text-primary shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:translate-y-[-2px] hover:bg-primary hover:text-primary-foreground hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)]':
           !popular,
       }
     )}
