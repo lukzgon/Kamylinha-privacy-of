@@ -205,10 +205,12 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
 }
 
 .bookmark-btn.active {
-    background-color: #FF6A00;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #FF6A00;
 }
 
 .bookmark-btn.active .material-symbols-outlined {
     font-variation-settings: 'FILL' 1;
 }
+
+    
