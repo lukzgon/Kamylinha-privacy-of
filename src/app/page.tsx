@@ -133,16 +133,18 @@ export default function Home() {
               </div>
             </div>
             
-            {profileAvatar && (
-                <Image
-                  src={profileAvatar.imageUrl}
-                  alt={profileAvatar.description}
-                  width={150}
-                  height={150}
-                  className="relative z-10 -mt-[75px] ml-6 h-[150px] w-[150px] rounded-full border-6 border-white object-cover"
-                  data-ai-hint={profileAvatar.imageHint}
-                />
-              )}
+            <div className="relative">
+              {profileAvatar && (
+                  <Image
+                    src={profileAvatar.imageUrl}
+                    alt={profileAvatar.description}
+                    width={150}
+                    height={150}
+                    className="relative z-10 -mt-[75px] ml-6 h-[150px] w-[150px] rounded-full border-6 border-white object-cover"
+                    data-ai-hint={profileAvatar.imageHint}
+                  />
+                )}
+            </div>
 
             <div className="p-6 pt-4">
               <div className="mb-5">
