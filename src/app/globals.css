@@ -1,72 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap');
+/* MUDANÇA: Importando a fonte Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  :root {
-    --background: 330 33% 98%; /* Very light pink */
-    --foreground: 345 53% 15%;
-    --card: 330 33% 95%;
-    --card-foreground: 345 53% 15%;
-    --popover: 330 33% 95%;
-    --popover-foreground: 345 53% 15%;
-    --primary: 25 95% 53%; /* Saturated Orange */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 330 33% 92%;
-    --secondary-foreground: 345 53% 15%;
-    --muted: 330 33% 92%;
-    --muted-foreground: 345 8% 44%;
-    --accent: 30 100% 50%; /* Bright Orange */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 330 33% 90%;
-    --input: 330 33% 90%;
-    --ring: 25 95% 53%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 20 10% 15%;
-    --foreground: 20 50% 98%;
-    --card: 20 10% 15%;
-    --card-foreground: 20 50% 98%;
-    --popover: 20 10% 15%;
-    --popover-foreground: 20 50% 98%;
-    --primary: 25 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 20 10% 25%;
-    --secondary-foreground: 20 50% 98%;
-    --muted: 20 10% 25%;
-    --muted-foreground: 20 8% 64%;
-    --accent: 25 100% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 20 10% 25%;
-    --input: 20 10% 25%;
-    --ring: 25 100% 50%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-  }
-}
 
 /* --- Configurações Gerais --- */
 html {
@@ -75,7 +10,7 @@ html {
 
 body {
     background-color: #f0f2f5;
-    /* MUDANÇA: Aplicando a fonte Inter */
+    /* MUDANÇA: Aplicando a fonte Inter em todo o corpo */
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -123,6 +58,7 @@ body {
     border: none;
     border-radius: 12px;
     padding: 18px 30px;
+    /* MUDANÇA: Aplicando a fonte Inter no botão */
     font-family: 'Inter', sans-serif;
     font-size: 17px;
     font-weight: 700;
@@ -145,20 +81,13 @@ body {
 
 /* --- CONTROLE DE VISIBILIDADE DO CONTEÚDO PRINCIPAL --- */
 .main-content {
-    visibility: hidden; /* Esconde o conteúdo por padrão */
+    visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 0.3s, opacity 0.3s ease;
-}
-
-.main-content.visible {
-    visibility: visible;
-    opacity: 1;
-    transition-delay: 0s;
 }
 
 /* --- ESTILOS DA PÁGINA PRINCIPAL --- */
 .page-header { background-color:#fff; width:100%; padding:10px 0; display:flex; justify-content:center; align-items:center; border-bottom:1px solid #e6ecf0; }
-.logo { height:35px; }
+.logo { height:25px; }
 .content { width:100%; max-width:850px; padding:20px 15px; box-sizing:border-box; margin: 0 auto; }
 .profile-card { background-color:#fff; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,.06); margin-bottom:15px; overflow:hidden; }
 .banner { position:relative; }
@@ -179,7 +108,7 @@ body {
 .description-text { font-size:16px; line-height:1.6; color:#333; transition:max-height .5s ease-in-out; }
 .description-text.collapsed { max-height:105px; overflow:hidden; }
 .description-text.collapsed::after { content:''; position:absolute; bottom:0; left:0; right:0; height:50px; background:linear-gradient(to bottom,transparent,#fff); pointer-events:none; }
-.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#ff6a00; cursor:pointer; }
+.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter', sans-serif; font-size:16px; font-weight:700; color:#ff6a00; cursor:pointer; }
 .info-card h3 { font-size:20px; font-weight:700; margin:0 0 15px 0; }
 .promotions-title { font-size:14px; color:#5b7083; margin:25px 0 10px 0; text-transform:uppercase; font-weight:700; }
 .plan-button { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-radius:12px; text-decoration:none; margin-bottom:12px; transition:all .2s ease-in-out; font-weight:700; border:2px solid #ff6a00; color:#ff6a00; background-color:#fff; box-shadow:0 4px 10px rgba(255,106,0,.2); }
@@ -189,32 +118,9 @@ body {
 .plan-price { font-size:16px; font-weight:700; }
 .plan-button.popular { background-color:#ff6a00; color:#fff; border-color:#ff6a00; box-shadow:0 6px 15px rgba(255,106,0,.35); }
 .plan-button.popular:hover { background-color:#e67e00; border-color:#e67e00; color:#fff; box-shadow:0 8px 20px rgba(255,106,0,.5); transform:translateY(-3px); }
-.plan-tag {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 12px;
-    line-height: 1;
-}
-
-.popular-tag {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-}
-
-.economy-tag {
-    background-color: #e0f2fe;
-    color: #0c4a6e;
-}
-
-.best-offer-tag {
-    background-color: #dcfce7;
-    color: #166534;
-}
-
 .feed-section { margin-top:20px; }
 .feed-tabs { display:flex; border-bottom:1px solid #e6ecf0; }
-.tab-link { background:0 0; border:none; padding:15px 20px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#5b7083; cursor:pointer; border-bottom:3px solid transparent; transition:all .2s ease; }
+.tab-link { background:0 0; border:none; padding:15px 20px; /* MUDANÇA: Aplicando a fonte Inter nas abas */ font-family:'Inter', sans-serif; font-size:16px; font-weight:700; color:#5b7083; cursor:pointer; border-bottom:3px solid transparent; transition:all .2s ease; }
 .tab-link:hover { background-color:#f7f9fa; }
 .tab-link.active { color:#ff6a00; border-bottom-color:#ff6a00; }
 .feed-content { display:none; }
@@ -252,156 +158,3 @@ body {
 .media-item:hover .media-overlay { opacity:1; }
 .media-overlay .material-symbols-outlined { font-size:48px; text-shadow:0 0 10px rgba(0,0,0,.5); }
 @media (max-width:768px){.media-grid{grid-template-columns:repeat(2,1fr)}}@media (max-width:480px){.media-grid{grid-template-columns:repeat(3,1fr);gap:5px}}
-
-
-/* --- ESTILOS DO POP-UP DE FIM DE PÁGINA (CENTRALIZADO) --- */
-.scroll-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    padding: 20px;
-    box-sizing: border-box;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-}
-
-.scroll-popup-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.scroll-popup-box {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 480px;
-    position: relative;
-    text-align: center;
-    
-    /* Animação de entrada */
-    transform: scale(0.95);
-    transition: all 0.3s ease;
-}
-
-.scroll-popup-overlay.visible .scroll-popup-box {
-    transform: scale(1);
-}
-
-.close-popup-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: #cccccc;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    line-height: 1;
-}
-
-.close-popup-btn:hover {
-    color: #333333;
-    transform: rotate(90deg);
-}
-
-.popup-content-inner {
-    padding: 40px 30px;
-}
-
-.popup-logo {
-    max-width: 120px;
-    margin-bottom: 25px;
-}
-
-.scroll-popup-box h2 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0 0 15px 0;
-    line-height: 1.2;
-}
-
-.scroll-popup-box p {
-    font-size: 17px;
-    color: #555555;
-    line-height: 1.6;
-    margin: 0 0 30px 0;
-}
-
-.popup-action-btn {
-    display: inline-block;
-    background-color: hsl(var(--accent));
-    color: #ffffff;
-    padding: 18px 40px;
-    border-radius: 100px; /* Botão em formato de pílula */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
-    transition: all 0.2s ease;
-    width: auto;
-    min-width: 250px;
-    box-shadow: 0 4px 15px hsla(var(--accent), 0.3);
-}
-
-.popup-action-btn:hover {
-    background-color: hsl(var(--primary));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px hsla(var(--primary), 0.4);
-}
-
-.scroll-to-top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: hsl(var(--primary));
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
-    z-index: 999;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.scroll-to-top-btn.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.scroll-to-top-btn:hover {
-    background-color: hsl(var(--accent));
-}
-
-.scroll-to-top-btn .lucide {
-    font-size: 28px;
-}
-
-.tab-link:disabled {
-  color: black !important;
-  cursor: not-allowed;
-}
-
-.bookmark-btn.active {
-    background-color: #fff;
-    color: hsl(var(--primary));
-}
-
-.bookmark-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
