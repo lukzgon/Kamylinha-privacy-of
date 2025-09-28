@@ -18,13 +18,13 @@ type PlanProps = {
 
 function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   const popularStyles = isPopular
-    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(217,87,139,0.35)] hover:bg-accent hover:border-accent hover:shadow-[0_8px_20px_rgba(217,87,139,0.5)] hover:-translate-y-[3px]'
-    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(217,87,139,0.2)] hover:bg-[#FDF5F8] hover:border-accent hover:shadow-[0_6px_15px_rgba(217,87,139,0.3)] hover:-translate-y-0.5';
+    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:bg-accent hover:border-accent hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)] hover:-translate-y-[3px]'
+    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:bg-[#FFF8F2] hover:border-accent hover:text-primary hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)] hover:-translate-y-0.5';
 
   return (
     <a
       href="#"
-      className={`flex items-center justify-between rounded-xl border-2 p-4 font-bold transition-all duration-200 ease-in-out active:scale-[0.98] active:shadow-[0_2px_5px_rgba(217,87,139,0.3)] ${popularStyles}`}
+      className={`flex items-center justify-between rounded-xl border-2 p-4 font-bold transition-all duration-200 ease-in-out active:scale-[0.98] active:shadow-[0_2px_5px_rgba(255,106,0,0.3)] ${popularStyles}`}
     >
       <div className="flex items-center gap-2.5 text-base">
         <span>{duration}</span>
@@ -160,7 +160,7 @@ export default function Home() {
               duration="7 Dias"
               price="R$ 9,90"
               isPopular={true}
-              tag={{ text: 'MAIS POPULAR', bgColor: '', textColor: '' }}
+              tag={{ text: 'MAIS POPULAR', bgColor: 'bg-primary', textColor: 'text-primary' }}
             />
             <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
               Promoções
