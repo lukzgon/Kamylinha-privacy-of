@@ -166,7 +166,7 @@ export default function Home() {
               duration="7 Dias"
               price="R$ 9,90"
               isPopular={true}
-              tag={{ text: 'MAIS POPULAR 🔥', bgColor: '', textColor: '' }}
+              tag={{ text: 'MAIS POPULAR', bgColor: '', textColor: '' }}
             />
             <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
               Promoções
