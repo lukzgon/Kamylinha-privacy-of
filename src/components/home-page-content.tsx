@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
+import { useState } from 'react';
 
 const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
@@ -58,7 +59,7 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   );
 }
 
-function FeedPost({ likes, comments }: { likes: number; comments: number }) {
+function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comments: number }) {
   const profileAvatar = PlaceHolderImages.find((p) => p.id === 'profile-avatar');
   return (
     <Card className="overflow-hidden">
@@ -82,7 +83,7 @@ function FeedPost({ likes, comments }: { likes: number; comments: number }) {
       </div>
       <div className="relative aspect-[4/5] bg-gray-200">
         <Image
-          src="https://picsum.photos/seed/feed1/400/500"
+          src={`https://picsum.photos/seed/feed${seed}/400/500`}
           alt="Mídia Bloqueada"
           fill
           className="object-cover"
@@ -117,6 +118,7 @@ function FeedPost({ likes, comments }: { likes: number; comments: number }) {
 }
 
 export function HomePageContent() {
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const profileBanner = PlaceHolderImages.find(
     (p) => p.id === 'profile-banner'
   );
@@ -144,6 +146,18 @@ export function HomePageContent() {
       },
     },
   ];
+
+  const feedPosts = [
+    { seed: 1, likes: 248, comments: 126 },
+    { seed: 2, likes: 549, comments: 362 },
+    { seed: 3, likes: 312, comments: 98 },
+    { seed: 4, likes: 488, comments: 210 },
+    { seed: 5, likes: 620, comments: 340 },
+    { seed: 6, likes: 199, comments: 85 },
+    { seed: 7, likes: 715, comments: 450 },
+    { seed: 8, likes: 432, comments: 199 },
+  ];
+
 
   return (
     <>
@@ -213,12 +227,12 @@ export function HomePageContent() {
                 <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
               </div>
               <div className="text-base/relaxed font-normal text-card-foreground">
-                <p>
-                  Meu amor... não adianta resistir, eu sei que você quer... e eu
-                  tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem
-                  dói... você vai ter acesso total ao meu lado mais safado e
-                  proibido. São mais de 800 fotos
+                <p className={cn(!isDescriptionExpanded && 'line-clamp-3')}>
+                  Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat... Pode soltar a sua fantasia, seu desejo mais escondido... eu vou adorar saber. E dependendo de como você se soltar... quem sabe a gente não realiza junto?🤫 Assina agora e ainda tenha acesso a uma chamada exclusiva comigo... só eu e você, ao vivo, sem pressa, podendo falar... ou fazer... o que a gente quiser. 💫🎬 Não fica só se masturbando com a imaginação, bebê... vem ter o conteúdo real, vem sentir o meu tesão de perto. Porque aqui... eu tô pronta pra te provocar, te deixar louco... e te fazer gozar só de me ver. 🔥💦
                 </p>
+                <Button variant="link" className="p-0 h-auto text-primary" onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}>
+                  {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+                </Button>
               </div>
             </div>
           </div>
@@ -253,13 +267,14 @@ export function HomePageContent() {
               </TabsList>
               <TabsContent value="posts">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                  <FeedPost likes={248} comments={126} />
-                  <FeedPost likes={549} comments={362} />
+                  {feedPosts.map((post) => (
+                    <FeedPost key={post.seed} seed={post.seed} likes={post.likes} comments={post.comments} />
+                  ))}
                 </div>
               </TabsContent>
               <TabsContent value="media">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                   <p className="text-center col-span-2 text-muted-foreground">Nenhuma mídia encontrada.</p>
+                   <p className="text-center col-span-2 text-muted-foreground">Conteúdo da aba de mídias.</p>
                 </div>
               </TabsContent>
             </Tabs>
@@ -269,3 +284,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
