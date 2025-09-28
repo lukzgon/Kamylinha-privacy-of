@@ -54,13 +54,13 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   );
 }
 
-function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comments: number }) {
+function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; likes: number; comments: number }) {
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   return (
-    <div className="feed-item">
+    <div id={id} className="feed-item">
       <div className="feed-item-header">
           {avatarImage && <Image src={avatarImage.imageUrl} alt="Avatar" width={40} height={40} className="header-avatar" />}
           <div className="header-names">
@@ -135,14 +135,8 @@ export function HomePageContent() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { seed: 1, likes: 248, comments: 126 },
-    { seed: 2, likes: 549, comments: 362 },
-    { seed: 3, likes: 312, comments: 98 },
-    { seed: 4, likes: 87, comments: 23 },
-    { seed: 5, likes: 199, comments: 77 },
-    { seed: 6, likes: 450, comments: 200 },
-    { seed: 7, likes: 112, comments: 45 },
-    { seed: 8, likes: 678, comments: 300 },
+    { id: 'popup-reset-card', seed: 9, likes: 715, comments: 450 },
+    { id: 'popup-trigger-card', seed: 10, likes: 432, comments: 199 },
   ];
   
   const mediaItems = [
@@ -183,11 +177,11 @@ export function HomePageContent() {
                         </div>
                     </div>
                 </div>
-                {avatarImage && <Image src="https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg" alt={avatarImage.description} width={150} height={150} className="avatar" data-ai-hint={avatarImage.imageHint} />}
+                {avatarImage && <Image src={avatarImage.imageUrl} alt={avatarImage.description} width={150} height={150} className="avatar" data-ai-hint={avatarImage.imageHint} />}
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>euukamylinhasantos</h2>
-                        <p>@euukamylinhasantos</p>
+                        <h2>melissamailmaia</h2>
+                        <p>@melmaia</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -234,7 +228,7 @@ export function HomePageContent() {
               <TabsContent value="posts" className="feed-content active">
                 <div className="posts-grid">
                   {feedPosts.map((post) => (
-                    <FeedPost key={post.seed} seed={post.seed} likes={post.likes} comments={post.comments} />
+                    <FeedPost key={post.seed} id={post.id} seed={post.seed} likes={post.likes} comments={post.comments} />
                   ))}
                 </div>
               </TabsContent>
@@ -253,5 +247,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    

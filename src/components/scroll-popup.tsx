@@ -8,16 +8,25 @@ export function ScrollPopup() {
   const [isVisible, setIsVisible] = useState(false);
 
   const checkScrollPosition = useCallback(() => {
-    // This logic is based on the user's provided script.
-    const scrollPosition = window.innerHeight + window.scrollY;
-    // Using document.body.offsetHeight as per the script's intention.
-    const pageHeight = document.body.offsetHeight;
-    const isPopupVisible = document.getElementById('scroll-popup')?.classList.contains('visible');
+    const triggerCard = document.getElementById('popup-trigger-card');
+    if (!triggerCard) return;
 
-    if (scrollPosition >= pageHeight - 100 && !isPopupVisible) {
-        setIsVisible(true);
+    const rect = triggerCard.getBoundingClientRect();
+    const isTriggerVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+    
+    if (isTriggerVisible && !isVisible) {
+      setIsVisible(true);
     }
-  }, []);
+
+    const resetCard = document.getElementById('popup-reset-card');
+    if (resetCard) {
+      const resetRect = resetCard.getBoundingClientRect();
+      if (resetRect.top < window.innerHeight && resetRect.bottom >=0) {
+        setIsVisible(false);
+      }
+    }
+
+  }, [isVisible]);
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollPosition);
@@ -31,15 +40,11 @@ export function ScrollPopup() {
   };
 
   const handleActionClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    // 1. Prevent the default link behavior
     event.preventDefault();
-    // 2. Close the popup
     hidePopup();
-    // 3. Get the target from the link
     const targetId = event.currentTarget.getAttribute('href');
     if (targetId) {
         const targetSection = document.querySelector(targetId);
-        // 4. If the section exists, scroll smoothly to it
         if (targetSection) {
             targetSection.scrollIntoView({
                 behavior: 'smooth',
