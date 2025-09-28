@@ -73,8 +73,8 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
         <div className="feed-item-header">
           <Image src={avatarImage?.imageUrl || "https://via.placeholder.com/40"} alt="Avatar" width={40} height={40} className="header-avatar" />
           <div className="header-names">
-              <strong>melissamailmaia</strong>
-              <span>@melmaia</span>
+              <strong>euukamylinhasantos</strong>
+              <span>@euukamylinhasantos</span>
           </div>
           <MoreHorizontal className="h-5 w-5 text-gray-500" />
         </div>
@@ -100,14 +100,6 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
                 </button>
                 <span className="like-count">{likeCount}</span>
               </div>
-              <button className="action-btn comment-btn">
-                  <MessageSquare className="material-symbols-outlined" />
-              </button>
-          </div>
-          <div className="actions-right">
-              <button className={cn("action-btn bookmark-btn", { active: isBookmarked })} onClick={() => setIsBookmarked(!isBookmarked)}>
-                  <Bookmark className="material-symbols-outlined" />
-              </button>
           </div>
       </div>
     </div>
@@ -204,8 +196,8 @@ export function HomePageContent() {
                 <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>melissamailmaia</h2>
-                        <p>@melmaia</p>
+                        <h2>euukamylinhasantos</h2>
+                        <p>@euukamylinhasantos</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -265,3 +257,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
