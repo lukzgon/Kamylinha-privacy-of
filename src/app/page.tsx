@@ -18,8 +18,8 @@ type PlanProps = {
 
 function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
   const popularStyles = isPopular
-    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:bg-primary/90 hover:border-primary/90 hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)] hover:-translate-y-0.5'
-    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:bg-primary hover:text-primary-foreground hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)] hover:-translate-y-0.5';
+    ? 'bg-primary text-primary-foreground border-primary shadow-[0_6px_15px_rgba(255,106,0,0.35)] hover:bg-primary/90 hover:border-primary/90 hover:shadow-[0_8px_20px_rgba(255,106,0,0.5)] hover:-translate-y-[3px]'
+    : 'border-primary text-primary bg-white shadow-[0_4px_10px_rgba(255,106,0,0.2)] hover:bg-[#FFF8F2] hover:border-primary/90 hover:shadow-[0_6px_15px_rgba(255,106,0,0.3)] hover:-translate-y-0.5';
 
   return (
     <a
