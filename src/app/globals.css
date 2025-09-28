@@ -16,19 +16,19 @@
     --card-foreground: 345 53% 15%;
     --popover: 330 33% 95%;
     --popover-foreground: 345 53% 15%;
-    --primary: 345 53% 58%; /* Saturated pink */
+    --primary: 25 95% 53%; /* Saturated Orange */
     --primary-foreground: 0 0% 100%;
     --secondary: 330 33% 92%;
     --secondary-foreground: 345 53% 15%;
     --muted: 330 33% 92%;
     --muted-foreground: 345 8% 44%;
-    --accent: 322 47% 43%; /* Red-violet */
+    --accent: 30 100% 50%; /* Bright Orange */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 330 33% 90%;
     --input: 330 33% 90%;
-    --ring: 345 53% 58%;
+    --ring: 25 95% 53%;
     --radius: 0.5rem;
   }
 
@@ -408,4 +408,5 @@ body {
 .bookmark-btn.active .lucide-bookmark {
     fill: hsl(var(--primary));
 }
+
 
