@@ -72,7 +72,7 @@ function FeedPost({ id, src, likes, comments, onMediaClick }: { id?: string; src
           <span className="material-symbols-outlined">more_horiz</span>
         </div>
       <div className="feed-item-media" onClick={onMediaClick}>
-          <Image src={src} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
+          <Image src={src} alt="Mídia Bloqueada" width={400} height={500} className="w-full h-auto" data-ai-hint="woman content" />
           <div className="locked-overlay">
               <div className="locked-icon">
                 <span className="material-symbols-outlined">lock</span>
