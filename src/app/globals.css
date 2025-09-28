@@ -177,7 +177,7 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
     background: none;
     border: none;
     cursor: pointer;
-    color: #5b7083;
+    color: #2F3336;
     padding: 8px;
     border-radius: 50%;
     display: flex;
@@ -199,18 +199,23 @@ body{background-color:#f0f2f5;font-family:'Inter',sans-serif;margin:0;padding:0}
     transform: scale(0.9);
 }
 
+.like-btn.active {
+    color: #F44336;
+    background-color: transparent;
+}
+
 .like-btn.active .material-symbols-outlined {
-    color: #FF6A00;
-    font-variation-settings: 'FILL' 1;
+    font-variation-settings: 'FILL' 0;
 }
 
 .bookmark-btn.active {
-    background-color: #ffffff;
     color: #FF6A00;
+    background-color: transparent;
 }
 
 .bookmark-btn.active .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1;
+    font-variation-settings: 'FILL' 0;
 }
+    
 
     
