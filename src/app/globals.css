@@ -1,9 +1,9 @@
-/* MUDANÇA: Importando a nova fonte Nunito */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* MUDANÇA: Importando a nova fonte Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 @layer base {
   html {
@@ -22,7 +22,7 @@
     --secondary-foreground: 20 10% 15%;
     --muted: 20 20% 95%;
     --muted-foreground: 20 8% 44%;
-    --accent: 30 100% 45%;
+    --accent: 25 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -44,7 +44,7 @@
     --secondary-foreground: 20 50% 98%;
     --muted: 20 10% 25%;
     --muted-foreground: 20 8% 64%;
-    --accent: 30 100% 45%;
+    --accent: 25 100% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -64,14 +64,20 @@
   }
 }
 
-/* --- ESTILOS DA PÁGINA DE VERIFICAÇÃO DE IDADE --- */
-.age-gate-body {
-    background-color: #F5F3F2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* --- Configurações Gerais --- */
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- ESTILOS DA PÁGINA DE VERIFICAÇÃO DE IDADE --- */
+.age-gate-body { background-color: #F5F3F2; display: flex; justify-content: center; align-items: center; height: 100vh; }
 .age-gate-content { text-align: center; max-width: 500px; padding: 20px; }
 .popup-logo { max-width: 200px; margin-bottom: 30px; }
 .age-gate-content p { font-size: 1.2rem; color: #333; line-height: 1.6; margin: 0 0 20px 0; }
@@ -142,7 +148,7 @@
 .action-btn:active { transform: scale(0.9); }
 .like-btn.active { color: #f44336; }
 .like-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
-.bookmark-btn.active { color: #ff6a00; }
+.bookmark-btn.active { background-color: #fff; color: hsl(var(--primary)); }
 .bookmark-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
 .media-item { position:relative; overflow:hidden; border-radius:8px; aspect-ratio:1/1; cursor:pointer; }
 .media-item img { width:100%; height:100%; object-fit:cover; transition:transform .3s ease; }
@@ -152,85 +158,113 @@
 .media-overlay .material-symbols-outlined { font-size:48px; text-shadow:0 0 10px rgba(0,0,0,.5); }
 @media (max-width:768px){.media-grid{grid-template-columns:repeat(2,1fr)}}@media (max-width:480px){.media-grid{grid-template-columns:repeat(3,1fr);gap:5px}}
 
-/* --- POPUP (Continua igual) --- */
+
+/* --- ESTILOS DO POP-UP DE FIM DE PÁGINA (CENTRALIZADO) --- */
 .scroll-popup-overlay {
     position: fixed;
-    bottom: -100%;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    z-index: 1000;
-    transition: bottom 0.5s ease-in-out;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+
+    opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-popup-overlay.visible {
-    bottom: 0;
+    opacity: 1;
     visibility: visible;
 }
 
 .scroll-popup-box {
-    background-color: #F5F3F2; /* Cor de fundo do popup */
-    padding: 25px;
-    border-radius: 20px 20px 0 0;
-    text-align: center;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
     position: relative;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    
+    /* Animação de entrada */
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.scroll-popup-overlay.visible .scroll-popup-box {
+    transform: scale(1);
 }
 
 .close-popup-btn {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     background: none;
     border: none;
-    font-size: 28px;
-    color: #888;
+    font-size: 32px;
+    color: #cccccc;
     cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
 }
 
-.popup-content-inner .popup-logo {
-    max-width: 150px;
-    margin-bottom: 15px;
+.close-popup-btn:hover {
+    color: #333333;
+    transform: rotate(90deg);
 }
 
-.popup-content-inner h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+.popup-content-inner {
+    padding: 40px 30px;
+}
+
+.popup-logo {
+    max-width: 120px;
+    margin-bottom: 25px;
+}
+
+.scroll-popup-box h2 {
+    font-size: 28px;
     font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
 }
 
-.popup-content-inner p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
+.scroll-popup-box p {
+    font-size: 17px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
 }
 
 .popup-action-btn {
     display: inline-block;
-    background-color: #ff6a00;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 8px;
+    background-color: #FF6A00;
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 100px; /* Botão em formato de pílula */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    width: auto;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
 }
 
 .popup-action-btn:hover {
-    background-color: #e67e00;
+    background-color: #E67E00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
 }
 
-
-/* Scroll to Top Button (Continua igual) */
 .scroll-to-top-btn {
     position: fixed;
     bottom: 20px;
@@ -263,4 +297,18 @@
 
 .scroll-to-top-btn .material-symbols-outlined {
     font-size: 28px;
+}
+
+.tab-link:disabled {
+  color: black !important;
+  cursor: not-allowed;
+}
+
+.bookmark-btn.active {
+    background-color: #fff;
+    color: hsl(var(--primary));
+}
+
+.bookmark-btn.active .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
 }
