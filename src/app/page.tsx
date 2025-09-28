@@ -3,7 +3,8 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video } from 'lucide-react';
+import { Heart, Library, Video, Edit } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   const profileBanner = PlaceHolderImages.find(
@@ -78,7 +79,7 @@ export default function Home() {
               </div>
             )}
           </div>
-          <div className="p-6 pt-[95px]">
+          <div className="rounded-2xl bg-card p-6 pt-[95px] shadow-lg">
             <div>
               <h2 className="text-xl font-bold text-foreground">
                 melissamelmaia
