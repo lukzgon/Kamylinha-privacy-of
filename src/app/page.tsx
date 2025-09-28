@@ -9,44 +9,26 @@ const Plan = ({
   popular,
   period,
   price,
-  bonus,
-  economy,
-  bestOffer,
 }: {
   popular?: boolean;
   period: string;
   price: string;
-  bonus?: string;
-  economy?: boolean;
-  bestOffer?: boolean;
 }) => (
   <a
     href="#"
     className={cn(
       'group block text-foreground no-underline rounded-lg border border-border p-4 transition-colors hover:bg-accent',
       {
-        'flex flex-col items-stretch !border-none !bg-primary !pb-2.5 !text-primary-foreground':
+        'flex flex-col items-stretch !border-none !bg-primary !text-primary-foreground':
           popular,
-      }
+      },
+      'flex items-center justify-between'
     )}
   >
-    <div className={cn('flex items-center justify-between', { 'items-start': !popular })}>
-      <div className={cn('flex flex-col gap-1.5', { 'flex-row items-center gap-2': popular })}>
-        <strong className="font-bold">{period}</strong>
-        {popular && <Badge className="bg-white !text-primary">MAIS POPULAR 🔥</Badge>}
-        {economy && <Badge variant="secondary" className="bg-[#d4edda] text-[#155724]">Economia</Badge>}
-        {bestOffer && <Badge variant="secondary" className="bg-[#d1ecf1] text-[#0c5460]">Melhor oferta</Badge>}
-      </div>
-
-      <strong className={cn('text-lg font-bold', { 'text-xl': !popular })}>
-        {price}
-      </strong>
-    </div>
-    {bonus && (
-      <div className="mt-2.5 rounded-md bg-[#ff8528] py-1.5 text-center text-xs font-bold text-white">
-        {bonus}
-      </div>
-    )}
+    <strong className={cn('font-bold', { 'text-lg': popular })}>{period}</strong>
+    <strong className={cn('text-lg font-bold', { 'text-xl': !popular })}>
+      {price}
+    </strong>
   </a>
 );
 
@@ -67,9 +49,9 @@ export default function Home() {
       </header>
 
       <main className="w-full max-w-[850px] p-4 md:p-5">
-        <div className="relative mb-5 rounded-2xl bg-card shadow-lg">
+        <div className="relative mb-20 rounded-2xl bg-card shadow-lg">
           <div className="relative">
-            <div className="relative h-[220px] w-full overflow-hidden">
+            <div className="relative h-[220px] w-full overflow-hidden rounded-t-2xl">
               {profileBanner && (
                 <Image
                   src={profileBanner.imageUrl}
@@ -136,7 +118,6 @@ export default function Home() {
               popular
               period="7 Dias"
               price="R$ 9,90"
-              bonus="+ BRINDE SURPRESA HOJE!"
             />
 
             <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
@@ -146,13 +127,11 @@ export default function Home() {
             <Plan
               period="1 Mês"
               price="R$ 19,90"
-              economy
             />
 
             <Plan
               period="3 Meses"
               price="R$ 29,90"
-              bestOffer
             />
           </CardContent>
         </Card>
