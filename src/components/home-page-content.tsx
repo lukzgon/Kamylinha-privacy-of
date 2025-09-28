@@ -78,8 +78,8 @@ export function HomePageContent() {
       price: 'R$ 29,90',
       tag: {
         text: 'Melhor oferta',
-        bgColor: 'bg-[#d1ecf1]',
-        textColor: 'text-[#0c5460]',
+        bgColor: 'bg-orange-500',
+        textColor: 'text-white',
       },
     },
   ];
