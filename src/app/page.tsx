@@ -79,19 +79,19 @@ export default function Home() {
               />
             )}
             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 from-0% to-transparent to-60%">
-              <div className="flex w-full items-center justify-between p-5 text-white">
+              <div className="w-full p-5 text-white">
                 <h1 className="flex items-center text-3xl font-bold [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                   Mel Maia
                   <Image src="https://i.imgur.com/vH4vK4r.png" alt="lips" width={24} height={24} className="ml-2.5 h-6 w-auto" />
                 </h1>
-                <div className="flex gap-5">
-                  <span className="flex items-center gap-1.5 rounded-lg bg-black/20 px-2.5 py-1 text-base font-medium">
+                <div className="mt-2 flex gap-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
+                  <span className="flex items-center gap-1.5 text-base font-medium">
                     <Library className="h-5 w-5" /> 401
                   </span>
-                  <span className="flex items-center gap-1.5 rounded-lg bg-black/20 px-2.5 py-1 text-base font-medium">
+                  <span className="flex items-center gap-1.5 text-base font-medium">
                     <Video className="h-5 w-5" /> 438
                   </span>
-                  <span className="flex items-center gap-1.5 rounded-lg bg-black/20 px-2.5 py-1 text-base font-medium">
+                  <span className="flex items-center gap-1.5 text-base font-medium">
                     <Heart className="h-5 w-5 fill-current" /> 229k
                   </span>
                 </div>
