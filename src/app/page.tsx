@@ -24,12 +24,13 @@ const Plan = ({
     className={cn(
       'group block text-foreground no-underline rounded-lg border border-border p-4 transition-colors hover:bg-accent',
       {
-        'flex flex-col items-stretch !border-none !bg-primary !pb-2.5 !text-white': popular,
+        'flex flex-col items-stretch !border-none !bg-primary !pb-2.5 !text-primary-foreground':
+          popular,
       }
     )}
   >
     <div className={cn('flex items-center justify-between', { 'items-start': !popular })}>
-      <div className={cn('flex flex-col gap-1.5', { 'flex-row items-center': popular })}>
+      <div className={cn('flex flex-col gap-1.5', { 'flex-row items-center gap-2': popular })}>
         <strong className="font-bold">{period}</strong>
         {popular && <Badge className="bg-white !text-primary">MAIS POPULAR 🔥</Badge>}
         {economy && <Badge variant="secondary" className="bg-[#d4edda] text-[#155724]">Economia</Badge>}
@@ -41,7 +42,7 @@ const Plan = ({
       </strong>
     </div>
     {bonus && (
-      <div className="mt-2.5 rounded-md bg-[#ff8528] py-1.5 text-center text-xs font-bold">
+      <div className="mt-2.5 rounded-md bg-[#ff8528] py-1.5 text-center text-xs font-bold text-white">
         {bonus}
       </div>
     )}
@@ -54,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center bg-background">
-      <header className="flex w-full items-center justify-center border-b border-secondary bg-card py-2.5">
+      <header className="flex w-full items-center justify-center border-b border-border bg-card py-2.5">
         <Image
           src="https://i.imgur.com/gY9k2Yy.png"
           alt="Logo Privacy"
@@ -79,15 +80,9 @@ export default function Home() {
             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent">
               <div className="p-5 text-white">
                 <h1 className="flex items-center text-3xl font-bold [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  Mel Maia <img src="https://i.imgur.com/vH4vK4r.png" className="ml-2.5 h-6 w-6" alt="lips" />
+                  Mel Maia
                 </h1>
                 <div className="mt-2 flex gap-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  <span className="flex items-center gap-1.5 text-base font-medium">
-                    <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>play_circle</span> 401
-                  </span>
-                  <span className="flex items-center gap-1.5 text-base font-medium">
-                    <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>photo_camera</span> 438
-                  </span>
                   <span className="flex items-center gap-1.5 text-base font-medium">
                     <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span> 229k
                   </span>

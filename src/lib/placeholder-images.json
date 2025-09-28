@@ -3,13 +3,13 @@
     {
       "id": "profile-banner",
       "description": "Banner do perfil da Mel Maia",
-      "imageUrl": "https://images.unsplash.com/photo-1512101176959-c557f3516787?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMGJlYWNofGVufDB8fHx8MTc1ODk0MDUyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://via.placeholder.com/850x220/CCCCCC/FFFFFF.png",
       "imageHint": "woman beach"
     },
     {
       "id": "profile-avatar",
       "description": "Foto de perfil da Mel Maia",
-      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODk3MzQ2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://via.placeholder.com/150",
       "imageHint": "woman portrait"
     }
   ]
