@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card } from '@/components/ui/card';
 import { useState } from 'react';
+import { ScrollPopup } from './scroll-popup';
 
 const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
@@ -269,7 +270,7 @@ export function HomePageContent() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-card p-6 shadow-lg mb-4">
+          <div id="assinaturas" className="rounded-2xl bg-card p-6 shadow-lg mb-4">
             <h3 className="text-xl font-bold">Assinaturas</h3>
             <div className="mt-4 flex flex-col gap-3">
               <Plan
@@ -315,6 +316,7 @@ export function HomePageContent() {
           </div>
         </main>
       </div>
+      <ScrollPopup />
     </>
   );
 }
