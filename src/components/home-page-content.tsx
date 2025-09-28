@@ -76,12 +76,10 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
                 <Lock className="h-8 w-8" />
               </div>
               <div className="locked-stats">
-                  <div className="flex items-center gap-1.5">
-                    <Heart className="h-4 w-4" /> {likes}
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <MessageSquare className="h-4 w-4" /> {comments}
-                  </div>
+                  <Heart className="h-4 w-4" />
+                  <span className="locked-like-count">{likes}</span>
+                  <MessageSquare className="h-4 w-4" />
+                  <span>{comments}</span>
               </div>
           </div>
       </div>
