@@ -60,15 +60,12 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
   const [likeCount, setLikeCount] = useState(likes);
 
   const handleLikeClick = () => {
-    setIsLiked(prevIsLiked => {
-      const newIsLiked = !prevIsLiked;
-      if (newIsLiked) {
-        setLikeCount(prev => prev + 1);
-      } else {
-        setLikeCount(prev => prev - 1);
-      }
-      return newIsLiked;
-    });
+    if (isLiked) {
+      setLikeCount(prev => prev - 1);
+    } else {
+      setLikeCount(prev => prev + 1);
+    }
+    setIsLiked(prev => !prev);
   };
   
   const [isBookmarked, setIsBookmarked] = useState(false);
