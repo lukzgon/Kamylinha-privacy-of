@@ -221,7 +221,7 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
           <h3>Assinaturas</h3>
           <div className="mt-4 flex flex-col gap-3">
             <Plan
-              duration="7 Dias"
+              duration="15 dias"
               price="R$ 9,90"
               isPopular={true}
               tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
