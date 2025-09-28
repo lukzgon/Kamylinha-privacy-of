@@ -3,8 +3,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video, Edit } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Heart, Library, Video } from 'lucide-react';
 
 export default function Home() {
   const profileBanner = PlaceHolderImages.find(
