@@ -232,7 +232,7 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
             </h4>
              <Plan
               duration="1 Mês"
-              price="R$ 15,90"
+              price="R$ 17,90"
               href="https://www.ggcheckout.com/checkout/v2/WAa1UAuxqAbxqoe4CBiB"
               tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
             />
