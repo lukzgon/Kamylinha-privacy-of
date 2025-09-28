@@ -67,65 +67,64 @@ export default function Home() {
       </header>
 
       <main className="w-full max-w-[850px] p-4 md:p-5">
-        <div className="relative mb-20">
-          <div className="relative h-[220px] w-full overflow-hidden rounded-2xl shadow-lg">
-            {profileBanner && (
-              <Image
-                src={profileBanner.imageUrl}
-                alt={profileBanner.description}
-                fill
-                className="object-cover"
-                data-ai-hint={profileBanner.imageHint}
-              />
-            )}
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 from-0% to-transparent to-60%">
-              <div className="w-full p-5 text-white">
-                <h1 className="flex items-center text-3xl font-bold [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  Mel Maia
-                  <Image src="https://i.imgur.com/vH4vK4r.png" alt="lips" width={24} height={24} className="ml-2.5 h-6 w-auto" />
-                </h1>
-                <div className="mt-2 flex gap-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                  <span className="flex items-center gap-1.5 text-base font-medium">
-                    <Library className="h-5 w-5" /> 401
-                  </span>
-                  <span className="flex items-center gap-1.5 text-base font-medium">
-                    <Video className="h-5 w-5" /> 438
-                  </span>
-                  <span className="flex items-center gap-1.5 text-base font-medium">
-                    <Heart className="h-5 w-5 fill-current" /> 229k
-                  </span>
+        <div className="relative mb-5 rounded-2xl bg-card shadow-lg">
+          <div className="relative">
+            <div className="relative h-[220px] w-full overflow-hidden">
+              {profileBanner && (
+                <Image
+                  src={profileBanner.imageUrl}
+                  alt={profileBanner.description}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={profileBanner.imageHint}
+                />
+              )}
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 from-0% to-transparent to-60% p-5">
+                <div className="flex flex-col items-end self-end text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)] mb-2.5">
+                  <h1 className="flex items-center text-3xl font-bold">
+                    Mel Maia
+                    <Image src="https://i.imgur.com/vH4vK4r.png" alt="lips" width={24} height={24} className="ml-2.5 h-6 w-auto" />
+                  </h1>
+                  <div className="mt-1.5 flex gap-4">
+                    <span className="flex items-center gap-1.5 text-base font-medium">
+                      <Library className="h-5 w-5" /> 401
+                    </span>
+                    <span className="flex items-center gap-1.5 text-base font-medium">
+                      <Video className="h-5 w-5" /> 438
+                    </span>
+                    <span className="flex items-center gap-1.5 text-base font-medium">
+                      <Heart className="h-5 w-5 fill-current" /> 229k
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {profileAvatar && (
+              <div className="absolute -bottom-[65px] left-[25px]">
+                <Image
+                  src={profileAvatar.imageUrl}
+                  alt={profileAvatar.description}
+                  width={150}
+                  height={150}
+                  className="h-[150px] w-[150px] rounded-full border-[6px] border-background object-cover shadow-lg"
+                  data-ai-hint={profileAvatar.imageHint}
+                />
+              </div>
+            )}
           </div>
-
-          {profileAvatar && (
-            <div className="absolute -bottom-[65px] left-[25px]">
-              <Image
-                src={profileAvatar.imageUrl}
-                alt={profileAvatar.description}
-                width={150}
-                height={150}
-                className="h-[150px] w-[150px] rounded-full border-[6px] border-background object-cover shadow-lg"
-                data-ai-hint={profileAvatar.imageHint}
-              />
-            </div>
-          )}
+          <div className="p-6 pt-[95px]">
+              <div>
+                <h2 className="text-xl font-bold text-foreground">melissamelmaia</h2>
+                <p className="text-base text-muted-foreground">@melmaia</p>
+              </div>
+              <div className="mt-4 text-base/relaxed text-card-foreground">
+                <p>
+                  Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou...
+                </p>
+              </div>
+          </div>
         </div>
-
-        <Card className="shadow-lg">
-          <CardContent className="p-6">
-            <div>
-              <h2 className="text-xl font-bold text-foreground">melissamelmaia</h2>
-              <p className="text-base text-muted-foreground">@melmaia</p>
-            </div>
-            <div className="mt-4 text-base/relaxed text-card-foreground">
-              <p>
-                Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou...
-              </p>
-            </div>
-          </CardContent>
-        </Card>
 
         <Card className="mt-4 shadow-lg">
           <CardContent className="p-6 space-y-2.5">
