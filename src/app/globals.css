@@ -16,7 +16,7 @@
     --card-foreground: 20 10% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 10% 15%;
-    --primary: 20 90% 55%; /* Orange */
+    --primary: 25 95% 53%; /* Orange */
     --primary-foreground: 0 0% 100%;
     --secondary: 20 20% 95%;
     --secondary-foreground: 20 10% 15%;
@@ -115,7 +115,7 @@ body {
 .description-text { font-size:16px; line-height:1.6; color:#333; transition:max-height .5s ease-in-out; }
 .description-text.collapsed { max-height:105px; overflow:hidden; }
 .description-text.collapsed::after { content:''; position:absolute; bottom:0; left:0; right:0; height:50px; background:linear-gradient(to bottom,transparent,#fff); pointer-events:none; }
-.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:#ff6a00; cursor:pointer; }
+.read-more-btn { background:0 0; border:none; padding:0; margin-top:10px; font-family:'Inter',sans-serif; font-size:16px; font-weight:700; color:hsl(var(--primary)); cursor:pointer; }
 .info-card h3 { font-size:20px; font-weight:700; margin:0 0 15px 0; }
 .promotions-title { font-size:14px; color:#5b7083; margin:25px 0 10px 0; text-transform:uppercase; font-weight:700; }
 .plan-button { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-radius:12px; text-decoration:none; margin-bottom:12px; transition:all .2s ease-in-out; font-weight:700; border:2px solid hsl(var(--primary)); color:hsl(var(--primary)); background-color:#fff; box-shadow:0 4px 10px hsla(var(--primary) / 0.2); }
@@ -185,75 +185,37 @@ body {
 @media (max-width:768px){.media-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.media-grid{grid-template-columns:repeat(3,1fr);gap:5px}}
 
-/* --- ESTILO DEFINITIVO DOS BOTÕES DE AÇÃO DO FEED --- */
-.feed-item-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-}
-.actions-left, .actions-right {
-    display: flex;
-    gap: 8px;
-}
+/* --- ESTILOS DOS BOTÕES DE AÇÃO DO FEED (ATUALIZADOS) --- */
+.feed-item-actions { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; }
+.actions-left, .actions-right { display: flex; align-items: center; gap: 8px; }
+
 .like-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #5b7083;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.action-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5b7083; /* Cor cinza padrão do ícone */
-    padding: 8px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
+    gap: 5px;
 }
 
-.action-btn .material-symbols-outlined {
-    font-size: 24px;
-    font-variation-settings: 'FILL' 0; /* Ícones vazados por padrão */
-    transition: all 0.2s ease;
+.like-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5b7083;
+    transition: color 0.2s ease;
 }
 
-/* Efeito ao passar o mouse */
-.action-btn:hover {
-    background-color: #f0f2f5; /* Fundo cinza claro */
+.action-btn { background: none; border: none; cursor: pointer; color: #5b7083; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+.action-btn .material-symbols-outlined { font-size: 24px; font-variation-settings: 'FILL' 0; transition: all 0.2s ease; }
+.action-btn:hover { background-color: #f0f2f5; }
+.action-btn:active { transform: scale(0.9); }
+
+.like-wrapper.liked .like-count {
+    color: #F44336;
 }
 
-/* Efeito ao clicar */
-.action-btn:active {
-    transform: scale(0.9);
-}
+.like-btn.active { color: #F44336; }
+.like-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
 
-/* Estado ATIVO para o botão de Curtir */
-.like-btn.active {
-    color: #F44336; /* Ícone fica vermelho */
-}
-.like-btn.active .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1; /* Ícone fica PREENCHIDO */
-}
-.like-btn.active + .like-count {
-  color: #F44336;
-}
-
-
-/* Estado ATIVO para o botão de Salvar */
-.bookmark-btn.active {
-    background-color: #fff;
-    color: hsl(var(--primary));
-}
-.bookmark-btn.active .material-symbols-outlined {
-    font-variation-settings: 'FILL' 1; /* Ícone fica PREENCHIDO */
-}
+.bookmark-btn.active { background-color: hsl(var(--primary)); color: #ffffff; }
+.bookmark-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
     
 /* --- ESTILOS DO POP-UP DE FIM DE PÁGINA --- */
 .scroll-popup-overlay {
@@ -285,5 +247,7 @@ body {
 
     
 
+
+    
 
     

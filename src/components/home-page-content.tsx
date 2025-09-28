@@ -67,7 +67,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               <strong>melissamailmaia</strong>
               <span>@melmaia</span>
           </div>
-          <button className="action-btn"><MoreHorizontal className="h-5 w-5 text-gray-500" /></button>
+          <MoreHorizontal className="h-5 w-5 text-gray-500" />
         </div>
       <div className="feed-item-media">
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
@@ -87,7 +87,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
       </div>
       <div className="feed-item-actions">
           <div className="actions-left">
-              <div className="like-wrapper">
+              <div className={cn("like-wrapper", { liked: isLiked })}>
                 <button className={cn("action-btn like-btn", { active: isLiked })} onClick={() => setIsLiked(!isLiked)}>
                     <Heart className="material-symbols-outlined" />
                 </button>
@@ -244,6 +244,8 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
 
