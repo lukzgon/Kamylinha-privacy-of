@@ -79,13 +79,13 @@ export default function Home() {
                   data-ai-hint={profileBanner.imageHint}
                 />
               )}
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 from-0% to-transparent to-60% p-5">
-                <div className="flex flex-col items-end self-end text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)] mb-2.5">
+              <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 from-0% to-transparent to-60% p-5">
+                <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                   <h1 className="flex items-center text-3xl font-bold">
                     Mel Maia
                     <Image src="https://i.imgur.com/vH4vK4r.png" alt="lips" width={24} height={24} className="ml-2.5 h-6 w-auto" />
                   </h1>
-                  <div className="mt-1.5 flex gap-4">
+                  <div className="mt-2 flex gap-5">
                     <span className="flex items-center gap-1.5 text-base font-medium">
                       <Library className="h-5 w-5" /> 401
                     </span>
