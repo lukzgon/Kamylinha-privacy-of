@@ -205,8 +205,8 @@ export function HomePageContent() {
                 <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>@kamylinhasantos</h2>
-                        <p>@kamylinhasantos</p>
+                        <h2>@euukamylinhasantos</h2>
+                        <p>@euukamylinhasantos</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
@@ -267,3 +267,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
