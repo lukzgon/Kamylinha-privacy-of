@@ -193,7 +193,7 @@ export function HomePageContent() {
                     <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
-                            <h1>Mel Maia</h1>
+                            <h1>Kamylinha Santos</h1>
                             <div className="stats">
                                 <span className="stat-item"><ImageIcon className="h-5 w-5 mr-1.5"/> 401</span>
                                 <span className="stat-item"><Film className="h-5 w-5 mr-1.5"/> 438</span>
@@ -205,8 +205,8 @@ export function HomePageContent() {
                 <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
                 <div className="profile-card-body">
                     <div className="username-section">
-                        <h2>@melmaia</h2>
-                        <p>@melmaia</p>
+                        <h2>@kamylinhasantos</h2>
+                        <p>@kamylinhasantos</p>
                     </div>
                     <div className="description-wrapper">
                          <p className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
