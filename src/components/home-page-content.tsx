@@ -61,7 +61,10 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
 }
 
 function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comments: number }) {
+  const [isLiked, setIsLiked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const profileAvatar = PlaceHolderImages.find((p) => p.id === 'profile-avatar');
+
   return (
     <Card className="overflow-hidden">
       <div className="flex items-center gap-3 p-3">
@@ -106,14 +109,14 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
         </div>
       </div>
       <div className="flex items-center justify-start gap-2 p-3">
-        <Button variant="ghost" size="icon">
-          <Heart className="h-6 w-6" />
+        <Button variant="ghost" size="icon" onClick={() => setIsLiked(!isLiked)}>
+          <Heart className={cn("h-6 w-6", isLiked && "fill-current text-red-500")} />
         </Button>
         <Button variant="ghost" size="icon">
           <MessageSquare className="h-6 w-6" />
         </Button>
-        <Button variant="ghost" size="icon" className="ml-auto">
-          <Bookmark className="h-6 w-6" />
+        <Button variant="ghost" size="icon" className="ml-auto" onClick={() => setIsBookmarked(!isBookmarked)}>
+          <Bookmark className={cn("h-6 w-6", isBookmarked && "fill-current")} />
         </Button>
       </div>
     </Card>
@@ -322,3 +325,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
