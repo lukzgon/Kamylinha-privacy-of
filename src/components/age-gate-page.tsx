@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { HomePageContent } from './home-page-content';
+import { cn } from '@/lib/utils';
 
 export function AgeGate() {
   const [isVerified, setIsVerified] = useState(false);
@@ -32,7 +33,7 @@ export function AgeGate() {
         </div>
       </div>
 
-      <div id="main-content" className="main-content" style={{ display: isVerified ? 'block' : 'none' }}>
+      <div id="main-content" className={cn('main-content', isVerified && 'visible')}>
         <HomePageContent />
       </div>
     </>
