@@ -56,8 +56,21 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
 
 function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; likes: number; comments: number }) {
   const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(likes);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
+  
+  const handleLikeClick = () => {
+    setIsLiked(prevIsLiked => {
+      const newIsLiked = !prevIsLiked;
+      if (newIsLiked) {
+        setLikeCount(prevCount => prevCount + 1);
+      } else {
+        setLikeCount(prevCount => prevCount - 1);
+      }
+      return newIsLiked;
+    });
+  };
 
   return (
     <div id={id} className="feed-item">
@@ -67,7 +80,6 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               <strong>melissamailmaia</strong>
               <span>@melmaia</span>
           </div>
-          <MoreHorizontal className="h-5 w-5 text-gray-500" />
         </div>
       <div className="feed-item-media">
           <Image src={`https://via.placeholder.com/400x500/${seed.toString(16)}${seed.toString(16)}${seed.toString(16)}/fff`} alt="Mídia Bloqueada" width={400} height={500} className="media-background" data-ai-hint="woman content" />
@@ -77,7 +89,7 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               </div>
               <div className="locked-stats">
                   <Heart className="h-4 w-4" />
-                  <span className="locked-like-count">{likes}</span>
+                  <span className="locked-like-count">{likeCount}</span>
                   <MessageSquare className="h-4 w-4" />
                   <span>{comments}</span>
               </div>
@@ -86,10 +98,10 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
       <div className="feed-item-actions">
           <div className="actions-left">
               <div className={cn("like-wrapper", { liked: isLiked })}>
-                <button className={cn("action-btn like-btn", { active: isLiked })} onClick={() => setIsLiked(!isLiked)}>
+                <button className={cn("action-btn like-btn", { active: isLiked })} onClick={handleLikeClick}>
                     <Heart className="material-symbols-outlined" />
                 </button>
-                <span className="like-count">{isLiked ? likes + 1 : likes}</span>
+                <span className="like-count">{likeCount}</span>
               </div>
               <button className="action-btn comment-btn">
                   <MessageSquare className="material-symbols-outlined" />
