@@ -238,7 +238,7 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
             />
             <Plan
               duration="3 Meses"
-              price="R$ 29,90"
+              price="R$ 27,90"
               tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
               href="https://www.ggcheckout.com/checkout/v2/Z9zBT5TR5gWgBOeCS9Ie"
             />
