@@ -91,7 +91,7 @@ export function HomePageContent() {
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
-            width={100}
+            width={125}
             height={24}
             className="h-auto w-auto"
           />
@@ -110,7 +110,7 @@ export function HomePageContent() {
                     data-ai-hint={profileBanner.imageHint}
                   />
                 )}
-                <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5">
+                <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5 rounded-b-lg">
                   <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
                     <h1 className="flex items-center text-3xl font-bold">
                       Kamylinha Santos
@@ -147,7 +147,7 @@ export function HomePageContent() {
             <div className="p-6 pt-4">
               <div className="mb-5">
                 <h2 className="text-xl font-bold text-foreground">
-                  euukamylinhasantos
+                  Kamylinha Santos
                 </h2>
                 <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
               </div>
