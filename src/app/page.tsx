@@ -6,6 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Heart, Library, Video } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { AgeGatePopup } from '@/components/age-gate-popup';
 
 const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
@@ -86,12 +87,13 @@ export default function Home() {
 
   return (
     <div className={cn("flex min-h-screen flex-col items-center bg-background font-body", fontInter.variable, fontPlayfair.variable)}>
+      <AgeGatePopup />
       <header className="flex w-full items-center justify-center border-b border-border bg-card py-2.5">
         <Image
           src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
           alt="Logo Privacy"
-          width={123}
-          height={30}
+          width={100}
+          height={24}
           className="h-auto w-auto"
         />
       </header>
