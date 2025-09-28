@@ -4,7 +4,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/logo';
-import { AiSuggestionForm } from '@/components/ai-suggestion-form';
 
 export default function Home() {
   const profileBanner = PlaceHolderImages.find((p) => p.id === 'profile-banner');
@@ -82,7 +81,7 @@ export default function Home() {
                 escondido... eu vou adorar saber. E dependendo de como você se
                 soltar... quem sabe a gente não realiza junto?🤫 Assina agora e
                 ainda tenha acesso a uma chamada exclusiva comigo... só eu e
--                você, ao vivo, sem pressa, podendo falar... ou fazer... o que a
+                você, ao vivo, sem pressa, podendo falar... ou fazer... o que a
                 gente quiser. 💫🎬 Não fica só se masturbando com a imaginação,
                 bebê... vem ter o conteúdo real, vem sentir o meu tesão de perto.
                 Porque aqui... eu tô pronta pra te provocar, te deixar louco... e
@@ -145,8 +144,6 @@ export default function Home() {
             </a>
           </CardContent>
         </Card>
-
-        <AiSuggestionForm />
       </main>
     </div>
   );
