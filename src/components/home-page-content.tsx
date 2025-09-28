@@ -3,9 +3,12 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video } from 'lucide-react';
+import { Heart, Library, Video, MoreHorizontal, Lock, MessageSquare, Bookmark } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card } from '@/components/ui/card';
 
 const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
@@ -52,6 +55,64 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
       </div>
       <div className="text-base font-bold">{price}</div>
     </a>
+  );
+}
+
+function FeedPost({ likes, comments }: { likes: number; comments: number }) {
+  const profileAvatar = PlaceHolderImages.find((p) => p.id === 'profile-avatar');
+  return (
+    <Card className="overflow-hidden">
+      <div className="flex items-center gap-3 p-3">
+        {profileAvatar && (
+          <Image
+            src={profileAvatar.imageUrl}
+            alt="Avatar"
+            width={40}
+            height={40}
+            className="h-10 w-10 rounded-full object-cover"
+          />
+        )}
+        <div className="flex-1">
+          <p className="text-sm font-bold">euukamylinhasantos</p>
+          <p className="text-xs text-muted-foreground">@euukamylinhasantos</p>
+        </div>
+        <Button variant="ghost" size="icon" className="h-8 w-8">
+          <MoreHorizontal className="h-5 w-5" />
+        </Button>
+      </div>
+      <div className="relative aspect-[4/5] bg-gray-200">
+        <Image
+          src="https://picsum.photos/seed/feed1/400/500"
+          alt="Mídia Bloqueada"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white backdrop-blur-sm">
+          <Lock className="h-12 w-12" />
+          <div className="mt-4 flex items-center gap-4">
+            <div className="flex items-center gap-1.5">
+              <Heart className="h-5 w-5" />
+              <span>{likes}</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <MessageSquare className="h-5 w-5" />
+              <span>{comments}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center justify-start gap-2 p-3">
+        <Button variant="ghost" size="icon">
+          <Heart className="h-6 w-6" />
+        </Button>
+        <Button variant="ghost" size="icon">
+          <MessageSquare className="h-6 w-6" />
+        </Button>
+        <Button variant="ghost" size="icon" className="ml-auto">
+          <Bookmark className="h-6 w-6" />
+        </Button>
+      </div>
+    </Card>
   );
 }
 
@@ -166,7 +227,7 @@ export function HomePageContent() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-card p-6 shadow-lg">
+          <div className="rounded-2xl bg-card p-6 shadow-lg mb-4">
             <h3 className="text-xl font-bold">Assinaturas</h3>
             <div className="mt-4 flex flex-col gap-3">
               <Plan
@@ -188,8 +249,29 @@ export function HomePageContent() {
               ))}
             </div>
           </div>
+          <div className="feed-section">
+            <Tabs defaultValue="posts" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="posts">93 postagens</TabsTrigger>
+                <TabsTrigger value="media">412 mídias</TabsTrigger>
+              </TabsList>
+              <TabsContent value="posts">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <FeedPost likes={248} comments={126} />
+                  <FeedPost likes={549} comments={362} />
+                </div>
+              </TabsContent>
+              <TabsContent value="media">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                   <p className="text-center col-span-2 text-muted-foreground">Nenhuma mídia encontrada.</p>
+                </div>
+              </TabsContent>
+            </Tabs>
+          </div>
         </main>
       </div>
     </>
   );
 }
+
+    
