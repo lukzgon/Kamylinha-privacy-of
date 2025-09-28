@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { HomePageContent } from './home-page-content';
-import { cn } from '@/lib/utils';
 
 export function AgeGate() {
   const [isVerified, setIsVerified] = useState(false);
@@ -22,9 +21,9 @@ export function AgeGate() {
     setIsVerified(true);
   };
 
-  return (
-    <>
-      <div id="age-gate-page" className="age-gate-page" style={{ display: isVerified ? 'none' : 'flex' }}>
+  if (!isVerified) {
+    return (
+      <div id="age-gate-page" className="age-gate-page">
         <div className="age-gate-card">
           <Image src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png" alt="Logo Privacy" width={160} height={40} className="popup-logo mx-auto" />
           <h1>Você tem 18 anos ou mais?</h1>
@@ -34,10 +33,8 @@ export function AgeGate() {
           </p>
         </div>
       </div>
+    );
+  }
 
-      <div id="main-content" className={cn('main-content', isVerified && 'opacity-100 visible')}>
-        <HomePageContent />
-      </div>
-    </>
-  );
+  return <HomePageContent />;
 }
