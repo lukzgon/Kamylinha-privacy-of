@@ -10,6 +10,7 @@ import { Card } from '@/components/ui/card';
 import { useState } from 'react';
 import { ScrollPopup } from './scroll-popup';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ScrollToTopButton } from './scroll-to-top-button';
 
 const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
@@ -41,12 +42,12 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
       )}
     >
       <div className="flex items-center gap-2">
-        <strong>{duration}</strong>
         {tag && (
             <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
               {tag.text}
             </span>
           )}
+        <strong>{duration}</strong>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
     </a>
@@ -56,21 +57,25 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
 function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; seed: number; likes: number; comments: number; onMediaClick: () => void; }) {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
-  
+
   const handleLikeClick = () => {
-    if (isLiked) {
-      setLikeCount(prev => prev - 1);
-    } else {
-      setLikeCount(prev => prev + 1);
-    }
-    setIsLiked(prev => !prev);
+    setIsLiked(prevIsLiked => {
+      const newIsLiked = !prevIsLiked;
+      if (newIsLiked) {
+        setLikeCount(prev => prev + 1);
+      } else {
+        setLikeCount(prev => prev - 1);
+      }
+      return newIsLiked;
+    });
   };
   
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const handleBookmarkClick = () => {
     setIsBookmarked(prevIsBookmarked => !prevIsBookmarked);
   };
+
+  const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   return (
     <div id={id} className="feed-item">
@@ -100,9 +105,15 @@ function FeedPost({ id, seed, likes, comments, onMediaClick }: { id?: string; se
           <div className="actions-left">
               <div className={cn("like-wrapper", { liked: isLiked })}>
                 <button className={cn("action-btn like-btn", { active: isLiked })} onClick={handleLikeClick}>
-                    <Heart className="material-symbols-outlined" />
+                    <span className="material-symbols-outlined">favorite</span>
                 </button>
               </div>
+              <button className="action-btn comment-btn"><span className="material-symbols-outlined">chat_bubble</span></button>
+          </div>
+          <div className="actions-right">
+              <button className={cn("action-btn bookmark-btn", { active: isBookmarked })} onClick={handleBookmarkClick}>
+                  <span className="material-symbols-outlined">bookmark</span>
+              </button>
           </div>
       </div>
     </div>
@@ -265,6 +276,7 @@ export function HomePageContent() {
         </main>
       </div>
       <ScrollPopup isVisible={isPopupVisible} onClose={handleClosePopup} onShow={handleMediaClick} />
+      <ScrollToTopButton />
     </>
   );
 }
@@ -272,3 +284,4 @@ export function HomePageContent() {
     
 
     
+

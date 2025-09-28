@@ -240,4 +240,39 @@ body {
 
 .scroll-popup-box{background-color:#fff;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.2);width:90%;max-width:500px;position:relative;padding:20px;text-align:center}.close-popup-btn{position:absolute;top:15px;right:15px;background:0 0;border:none;font-size:32px;color:#ccc;cursor:pointer;transition:color .2s ease;line-height:1}.close-popup-btn:hover{color:#666}.popup-content-inner{padding:20px}.popup-logo{max-width:120px;margin-bottom:25px}.scroll-popup-box h2{font-size:28px;font-weight:700;color:#1a1a1a;margin:0 0 15px 0;line-height:1.2}.scroll-popup-box p{font-size:17px;color:#555;line-height:1.6;margin:0 0 30px 0}.popup-action-btn{display:inline-block;background-color:hsl(var(--primary));color:#fff;padding:18px 40px;border-radius:12px;text-decoration:none;font-weight:700;font-size:18px;transition:background-color .2s ease;width:auto;min-width:250px}.popup-action-btn:hover{background-color:hsl(var(--primary) / 0.9)}@media (max-width:600px){.scroll-popup-box h2{font-size:24px}.scroll-popup-box p{font-size:15px}.popup-action-btn{padding:15px 30px;font-size:16px;min-width:unset;width:90%}}
 
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: hsl(var(--primary));
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all .3s ease;
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+    background-color: hsl(var(--primary) / 0.9);
+}
+
+.scroll-to-top-btn .material-symbols-outlined {
+    font-size: 28px;
+}
     
