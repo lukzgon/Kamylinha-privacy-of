@@ -9,20 +9,17 @@ import { cn } from '@/lib/utils';
 
 export function AgeGate() {
   const [isVerified, setIsVerified] = useState(false);
-  const [isContentVisible, setIsContentVisible] = useState(false);
 
   useEffect(() => {
     const ageGateDismissed = localStorage.getItem('ageGateDismissed');
     if (ageGateDismissed === 'true') {
       setIsVerified(true);
-      setIsContentVisible(true);
     }
   }, []);
 
   const handleEnter = () => {
     localStorage.setItem('ageGateDismissed', 'true');
     setIsVerified(true);
-    setTimeout(() => setIsContentVisible(true), 50);
   };
 
   if (!isVerified) {
@@ -41,13 +38,7 @@ export function AgeGate() {
   }
 
   return (
-    <div
-      id="main-content"
-      className={cn(
-        'transition-opacity duration-500',
-        isContentVisible ? 'opacity-100' : 'opacity-0'
-      )}
-    >
+    <div id="main-content" className="main-content" style={{ visibility: 'visible', opacity: 1 }}>
       <HomePageContent />
     </div>
   );
