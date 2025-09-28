@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video, MoreHorizontal, Lock, MessageSquare, Bookmark, PlayCircle, Expand } from 'lucide-react';
+import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -66,34 +66,34 @@ function FeedPost({ seed, likes, comments }: { seed: number; likes: number; comm
   const profileAvatar = PlaceHolderImages.find((p) => p.id === 'profile-avatar');
 
   return (
-    <Card className="overflow-hidden">
-      <div className="flex items-center gap-3 p-3">
+    <Card className="feed-item">
+      <div className="feed-item-header">
         {profileAvatar && (
           <Image
             src={profileAvatar.imageUrl}
             alt="Avatar"
             width={40}
             height={40}
-            className="h-10 w-10 rounded-full object-cover"
+            className="header-avatar"
           />
         )}
-        <div className="flex-1">
-          <p className="text-sm font-bold">Kamylinha Santos</p>
-          <p className="text-xs text-muted-foreground">@euukamylinhasantos</p>
+        <div className="header-names">
+          <strong>Kamylinha Santos</strong>
+          <span>@euukamylinhasantos</span>
         </div>
       </div>
-      <div className="relative aspect-[4/5] bg-gray-200">
+      <div className="feed-item-media">
         <Image
           src={`https://picsum.photos/seed/feed${seed}/400/500`}
           alt="Mídia Bloqueada"
           fill
-          className="object-cover"
+          className="media-background"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white backdrop-blur-sm">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/30">
+        <div className="locked-overlay">
+          <div className="locked-icon">
             <Lock className="h-8 w-8" />
           </div>
-          <div className="mt-4 flex items-center gap-4 rounded-full bg-black/40 px-4 py-2 text-sm">
+          <div className="locked-stats">
             <div className="flex items-center gap-1.5">
               <Heart className="h-5 w-5" />
               <span>{likes}</span>
@@ -201,83 +201,77 @@ export function HomePageContent() {
   return (
     <>
       <div className={cn("flex min-h-screen flex-col items-center bg-background font-body", fontInter.variable, fontPlayfair.variable)}>
-        <header className="flex w-full items-center justify-center border-b border-border bg-card py-2.5">
+        <header className="page-header">
           <Image
             src="https://i.imgur.com/gY9k2Yy.png"
             alt="Logo Privacy"
             width={125}
             height={24}
-            className="h-auto w-auto"
+            className="logo"
           />
         </header>
 
-        <main className="w-full max-w-[850px] p-4 md:p-5">
-          <div className="mb-4 rounded-2xl bg-card shadow-lg overflow-hidden">
-            <div className="relative">
-              <div className="relative h-[220px] w-full">
+        <main className="content">
+          <div className="profile-card">
+            <div className="banner">
                 {profileBanner && (
                   <Image
                     src={profileBanner.imageUrl}
                     alt={profileBanner.description}
-                    fill
-                    className="object-cover"
+                    width={850}
+                    height={220}
+                    className="banner-image"
                     data-ai-hint={profileBanner.imageHint}
                   />
                 )}
-                <div className="absolute inset-0 flex flex-col justify-start bg-gradient-to-b from-black/70 to-transparent p-5 rounded-b-lg">
-                  <div className="text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
-                    <h1 className="flex items-center text-3xl font-bold">
-                      Kamylinha Santos
-                    </h1>
-                    <div className="mt-2 flex gap-5">
-                      <span className="flex items-center gap-1.5 text-base font-medium">
+                <div className="banner-overlay">
+                  <div className="banner-text">
+                    <h1>Kamylinha Santos</h1>
+                    <div className="stats">
+                      <span className="stat-item">
                         <Library className="h-5 w-5" /> 401
                       </span>
-                      <span className="flex items-center gap-1.5 text-base font-medium">
+                      <span className="stat-item">
                         <Video className="h-5 w-5" /> 438
                       </span>
-                      <span className="flex items-center gap-1.5 text-base font-medium">
+                      <span className="stat-item">
                         <Heart className="h-5 w-5 fill-current" /> 229k
                       </span>
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
-            
-            <div className="relative">
-              {profileAvatar && (
-                  <Image
-                    src={profileAvatar.imageUrl}
-                    alt={profileAvatar.description}
-                    width={150}
-                    height={150}
-                    className="relative z-10 -mt-[75px] ml-6 h-[150px] w-[150px] rounded-full border-6 border-white object-cover"
-                    data-ai-hint={profileAvatar.imageHint}
-                  />
-                )}
-            </div>
-
-            <div className="p-6 pt-4">
-              <div className="mb-5">
-                <h2 className="text-xl font-bold text-foreground">
-                  Kamylinha Santos
-                </h2>
-                <p className="text-base text-muted-foreground">@euukamylinhasantos</p>
-              </div>
-              <div className="text-base/relaxed font-normal text-card-foreground">
-                <p className={cn(!isDescriptionExpanded && 'line-clamp-3')}>
-                  Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat... Pode soltar a sua fantasia, seu desejo mais escondido... eu vou adorar saber. E dependendo de como você se soltar... quem sabe a gente não realiza junto?🤫 Assina agora e ainda tenha acesso a uma chamada exclusiva comigo... só eu e você, ao vivo, sem pressa, podendo falar... ou fazer... o que a gente quiser. 💫🎬 Não fica só se masturbando com a imaginação, bebê... vem ter o conteúdo real, vem sentir o meu tesão de perto. Porque aqui... eu tô pronta pra te provocar, te deixar louco... e te fazer gozar só de me ver. 🔥💦
-                </p>
-                <Button variant="link" className="p-0 h-auto text-primary" onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}>
-                  {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
-                </Button>
+            {profileAvatar && (
+              <Image
+                src={profileAvatar.imageUrl}
+                alt={profileAvatar.description}
+                width={150}
+                height={150}
+                className="avatar"
+                data-ai-hint={profileAvatar.imageHint}
+              />
+            )}
+            <div className="profile-card-body">
+              <div className="username-section">
+                <h2>Kamylinha Santos</h2>
+                <p>@euukamylinhasantos</p>
               </div>
             </div>
           </div>
+          
+          <div className="info-card">
+              <div className={cn("description-text", !isDescriptionExpanded && "collapsed")}>
+                <p>
+                  Meu amor... não adianta resistir, eu sei que você quer... e eu tô aqui só pra te deixar maluco. 😈🍓 Por um valorzinho que nem dói... você vai ter acesso total ao meu lado mais safado e proibido. São mais de 800 fotos e vídeos, me mostrando como você nunca viu... peladinha, provocando, brincando... me tocando... só pra deixar a sua imaginação no talo. 💦👅 Tem conteúdo só meu, tem com as minhas amigas, tem eu fazendo o que você sempre sonhou... e olha... não tem censura, não tem frescura. Só pura safadeza, pra te deixar duro de vontade. 😈 E o melhor? Você fala comigo direto no chat... Pode soltar a sua fantasia, seu desejo mais escondido... eu vou adorar saber. E dependendo de como você se soltar... quem sabe a gente não realiza junto?🤫 Assina agora e ainda tenha acesso a uma chamada exclusiva comigo... só eu e você, ao vivo, sem pressa, podendo falar... ou fazer... o que a gente quiser. 💫🎬 Não fica só se masturbando com a imaginação, bebê... vem ter o conteúdo real, vem sentir o meu tesão de perto. Porque aqui... eu tô pronta pra te provocar, te deixar louco... e te fazer gozar só de me ver. 🔥💦
+                </p>
+              </div>
+              <button className="read-more-btn" onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}>
+                {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+              </button>
+          </div>
 
-          <div id="assinaturas" className="rounded-2xl bg-card p-6 shadow-lg mb-4">
-            <h3 className="text-xl font-bold">Assinaturas</h3>
+          <div id="assinaturas" className="info-card">
+            <h3>Assinaturas</h3>
             <div className="mt-4 flex flex-col gap-3">
               <Plan
                 duration="7 Dias"
@@ -285,7 +279,7 @@ export function HomePageContent() {
                 isPopular={true}
                 tag={{ text: 'MAIS POPULAR', bgColor: '', textColor: '' }}
               />
-              <h4 className="pt-4 text-sm font-bold uppercase text-muted-foreground">
+              <h4 className="promotions-title">
                 Promoções
               </h4>
               {plans.map((plan, index) => (
@@ -300,18 +294,18 @@ export function HomePageContent() {
           </div>
           <div className="feed-section">
             <Tabs defaultValue="posts" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="posts">93 postagens</TabsTrigger>
-                <TabsTrigger value="media">412 mídias</TabsTrigger>
+              <TabsList className="feed-tabs">
+                <TabsTrigger value="posts" className="tab-link" data-tab="posts">93 postagens</TabsTrigger>
+                <TabsTrigger value="media" className="tab-link" data-tab="media">412 mídias</TabsTrigger>
               </TabsList>
-              <TabsContent value="posts">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <TabsContent value="posts" id="posts" className="feed-content">
+                <div className="posts-grid">
                   {feedPosts.map((post) => (
                     <FeedPost key={post.seed} seed={post.seed} likes={post.likes} comments={post.comments} />
                   ))}
                 </div>
               </TabsContent>
-              <TabsContent value="media">
+              <TabsContent value="media" id="media" className="feed-content">
                 <div className="media-grid mt-4">
                   {mediaItems.map((item) => (
                     <MediaGridItem key={item.seed} seed={item.seed} type={item.type as 'photo' | 'video'} />
@@ -326,3 +320,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
