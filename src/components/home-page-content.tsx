@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, MoreHorizontal, Camera, VideoIcon, Star } from 'lucide-react';
+import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock, Camera, VideoIcon } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
