@@ -193,7 +193,7 @@ export function HomePageContent() {
                           <h1>Kamylinha Santos</h1>
                           <div className="stats">
                               <span className="stat-item"><span className="material-symbols-outlined">image</span> 67</span>
-                              <span className="stat-item"><span className="material-symbols-outlined">movie</span> 438</span>
+                              <span className="stat-item"><span className="material-symbols-outlined">movie</span> 82</span>
                               <span className="stat-item"><span className="material-symbols-outlined">favorite</span> 229k</span>
                           </div>
                       </div>
