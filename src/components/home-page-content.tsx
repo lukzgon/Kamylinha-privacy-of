@@ -42,12 +42,12 @@ function Plan({ duration, price, isPopular = false, tag }: PlanProps) {
     >
       <div className="plan-info">
         <div className='flex flex-row items-center gap-2'>
-          <strong>{duration}</strong>
-          {tag && (
+        {tag && (
             <span className={cn('plan-tag', isPopular ? 'popular-tag' : tag.className)}>
               {tag.text}
             </span>
           )}
+          <strong>{duration}</strong>
         </div>
       </div>
       <div className="plan-price"><strong>{price}</strong></div>
@@ -62,8 +62,11 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
   
   const handleLikeClick = () => {
-    setLikeCount(prev => isLiked ? prev - 1 : prev + 1);
-    setIsLiked(prev => !prev);
+    setIsLiked(prevIsLiked => {
+      const newIsLiked = !prevIsLiked;
+      setLikeCount(prevLikeCount => newIsLiked ? prevLikeCount + 1 : prevLikeCount - 1);
+      return newIsLiked;
+    });
   };
   
   const handleBookmarkClick = () => {
@@ -88,7 +91,6 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
               </div>
               <div className="locked-stats">
                   <Heart className="h-4 w-4" />
-                  <span className="locked-like-count">{likeCount}</span>
                   <MessageSquare className="h-4 w-4" />
                   <span>{comments}</span>
               </div>
@@ -100,7 +102,6 @@ function FeedPost({ id, seed, likes, comments }: { id?: string; seed: number; li
                 <button className={cn("action-btn like-btn", { active: isLiked })} onClick={handleLikeClick}>
                     <Heart className="material-symbols-outlined" />
                 </button>
-                <span className="like-count">{likeCount}</span>
               </div>
               <button className="action-btn comment-btn">
                 <MessageSquare className="material-symbols-outlined" />
@@ -267,3 +268,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
