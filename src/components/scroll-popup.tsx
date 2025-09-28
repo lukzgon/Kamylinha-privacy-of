@@ -84,7 +84,7 @@ export function ScrollPopup() {
         </button>
         <div className="popup-content-inner">
           <Image
-            src="https://i.imgur.com/gY9k2Yy.png"
+            src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
             width={120}
             height={25}
