@@ -195,7 +195,7 @@
 .action-btn:active { transform: scale(0.9); filter: brightness(0.9); }
 .like-wrapper.liked .like-btn { color: #D14D72; }
 .like-wrapper.liked .like-btn .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
-.bookmark-btn.active { background-color: #fff; color: hsl(var(--primary)); border: 1px solid hsl(var(--primary)); }
+.bookmark-btn.active { background-color: #fff; color: hsl(var(--primary)); }
 .bookmark-btn.active .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
 
 
@@ -354,4 +354,6 @@
 
 
     
+    
+
     
