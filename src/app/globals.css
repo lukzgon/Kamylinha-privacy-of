@@ -87,15 +87,31 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #F5F3F2;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 20000; /* Garante que fique acima de tudo */
 }
-.age-gate-content { text-align: center; max-width: 500px; padding: 20px; }
-.popup-logo { max-width: 200px; margin-bottom: 30px; }
-.age-gate-content p { font-size: 1.2rem; color: #333; line-height: 1.6; margin: 0 0 20px 0; }
+.age-gate-card { 
+    text-align: center; 
+    max-width: 500px; 
+    padding: 40px 30px; 
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+.popup-logo { max-width: 160px; margin-bottom: 25px; }
+
+.age-gate-card h1 {
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 1.4;
+    margin: 0 0 25px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
 .age-gate-button { 
     display: flex; 
     justify-content: center;
@@ -113,8 +129,16 @@ body {
     transition: background-color 0.3s ease; 
     width: 100%; max-width: 400px; 
     box-sizing: border-box; 
+    margin-bottom: 20px;
 }
 .age-gate-button:hover { background-color: hsl(var(--accent)); }
+.age-gate-disclaimer {
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.6;
+    margin: 0;
+}
+
 
 /* --- CONTROLE DE VISIBILIDADE DO CONTEÚDO PRINCIPAL --- */
 .main-content {
@@ -425,6 +449,7 @@ body {
 .bookmark-btn.active .lucide-bookmark {
     fill: hsl(var(--primary));
 }
+
 
 
 

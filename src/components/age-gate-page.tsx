@@ -25,11 +25,13 @@ export function AgeGate() {
   return (
     <>
       <div id="age-gate-page" className="age-gate-page" style={{ display: isVerified ? 'none' : 'flex' }}>
-        <div className="age-gate-content">
-          <Image src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png" alt="Logo Privacy" width={250} height={60} className="popup-logo mx-auto" />
-          <p>Este site é uma comunidade adulta que contém material sexualmente explícito.</p>
-          <p>Você deve ter 18 anos ou mais para entrar.</p>
-          <Button id="age-gate-enter-button" className="age-gate-button" onClick={handleEnter}>Tenho 18 anos ou mais - Entrar</Button>
+        <div className="age-gate-card">
+          <Image src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png" alt="Logo Privacy" width={160} height={40} className="popup-logo mx-auto" />
+          <h1>Você tem 18 anos ou mais?</h1>
+          <Button id="age-gate-enter-button" className="age-gate-button" onClick={handleEnter}>Sim, tenho mais de 18 anos</Button>
+          <p className="age-gate-disclaimer">
+            Atenção: O conteúdo a seguir é explícito e destinado exclusivamente para maiores de 18 anos. Ao prosseguir, você confirma que possui idade legal e assume total responsabilidade por visualizar este material.
+          </p>
         </div>
       </div>
 
