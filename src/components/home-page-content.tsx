@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand } from 'lucide-react';
+import { Heart, Library, Video, MessageSquare, Bookmark, PlayCircle, Expand, Lock } from 'lucide-react';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
