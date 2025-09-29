@@ -174,7 +174,7 @@ export function HomePageContent() {
 
   return (
     <>
-        <header className="page-header">
+      <header className="page-header sticky top-0 z-20">
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
@@ -183,85 +183,87 @@ export function HomePageContent() {
             className="logo"
           />
         </header>
-      <main className="content">
-          <div className="profile-card">
-              <div className="banner">
-                  <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
-                  <div className="banner-overlay">
-                      <div className="banner-text">
-                          <h1>Kamylinha Santos</h1>
-                          <div className="stats">
-                              <span className="stat-item"><span className="material-symbols-outlined">image</span> 67</span>
-                              <span className="stat-item"><span className="material-symbols-outlined">movie</span> 82</span>
-                              <span className="stat-item"><span className="material-symbols-outlined">favorite</span> 229k</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
-              <div className="profile-card-body">
-                  <div className="username-section">
-                      <h2>Kamylinha Santos</h2>
-                      <p>@euukamylinhasantos</p>                  </div>
-                  <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
-                       <p className="description-text whitespace-pre-wrap">
-                          Oi meu bem! Sou a Kamylinha 💋
+      <div className="max-w-[850px] mx-auto">
+        <main className="content">
+            <div className="profile-card">
+                <div className="banner">
+                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
+                    <div className="banner-overlay">
+                        <div className="banner-text">
+                            <h1>Kamylinha Santos</h1>
+                            <div className="stats">
+                                <span className="stat-item"><span className="material-symbols-outlined">image</span> 67</span>
+                                <span className="stat-item"><span className="material-symbols-outlined">movie</span> 82</span>
+                                <span className="stat-item"><span className="material-symbols-outlined">favorite</span> 229k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Image src={avatarImage?.imageUrl || "https://i.postimg.cc/MGXbTBxx/photo-2025-09-26-22-20-19-1.jpg"} alt="Foto de Perfil" width={150} height={150} className="avatar" data-ai-hint={avatarImage?.imageHint || "woman portrait"} />
+                <div className="profile-card-body">
+                    <div className="username-section">
+                        <h2>Kamylinha Santos</h2>
+                        <p>@euukamylinhasantos</p>                  </div>
+                    <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
+                         <p className="description-text whitespace-pre-wrap">
+                            Oi meu bem! Sou a Kamylinha 💋
 A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
 Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
 Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
-                      </p>
-                      <button className="read-more-btn" onClick={toggleDescription}>
-                        {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
-                      </button>
-                  </div>
-              </div>
-          </div>
-        
-        <div id="assinaturas" className="info-card">
-          <h3>Assinaturas</h3>
-          <div className="mt-4 flex flex-col gap-3">
-            <Plan
-              duration="15 dias"
-              price="R$ 9,90"
-              isPopular={true}
-              tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
-              href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
-            />
-            <h4 className="promotions-title">
-              Promoções
-            </h4>
-             <Plan
-              duration="1 Mês"
-              price="R$ 17,90"
-              href="https://www.ggcheckout.com/checkout/v2/WAa1UAuxqAbxqoe4CBiB"
-              tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
-            />
-            <Plan
-              duration="3 Meses"
-              price="R$ 27,90"
-              tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
-              href="https://www.ggcheckout.com/checkout/v2/Z9zBT5TR5gWgBOeCS9Ie"
-            />
-          </div>
-        </div>
-
-        <Tabs defaultValue="posts" className="feed-section">
-          <TabsList className="feed-tabs">
-            <TabsTrigger value="posts" className="tab-link active">67 postagens</TabsTrigger>
-            <TabsTrigger value="media" className="tab-link" disabled>149 mídias</TabsTrigger>
-          </TabsList>
-          <TabsContent value="posts" className="feed-content active">
-            <div className="posts-grid">
-              {feedPosts.map((post, index) => (
-                <FeedPost key={index} id={post.id} src={post.src} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
-              ))}
+                        </p>
+                        <button className="read-more-btn" onClick={toggleDescription}>
+                          {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+                        </button>
+                    </div>
+                </div>
             </div>
-          </TabsContent>
-          <TabsContent value="media" className="feed-content">
-            <MediaGrid onMediaClick={handleMediaClick} />
-          </TabsContent>
-        </Tabs>
-      </main>
+          
+          <div id="assinaturas" className="info-card">
+            <h3>Assinaturas</h3>
+            <div className="mt-4 flex flex-col gap-3">
+              <Plan
+                duration="15 dias"
+                price="R$ 9,90"
+                isPopular={true}
+                tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
+                href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
+              />
+              <h4 className="promotions-title">
+                Promoções
+              </h4>
+               <Plan
+                duration="1 Mês"
+                price="R$ 17,90"
+                href="https://www.ggcheckout.com/checkout/v2/WAa1UAuxqAbxqoe4CBiB"
+                tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
+              />
+              <Plan
+                duration="3 Meses"
+                price="R$ 27,90"
+                tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
+                href="https://www.ggcheckout.com/checkout/v2/Z9zBT5TR5gWgBOeCS9Ie"
+              />
+            </div>
+          </div>
+
+          <Tabs defaultValue="posts" className="feed-section">
+            <TabsList className="feed-tabs">
+              <TabsTrigger value="posts" className="tab-link active">67 postagens</TabsTrigger>
+              <TabsTrigger value="media" className="tab-link" disabled>149 mídias</TabsTrigger>
+            </TabsList>
+            <TabsContent value="posts" className="feed-content active">
+              <div className="posts-grid">
+                {feedPosts.map((post, index) => (
+                  <FeedPost key={index} id={post.id} src={post.src} likes={post.likes} comments={post.comments} onMediaClick={handleMediaClick} />
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="media" className="feed-content">
+              <MediaGrid onMediaClick={handleMediaClick} />
+            </TabsContent>
+          </Tabs>
+        </main>
+      </div>
       <ScrollPopup isVisible={isPopupVisible} onClose={handleClosePopup} onShow={handleMediaClick} />
       <ScrollToTopButton />
     </>
