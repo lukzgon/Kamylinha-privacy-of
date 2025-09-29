@@ -1,6 +1,7 @@
 
 
 
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
@@ -113,25 +114,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #333333;
-    transition: max-height 0.4s ease-out;
     margin-bottom: 10px; /* Adiciona espaço antes do botão */
-    overflow: hidden;
-}
-.description-wrapper.collapsed .description-text {
-    max-height: 100px; /* Altura do texto recolhido */
-}
-.description-wrapper.collapsed::after {
-    content: '';
-    position: absolute;
-    bottom: 40px; /* Posição do degradê, acima do botão */
-    left: 0;
-    right: 0;
-    height: 50px;
-    background: linear-gradient(to top, #ffffff 20%, transparent);
-    pointer-events: none;
-}
-.description-wrapper:not(.collapsed) .description-text {
-    max-height: 1000px; /* Altura máxima quando expandido */
 }
 .read-more-btn {
     background: none;
@@ -253,3 +236,4 @@ body {
     
 
     
+

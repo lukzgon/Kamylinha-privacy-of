@@ -149,27 +149,11 @@ function MediaGrid({ onMediaClick }: { onMediaClick: () => void }) {
 
 
 export function HomePageContent() {
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  const [showReadMore, setShowReadMore] = useState(false);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-
-
-  useEffect(() => {
-    const checkHeight = () => {
-      if (descriptionRef.current) {
-        setShowReadMore(descriptionRef.current.scrollHeight > 100);
-      }
-    };
-    checkHeight();
-    window.addEventListener('resize', checkHeight);
-    return () => window.removeEventListener('resize', checkHeight);
-  }, []);
-
   const bannerImage = PlaceHolderImages.find(img => img.id === 'profile-banner');
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { id: 'popup-reset-card', src: 'https://i.postimg.cc/k47d9V3z/photo-1542372147-7a5b65152869.jpg', likes: 1248, comments: 126 },
+    { id: 'popup-reset-card', src: 'https://i.postimg.cc/yNrjXPnk/imagem-2025-09-23-231311930.png', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
     { id: undefined, src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
@@ -184,10 +168,6 @@ export function HomePageContent() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const handleClosePopup = () => {
     setIsPopupVisible(false);
-  };
-
-  const toggleDescription = () => {
-    setIsDescriptionExpanded(prevState => !prevState);
   };
 
   return (
@@ -222,18 +202,13 @@ export function HomePageContent() {
                     <div className="username-section">
                         <h2>Kamylinha Santos</h2>
                         <p>@euukamylinhasantos</p>                  </div>
-                    <div className={cn("description-wrapper", !isDescriptionExpanded && showReadMore && "collapsed")}>
-                         <p className="description-text whitespace-pre-wrap" ref={descriptionRef}>
+                    <div className="description-wrapper">
+                         <p className="description-text whitespace-pre-wrap">
                             Oi meu bem! Sou a Kamylinha 💋
 A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
 Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
 Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
                         </p>
-                        {showReadMore && (
-                          <button className="read-more-btn" onClick={toggleDescription}>
-                            {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
-                          </button>
-                        )}
                     </div>
                 </div>
             </div>
