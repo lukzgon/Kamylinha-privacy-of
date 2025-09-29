@@ -156,7 +156,7 @@ export function HomePageContent() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { id: 'popup-reset-card', src: 'https://i.postimg.cc/6pVK543G/kamy03-4.gif', likes: 1248, comments: 126 },
+    { id: 'popup-reset-card', src: 'https://i.postimg.cc/W34V7PGj/photo-1542372147-7a5b65152869.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
     { id: undefined, src: 'https://i.postimg.cc/Z51g67yK/photo-2025-09-24-18-41-28-1.jpg', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
@@ -191,7 +191,7 @@ export function HomePageContent() {
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
-                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x280/333/fff"} alt="Banner do Perfil" width={850} height={320} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
+                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x280/333/fff"} alt="Banner do Perfil" width={850} height={360} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
                             <h1>Kamylinha Santos</h1>
