@@ -34,6 +34,7 @@ body {
     --input: 20 5.9% 90%;
     --ring: 24.6 95% 53.1%;
     --radius: 0.75rem;
+    --primary-orange: hsl(var(--primary));
   }
 
 /* --- ESTILOS DA PÁGINA DE VERIFICAÇÃO DE IDADE --- */
@@ -101,35 +102,32 @@ body {
 .info-card { background-color:#fff; border-radius:16px; padding:25px; box-shadow:0 4px 15px rgba(0,0,0,.06); margin-top:15px; }
 .username-section h2 { font-family: 'Inter', sans-serif; font-size:20px; font-weight:700; margin:0; color:#141619; }
 .username-section p { font-family: 'Inter', sans-serif; font-size:16px; color:#5b7083; margin:4px 0 0 0; }
-.description-wrapper {
-    position: relative;
-}
-.description-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333333;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-.description-wrapper.expanded .description-text {
-    -webkit-line-clamp: unset;
-}
 
-.read-more-btn {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: hsl(var(--primary));
+/* --- CSS para a funcionalidade "Ler Mais" e Altura da Bio --- */
+.profile-bio .bio-text-container {
+    max-height: 100px; /* Altura inicial quando TRUNCADA - ajuste este valor em pixels se quiser mostrar mais ou menos */
+    overflow: hidden; /* Esconde o texto que excede a altura */
+    transition: max-height 0.5s ease-in-out; /* Animação suave na expansão */
+}
+.profile-bio .bio-text-container.expanded {
+    max-height: 500px; /* Altura máxima quando EXPANDIDA - ajuste para um valor maior que o conteúdo total */
+    overflow: visible; /* Mostra todo o conteúdo */
+}
+.profile-bio .read-more-btn {
     background: none;
     border: none;
-    padding: 5px 0 0 0;
+    color: var(--primary-orange); /* Ou a cor que preferir para o link */
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
+    padding: 0;
+    margin-top: 5px;
     text-align: left;
 }
+.profile-bio .read-more-btn:hover {
+    text-decoration: underline;
+}
+
 .info-card h3 { font-family: 'Inter', sans-serif; font-size:20px; font-weight:700; margin:0 0 15px 0; }
 .promotions-title { font-family: 'Inter', sans-serif; font-size:14px; color:#5b7083; margin:25px 0 10px 0; text-transform:uppercase; font-weight:700; }
 
@@ -236,6 +234,7 @@ body {
 .scroll-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-to-top-btn:hover { background-color: hsl(var(--accent) / 0.8); }
 .scroll-to-top-btn .material-symbols-outlined { font-size: 24px; }
+
 
 
 
