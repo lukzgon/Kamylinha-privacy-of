@@ -153,7 +153,7 @@ export function HomePageContent() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
   const feedPosts = [
-    { id: 'popup-reset-card', src: 'https://i.postimg.cc/6pVK543G/kamy03-4.gif', likes: 1248, comments: 126 },
+    { id: 'popup-reset-card', src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
     { id: undefined, src: 'https://i.postimg.cc/Pr2C4c2g/kamy01.jpg', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
@@ -268,3 +268,5 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     </>
   );
 }
+
+    
