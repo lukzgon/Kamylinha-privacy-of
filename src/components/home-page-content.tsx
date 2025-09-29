@@ -12,6 +12,7 @@ import { ScrollToTopButton } from './scroll-to-top-button';
 type PlanProps = {
   duration: string;
   price: string;
+  oldPrice?: string;
   isPopular?: boolean;
   tag?: {
     text: string;
@@ -20,7 +21,7 @@ type PlanProps = {
   href?: string;
 };
 
-function Plan({ duration, price, isPopular = false, tag, href = '#' }: PlanProps) {
+function Plan({ duration, price, oldPrice, isPopular = false, tag, href = '#' }: PlanProps) {
   return (
     <a
       href={href}
@@ -37,7 +38,10 @@ function Plan({ duration, price, isPopular = false, tag, href = '#' }: PlanProps
             </span>
           )}
       </div>
-      <div className="plan-price"><strong>{price}</strong></div>
+      <div className="plan-price-group">
+        {oldPrice && <span className="old-price">{oldPrice}</span>}
+        <strong className="plan-price">{price}</strong>
+      </div>
     </a>
   );
 }
@@ -174,20 +178,20 @@ export function HomePageContent() {
 
   return (
     <>
-      <header className="page-header sticky top-0 z-20">
+      <header className="page-header absolute top-0 left-0 right-0 z-20">
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
             width={150}
             height={35}
-            className="logo"
+            className="logo invisible"
           />
         </header>
       <div className="max-w-[850px] mx-auto">
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
-                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x280/333/fff"} alt="Banner do Perfil" width={850} height={280} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
+                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x280/333/fff"} alt="Banner do Perfil" width={850} height={320} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
                             <h1>Kamylinha Santos</h1>
@@ -222,8 +226,9 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
             <h3>Assinaturas</h3>
             <div className="mt-4 flex flex-col gap-3">
               <Plan
-                duration="15 dias"
+                duration="15 Dias"
                 price="R$ 9,90"
+                oldPrice="R$ 19,90"
                 isPopular={true}
                 tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
@@ -234,12 +239,14 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
                <Plan
                 duration="1 Mês"
                 price="R$ 17,90"
+                oldPrice="R$ 27,90"
                 href="https://www.ggcheckout.com/checkout/v2/WAa1UAuxqAbxqoe4CBiB"
                 tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
               />
               <Plan
                 duration="3 Meses"
                 price="R$ 27,90"
+                oldPrice="R$ 39,90"
                 tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/Z9zBT5TR5gWgBOeCS9Ie"
               />
