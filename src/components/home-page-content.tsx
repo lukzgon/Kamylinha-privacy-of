@@ -187,7 +187,7 @@ export function HomePageContent() {
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
-                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x220/333/fff"} alt="Banner do Perfil" width={850} height={220} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
+                    <Image src={bannerImage?.imageUrl || "https://via.placeholder.com/850x280/333/fff"} alt="Banner do Perfil" width={850} height={280} className="banner-image" data-ai-hint={bannerImage?.imageHint || "woman beach"} />
                     <div className="banner-overlay">
                         <div className="banner-text">
                             <h1>Kamylinha Santos</h1>
