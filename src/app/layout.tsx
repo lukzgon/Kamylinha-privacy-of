@@ -44,6 +44,12 @@ export default function RootLayout({
           src="https://www.facebook.com/tr?id=1109649784570795&ev=PageView&noscript=1"
           />
         </noscript>
+        <Script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck
+          data-utmify-prevent-subids
+          strategy="afterInteractive"
+        ></Script>
       </head>
       <body
         className={cn(
