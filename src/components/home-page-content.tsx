@@ -152,10 +152,12 @@ export function HomePageContent() {
   const bannerImage = PlaceHolderImages.find(img => img.id === 'profile-banner');
   const avatarImage = PlaceHolderImages.find(img => img.id === 'profile-avatar');
 
+  const [isBioExpanded, setIsBioExpanded] = useState(false);
+
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/CK3x6Bc3/photo-2025-08-28-16-37-19.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
-    { id: undefined, src: 'https://i.postimg.cc/6pVK543G/kamy03-4.gif', likes: 889, comments: 45 },
+    { id: undefined, src: 'https://i.postimg.cc/1tY8JPWf/post1-3-1-2.gif', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
     { id: undefined, src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 3275, comments: 99 },
     { id: 'popup-trigger-card', src: 'https://i.postimg.cc/Y2fCbSYZ/photo-2025-08-28-15-09-54.jpg', likes: 4850, comments: 110 },
@@ -203,14 +205,14 @@ export function HomePageContent() {
                         <h2>Kamylinha Santos</h2>
                         <p>@euukamylinhasantos</p>
                     </div>
-                    <div className="description-wrapper">
-                         <p className="description-text whitespace-pre-wrap">
-                            Oi meu bem! Sou a Kamylinha 💋
-A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
-Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
-Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
+                    <div className={cn("description-wrapper", { 'expanded': isBioExpanded })}>
+                        <p className="description-text whitespace-pre-wrap">
+                        A fofoca que te choca. 💣 Tudo sobre famosos, reality shows e os babados da internet. Se você não viu aqui, é porque ainda não aconteceu. Chegou primeiro, postou primeiro. ⚡️ Sua dose diária de notícias e fofocas dos famosos em tempo real. Aqui você descobre os segredos e as polêmicas antes de todo mundo. Prepare-se para o choque! Sem papas na língua e com prints na mão. 🤫 Trazemos o que os famosos não querem que você saiba. De cancelamentos a romances secretos, a gente te deixa chocado com a verdade. Siga por sua conta e risco. 😈
                         </p>
                     </div>
+                    <button className="read-more-btn" onClick={() => setIsBioExpanded(!isBioExpanded)}>
+                        {isBioExpanded ? 'Ler menos' : 'Ler mais'}
+                    </button>
                 </div>
             </div>
           
