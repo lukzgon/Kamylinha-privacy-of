@@ -221,7 +221,7 @@ A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 1
 Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
 Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
                         </p>
-                        {descriptionHeight > 105 && (
+                        {descriptionHeight > 400 && (
                           <button className="read-more-btn" onClick={toggleDescription}>
                             {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
                           </button>
