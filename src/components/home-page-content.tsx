@@ -178,16 +178,16 @@ export function HomePageContent() {
 
   return (
     <>
-      <header className="page-header absolute top-0 left-0 right-0 z-20">
+      <header className="page-header sticky top-0 bg-white z-20 shadow-md">
           <Image
             src="https://i.postimg.cc/LXCqwCGJ/images-logo-1.png"
             alt="Logo Privacy"
             width={150}
             height={35}
-            className="logo invisible"
+            className="logo"
           />
         </header>
-      <div className="max-w-[850px] mx-auto">
+      <div className="mx-auto">
         <main className="content">
             <div className="profile-card">
                 <div className="banner">
