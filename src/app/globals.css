@@ -135,8 +135,8 @@ body {
 }
 
 .popular-tag {
-    background-color: hsl(var(--accent) / 0.8);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: hsl(var(--primary));
 }
 
 .economy-tag, .best-offer-tag {
@@ -216,5 +216,6 @@ body {
 .scroll-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-to-top-btn:hover { background-color: hsl(var(--accent) / 0.8); }
 .scroll-to-top-btn .material-symbols-outlined { font-size: 24px; }
+
 
 
