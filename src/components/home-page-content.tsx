@@ -150,16 +150,19 @@ function MediaGrid({ onMediaClick }: { onMediaClick: () => void }) {
 
 export function HomePageContent() {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [showReadMore, setShowReadMore] = useState(false);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
 
   useEffect(() => {
-    if (descriptionRef.current) {
-      // Show "Read more" button if text is taller than the collapsed height
-      setShowReadMore(descriptionRef.current.scrollHeight > 100);
-    }
+    const checkHeight = () => {
+      if (descriptionRef.current) {
+        setShowReadMore(descriptionRef.current.scrollHeight > 100);
+      }
+    };
+    checkHeight();
+    window.addEventListener('resize', checkHeight);
+    return () => window.removeEventListener('resize', checkHeight);
   }, []);
 
   const bannerImage = PlaceHolderImages.find(img => img.id === 'profile-banner');
@@ -178,6 +181,7 @@ export function HomePageContent() {
     setIsPopupVisible(true);
   };
   
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const handleClosePopup = () => {
     setIsPopupVisible(false);
   };
@@ -218,7 +222,7 @@ export function HomePageContent() {
                     <div className="username-section">
                         <h2>Kamylinha Santos</h2>
                         <p>@euukamylinhasantos</p>                  </div>
-                    <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
+                    <div className={cn("description-wrapper", !isDescriptionExpanded && showReadMore && "collapsed")}>
                          <p className="description-text whitespace-pre-wrap" ref={descriptionRef}>
                             Oi meu bem! Sou a Kamylinha 💋
 A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
@@ -288,5 +292,3 @@ Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈
     </>
   );
 }
-
-    

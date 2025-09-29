@@ -133,9 +133,6 @@ body {
 .description-wrapper:not(.collapsed) .description-text {
     max-height: 1000px; /* Altura máxima quando expandido */
 }
-.description-wrapper:not(.collapsed)::after {
-    display: none;
-}
 .read-more-btn {
     background: none;
     border: none;
