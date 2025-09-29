@@ -116,7 +116,7 @@ body {
     margin-bottom: 10px; /* Adiciona espaço antes do botão */
 }
 .description-wrapper.collapsed .description-text {
-    max-height: 105px; /* Altura do texto recolhido */
+    max-height: 1000px; /* Altura do texto recolhido */
     overflow: hidden;
 }
 .description-wrapper.collapsed::after {

@@ -176,6 +176,8 @@ export function HomePageContent() {
     setIsDescriptionExpanded(prevState => !prevState);
   };
 
+  const [descriptionHeight, setDescriptionHeight] = useState(0);
+
   return (
     <>
       <header className="page-header sticky top-0 bg-white z-20 shadow-md">
@@ -209,15 +211,21 @@ export function HomePageContent() {
                         <h2>Kamylinha Santos</h2>
                         <p>@euukamylinhasantos</p>                  </div>
                     <div className={cn("description-wrapper", !isDescriptionExpanded && "collapsed")}>
-                         <p className="description-text whitespace-pre-wrap">
+                         <p className="description-text whitespace-pre-wrap" ref={(el) => {
+                          if (el && descriptionHeight === 0) {
+                            setDescriptionHeight(el.scrollHeight);
+                          }
+                         }}>
                             Oi meu bem! Sou a Kamylinha 💋
 A polêmica acabou e a curiosidade de vocês também vai acabar! Agora que fiz 18, meu Privacy está oficialmente liberado!
 Prepare-se para conhecer o meu lado mais safado, com cenas explícitas, sozinha e acompanhada, sem censura nenhuma. É tudo aquilo que você sempre quis ver e não estava em lugar nenhum.
 Escolha um dos planos abaixo e libere seu acesso agora mesmo! 😈 
                         </p>
-                        <button className="read-more-btn" onClick={toggleDescription}>
-                          {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
-                        </button>
+                        {descriptionHeight > 105 && (
+                          <button className="read-more-btn" onClick={toggleDescription}>
+                            {isDescriptionExpanded ? 'Ler menos' : 'Ler mais'}
+                          </button>
+                        )}
                     </div>
                 </div>
             </div>
