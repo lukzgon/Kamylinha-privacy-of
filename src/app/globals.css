@@ -123,7 +123,7 @@ body {
 
 .plan-button.popular { background-color:hsl(var(--primary)); color:#fff; border-color:hsl(var(--primary)); box-shadow:0 6px 15px hsla(var(--primary) / 0.35); }
 .plan-button.popular:hover { background-color:hsl(var(--primary) / 0.8); border-color:hsl(var(--primary) / 0.8); color:#fff; box-shadow:0 8px 20px hsla(var(--primary) / 0.5); transform:translateY(-3px); }
-.popular .old-price { color: #fce4ec; }
+.popular .old-price { color: hsl(var(--primary-foreground) / 0.8); }
 
 .plan-tag {
     font-size: 12px;
@@ -140,8 +140,8 @@ body {
 }
 
 .economy-tag, .best-offer-tag {
-    background-color: transparent;
-    color: hsl(var(--primary));
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     border: 1px solid hsl(var(--primary));
 }
 
@@ -216,4 +216,5 @@ body {
 .scroll-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-to-top-btn:hover { background-color: hsl(var(--accent) / 0.8); }
 .scroll-to-top-btn .material-symbols-outlined { font-size: 24px; }
+
 
