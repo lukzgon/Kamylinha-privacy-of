@@ -25,6 +25,16 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "68d9e0c0051c28fc61a7d8c1";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
+          `}
+        </Script>
       </head>
       <body
         className={cn(
