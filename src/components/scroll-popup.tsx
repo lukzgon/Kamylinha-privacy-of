@@ -63,11 +63,15 @@ export function ScrollPopup({ isVisible: isVisibleProp, onClose, onShow }: { isV
     onClose();
     const targetId = event.currentTarget.getAttribute('href');
     if (targetId) {
-      const targetSection = document.querySelector(targetId);
+      const targetSection = document.querySelector(targetId) as HTMLElement;
       if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
+        const headerOffset = 100; // Offset to account for the sticky header and add some space
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+        window.scrollTo({
+           top: offsetPosition,
+           behavior: "smooth"
         });
       }
     }
