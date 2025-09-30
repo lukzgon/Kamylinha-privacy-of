@@ -129,7 +129,7 @@ body {
 }
 
 .info-card h3 { font-family: 'Inter', sans-serif; font-size:20px; font-weight:700; margin:0 0 15px 0; }
-.promotions-title { font-family: 'Inter', sans-serif; font-size:14px; color:#5b7083; margin:25px 0 10px 0; text-transform:uppercase; font-weight:700; }
+.promotions-title { font-family: 'Inter', sans-serif; font-size:14px; color:#5b7083; margin:25px 0 10px 0; font-weight:700; }
 
 .plan-button { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; border-radius:12px; text-decoration:none; margin-bottom:12px; transition:all .2s ease-in-out; font-weight:700; border:2px solid hsl(var(--primary)); color:hsl(var(--primary)); background-color:#fff; box-shadow:0 4px 10px hsla(var(--primary) / 0.2); }
 .plan-button:hover { border-color:hsl(var(--primary) / 0.8); background-color:#fff8f5; box-shadow:0 6px 15px hsla(var(--primary) / 0.3); transform:translateY(-2px); }
@@ -243,6 +243,7 @@ body {
 .scroll-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-to-top-btn:hover { background-color: hsl(var(--accent) / 0.8); }
 .scroll-to-top-btn .material-symbols-outlined { font-size: 24px; }
+
 
 
 
