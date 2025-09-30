@@ -250,34 +250,9 @@ export function HomePageContent() {
                 tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
               />
-               <Plan
-                duration="1 Mês"
-                price="R$ 29,90"
-                oldPrice="R$ 49,90"
-                tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/oT5Fw5yXz9g1d8C5P3Iq"
-              />
-              <Plan
-                duration="3 Meses"
-                price="R$ 59,90"
-                oldPrice="R$ 89,90"
-                tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/L8hA9g2C1bF4E7jH6kIm"
-              />
             </div>
-          </div>
-
-          <div className="info-card">
             <h3 className="promotions-title">Promoções</h3>
             <div className="mt-4 flex flex-col gap-3">
-              <Plan
-                duration="15 Dias"
-                price="R$ 9,90"
-                oldPrice="R$ 19,90"
-                isPopular={true}
-                tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
-              />
                <Plan
                 duration="1 Mês"
                 price="R$ 29,90"
@@ -318,3 +293,5 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
