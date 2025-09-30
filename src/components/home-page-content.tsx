@@ -173,7 +173,7 @@ export function HomePageContent() {
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/CK3x6Bc3/photo-2025-08-28-16-37-19.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
-    { id: undefined, src: 'https://i.postimg.cc/6pVK543G/kamy03-4.gif', likes: 889, comments: 45 },
+    { id: undefined, src: 'https://i.postimg.cc/1tY8JPWf/post1-3-1-2.gif', likes: 889, comments: 45 },
     { id: undefined, src: 'https://i.postimg.cc/4y8wXgHC/AYddvAdP.jpg', likes: 4402, comments: 150 },
     { id: undefined, src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 3275, comments: 99 },
     { id: 'popup-trigger-card', src: 'https://i.postimg.cc/Y2fCbSYZ/photo-2025-08-28-15-09-54.jpg', likes: 4850, comments: 110 },
@@ -246,23 +246,6 @@ export function HomePageContent() {
                 isPopular={true}
                 tag={{ text: 'MAIS POPULAR', className: 'popular-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/FEafE7L5HOa0C5HXItAg"
-              />
-              <h4 className="promotions-title">
-                Promoções
-              </h4>
-               <Plan
-                duration="1 Mês"
-                price="R$ 17,90"
-                oldPrice="R$ 27,90"
-                href="https://www.ggcheckout.com/checkout/v2/WAa1UAuxqAbxqoe4CBiB"
-                tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
-              />
-              <Plan
-                duration="3 Meses"
-                price="R$ 27,90"
-                oldPrice="R$ 39,90"
-                tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/Z9zBT5TR5gWgBOeCS9Ie"
               />
             </div>
           </div>
