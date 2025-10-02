@@ -171,9 +171,9 @@ export function HomePageContent() {
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/CK3x6Bc3/photo-2025-08-28-16-37-19.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
-    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/pT3Y7Hqf/kamy04.jpg', likes: 3100, comments: 150 },
+    { id: undefined, src: 'https://i.postimg.cc/pT3Y7Hqf/kamy04.jpg', likes: 3100, comments: 150 },
     { id: undefined, src: 'https://i.postimg.cc/qv0MSN3N/kamy03.jpg', likes: 1850, comments: 95 },
-    { id: undefined, src: 'https://i.postimg.cc/5yL5QZ3K/kamy05.jpg', likes: 2500, comments: 110 },
+    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/5yL5QZ3K/kamy05.jpg', likes: 2500, comments: 110 },
   ];
   
   const handleMediaClick = () => {
@@ -292,6 +292,8 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
 
