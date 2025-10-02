@@ -171,7 +171,6 @@ export function HomePageContent() {
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/CK3x6Bc3/photo-2025-08-28-16-37-19.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
-    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/Y2fCbSYZ/photo-2025-08-28-15-09-54.jpg', likes: 4850, comments: 110 },
     { id: undefined, src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 3275, comments: 99 },
   ];
   
@@ -260,7 +259,7 @@ export function HomePageContent() {
               />
               <Plan
                 duration="3 Meses"
-                price="R$ 59,90"
+                price="R$ 27,90"
                 oldPrice="R$ 89,90"
                 tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/L8hA9g2C1bF4E7jH6kIm"
@@ -291,6 +290,8 @@ export function HomePageContent() {
     </>
   );
 }
+
+    
 
     
 
