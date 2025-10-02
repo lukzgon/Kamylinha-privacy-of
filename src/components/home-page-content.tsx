@@ -171,7 +171,6 @@ export function HomePageContent() {
   const feedPosts = [
     { id: 'popup-reset-card', src: 'https://i.postimg.cc/CK3x6Bc3/photo-2025-08-28-16-37-19.jpg', likes: 1248, comments: 126 },
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
-    { id: undefined, src: 'https://i.postimg.cc/7Ld58QZb/kamy05-2.gif', likes: 3275, comments: 99 },
   ];
   
   const handleMediaClick = () => {
@@ -253,14 +252,14 @@ export function HomePageContent() {
                <Plan
                 duration="1 Mês"
                 price="R$ 17,90"
-                oldPrice="R$ 49,90"
+                oldPrice="R$ 29,90"
                 tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/oT5Fw5yXz9g1d8C5P3Iq"
               />
               <Plan
                 duration="3 Meses"
                 price="R$ 27,90"
-                oldPrice="R$ 89,90"
+                oldPrice="R$ 59,90"
                 tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
                 href="https://www.ggcheckout.com/checkout/v2/L8hA9g2C1bF4E7jH6kIm"
               />
@@ -290,11 +289,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
-
-    
-
-    
-
-    
