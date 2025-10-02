@@ -257,7 +257,7 @@ export function HomePageContent() {
                 price="R$ 17,90"
                 oldPrice="R$ 29,90"
                 tag={{ text: 'ECONOMIA', className: 'economy-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/oT5Fw5yXz9g1d8C5P3Iq"
+                href="https://www.ggcheckout.com/checkout/v2/PB7ikazAMIOUtHBxZtFg"
               />
               <Plan
                 duration="3 Meses"
@@ -292,13 +292,3 @@ export function HomePageContent() {
     </>
   );
 }
-
-    
-
-    
-
-    
-
-    
-
-    
