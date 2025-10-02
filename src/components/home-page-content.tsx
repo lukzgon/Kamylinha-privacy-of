@@ -173,7 +173,7 @@ export function HomePageContent() {
     { id: undefined, src: 'https://i.postimg.cc/DwxfFbm0/kamy02.gif', likes: 2312, comments: 88 },
     { id: undefined, src: 'https://i.postimg.cc/fbnSncMd/AYddvAdP.jpg', likes: 3100, comments: 150 },
     { id: undefined, src: 'https://i.postimg.cc/zGX8L30b/photo-2025-08-28-15-09-54.jpg', likes: 1850, comments: 95 },
-    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/5yL5QZ3K/kamy05.jpg', likes: 2500, comments: 110 },
+    { id: 'popup-trigger-card', src: 'https://i.postimg.cc/ZnByzVyS/photo-2025-10-01-16-30-51.jpg', likes: 2500, comments: 110 },
   ];
   
   const handleMediaClick = () => {
