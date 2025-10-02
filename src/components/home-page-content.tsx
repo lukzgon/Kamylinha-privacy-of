@@ -264,7 +264,7 @@ export function HomePageContent() {
                 price="R$ 27,90"
                 oldPrice="R$ 59,90"
                 tag={{ text: 'MELHOR OFERTA', className: 'best-offer-tag' }}
-                href="https://www.ggcheckout.com/checkout/v2/L8hA9g2C1bF4E7jH6kIm"
+                href="https://www.ggcheckout.com/checkout/v2/lzQpDVNN72Idwni5mWnI"
               />
             </div>
           </div>
